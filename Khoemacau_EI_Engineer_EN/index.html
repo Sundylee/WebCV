@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sundy Lee · Senior E&I Engineer · Khoemacau Copper Mine</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;700&display=swap');
+
+  :root {
+    --navy: #0d2240;
+    --steel: #1c3a5e;
+    --accent: #c8922a;
+    --accent2: #e8a83a;
+    --light: #f5f7fa;
+    --border: #d0d8e4;
+    --text: #1a2535;
+    --muted: #5a6a7e;
+    --tag-bg: #e8f0fb;
+    --tag-text: #1c3a5e;
+    --page-width: 920px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: #e8ecf2;
+    color: var(--text);
+    font-size: 13.5px;
+    line-height: 1.75;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .page-wrapper {
+    max-width: var(--page-width);
+    margin: 32px auto;
+    background: #fff;
+    box-shadow: 0 8px 48px rgba(13,34,64,0.18);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--steel) 100%);
+    color: #fff;
+    padding: 40px 48px 32px;
+    position: relative;
+    border-bottom: 4px solid var(--accent);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 50%, transparent 100%);
+  }
+  .header-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .name-block h1 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    line-height: 1.15;
+  }
+  .name-block .subtitle {
+    margin-top: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--accent2);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .contact-block {
+    text-align: right;
+    font-size: 12px;
+    line-height: 2;
+    color: rgba(255,255,255,0.82);
+  }
+  .contact-block a { color: var(--accent2); }
+
+  .header-tags {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .header-tag {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    color: rgba(255,255,255,0.9);
+    font-size: 11px;
+    padding: 3px 12px;
+    border-radius: 2px;
+    letter-spacing: 0.4px;
+  }
+
+  /* ── NAV ── */
+  .toc-nav {
+    background: var(--light);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+  .toc-nav a {
+    color: var(--muted);
+    font-size: 11.5px;
+    padding: 10px 14px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+  }
+  .toc-nav a:hover {
+    color: var(--navy);
+    border-bottom-color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* ── BODY ── */
+  .body-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 282px;
+    gap: 0;
+  }
+  .main-col { padding: 36px 40px 40px 48px; border-right: 1px solid var(--border); }
+  .side-col { padding: 32px 26px; background: var(--light); }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 32px; }
+  .section:last-child { margin-bottom: 0; }
+  .section-title {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .icon { color: var(--accent); font-size: 14px; }
+
+  /* ── SUMMARY ── */
+  .summary-text {
+    font-size: 13px;
+    line-height: 1.85;
+    color: var(--text);
+    border-left: 3px solid var(--accent);
+    padding-left: 14px;
+    margin-bottom: 14px;
+  }
+
+  /* ── ACHIEVEMENTS ── */
+  .achievement-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .ach-card {
+    background: linear-gradient(135deg, #f0f4fa 0%, #e8eef8 100%);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 2px;
+  }
+  .ach-card .ach-metric {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: 'Merriweather', Georgia, serif;
+    line-height: 1.2;
+  }
+  .ach-card .ach-label {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+    line-height: 1.45;
+  }
+
+  /* ── EXPERIENCE ── */
+  .exp-item { margin-bottom: 26px; padding-bottom: 26px; border-bottom: 1px solid var(--border); }
+  .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+  .exp-company {
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--navy);
+  }
+  .exp-company .company-type {
+    font-size: 10.5px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 6px;
+  }
+  .exp-period {
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    background: var(--tag-bg);
+    padding: 2px 10px;
+    border-radius: 2px;
+  }
+  .exp-role {
+    font-size: 12.5px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+  }
+  .exp-location {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .subsection-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 12px 0 6px;
+    padding: 3px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+
+  ul.duties {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul.duties li {
+    font-size: 12.5px;
+    padding: 3px 0 3px 18px;
+    position: relative;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  ul.duties li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 10px;
+    top: 5px;
+  }
+  ul.duties li strong { color: var(--navy); font-weight: 600; }
+
+  .result-box {
+    background: linear-gradient(135deg, #fdf8f0, #faf3e5);
+    border: 1px solid #e8d5b0;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 2px;
+    margin-top: 10px;
+  }
+  .result-box .rb-title {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  ul.results {
+    list-style: none;
+    padding: 0;
+  }
+  ul.results li {
+    font-size: 12px;
+    padding: 2px 0 2px 16px;
+    position: relative;
+    color: #4a3800;
+    line-height: 1.65;
+  }
+  ul.results li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 9px;
+    top: 5px;
+  }
+  ul.results li strong { color: #7a4800; }
+
+  /* ── PROJECTS ── */
+  .project-item { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .project-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
+  .project-name { font-size: 12.5px; font-weight: 700; color: var(--navy); line-height: 1.4; }
+  .project-period {
+    font-size: 10.5px;
+    color: var(--muted);
+    white-space: nowrap;
+    margin-left: 8px;
+    background: var(--tag-bg);
+    padding: 1px 8px;
+    border-radius: 2px;
+  }
+  .project-company { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .project-desc { font-size: 12px; color: var(--text); line-height: 1.65; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .tag {
+    font-size: 10px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 1px 8px;
+    border-radius: 2px;
+    border: 1px solid #c8d8f0;
+  }
+  .tag.accent { background: #fef3e2; color: #7a4a00; border-color: #e8c880; }
+
+  /* ── SIDE ── */
+  .side-section { margin-bottom: 22px; }
+  .side-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+  }
+
+  .skill-category { margin-bottom: 11px; }
+  .skill-cat-name {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .skill-tag {
+    font-size: 10.5px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 2px 8px;
+    border-radius: 2px;
+    border: 1px solid #c8d8f0;
+    line-height: 1.6;
+  }
+  .skill-tag.highlight {
+    background: #0d2240;
+    color: #fff;
+    border-color: #0d2240;
+  }
+
+  .kv-item {
+    display: flex;
+    font-size: 12px;
+    margin-bottom: 7px;
+    line-height: 1.5;
+  }
+  .kv-key { color: var(--muted); min-width: 76px; flex-shrink: 0; }
+  .kv-val { color: var(--text); font-weight: 500; }
+
+  .edu-item { margin-bottom: 10px; }
+  .edu-title { font-size: 12px; font-weight: 600; color: var(--navy); }
+  .edu-sub { font-size: 11px; color: var(--muted); }
+
+  .lang-bar { margin-bottom: 8px; }
+  .lang-label { display: flex; justify-content: space-between; font-size: 11.5px; margin-bottom: 3px; }
+  .lang-label .lang-name { font-weight: 600; color: var(--navy); }
+  .lang-label .lang-level { color: var(--muted); font-size: 10.5px; }
+  .bar-track { background: #dde4ee; border-radius: 2px; height: 4px; }
+  .bar-fill { background: linear-gradient(90deg, var(--navy), var(--accent)); height: 4px; border-radius: 2px; }
+
+  @media print {
+    body { background: #fff; font-size: 11.5px; }
+    .page-wrapper { margin: 0; box-shadow: none; border-radius: 0; }
+    .toc-nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header" id="top">
+    <div class="header-top">
+      <div class="name-block">
+        <h1>Sundy Lee &nbsp;<span style="font-size:18px;font-weight:400;opacity:0.7;">李朝珲</span></h1>
+        <div class="subtitle">Senior Electrical &amp; Instrumentation Engineer</div>
+      </div>
+      <div class="contact-block">
+        <div>📞 <a href="tel:+8613889810081">+86 138-8981-0081</a></div>
+        <div>✉️ <a href="mailto:winlee136@msn.com">winlee136@msn.com</a></div>
+        <div>📍 Shanghai, China · Open to Long-Term Overseas Assignment</div>
+      </div>
+    </div>
+    <div class="header-tags">
+      <span class="header-tag">18+ Yrs Heavy Industry E&amp;I Full Lifecycle</span>
+      <span class="header-tag">Mineral Processing · Chemical Refining · Power Generation</span>
+      <span class="header-tag">Siemens TIA Portal · Rockwell (AB) · GE Mark VIe</span>
+      <span class="header-tag">DCS/PLC/SCADA Maintenance &amp; Control Loop Tuning</span>
+      <span class="header-tag">Harsh-Environment Instrumentation · Density/Flow/Level/pH/ORP</span>
+      <span class="header-tag">VFD Drives · RCA Root Cause Analysis · TPM Framework</span>
+      <span class="header-tag">Overseas Site Experience · Bangladesh / Argentina / Pakistan</span>
+    </div>
+  </header>
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="toc-nav">
+    <a href="#summary">Profile</a>
+    <a href="#achievements">Key Achievements</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+  </nav>
+
+  <!-- ═══ BODY ═══ -->
+  <div class="body-wrapper">
+
+    <!-- ══ MAIN COLUMN ══ -->
+    <main class="main-col">
+
+      <!-- SUMMARY -->
+      <section class="section" id="summary">
+        <div class="section-title"><span class="icon">◈</span>Profile Summary</div>
+        <p class="summary-text">
+          Senior E&amp;I Engineer with <strong>18+ years</strong> of full-lifecycle experience in heavy industry, specialising in mineral extraction, chemical processing and large-scale power generation. Served as the <strong>lead E&amp;I engineer</strong> on the Ganfeng Mariana lithium mineral processing project (Argentina) and combined-cycle power plants in Bangladesh, covering electrical and instrumentation system build, daily maintenance, root cause analysis (RCA) and automation optimisation. Proficient in maintaining, modifying logic and configuring HMI screens on <strong>Foxboro ArchestrA IDE、Siemens TIA Portal, Rockwell (AB) Studio5000, GE Mark VIe</strong> and <strong>Emerson Delta V</strong> DCS/PLC platforms.
+        </p>
+        <p class="summary-text">
+          Full hands-on experience with <strong>microwave density meters, electromagnetic flow meters, pressure transmitters, radar level gauges and online pH/ORP analysers</strong> in highly corrosive, harsh-service conditions — covering selection, calibration, inspection and fault diagnosis. Skilled at driving systematic corrective actions through <strong>5Why / Fishbone RCA</strong> and establishing TPM / PM / PdM frameworks. Experienced in <strong>HV switchgear, power transformers, generator synchronisation</strong> and <strong>VFD drive management</strong>. Proven track record of <strong>local team training and technical knowledge transfer</strong> across multinational projects. English (CET-6) is primary working language; fully capable of interfacing with overseas OEM vendors and headquarters engineering teams.
+        </p>
+      </section>
+
+      <!-- ACHIEVEMENTS -->
+      <section class="section" id="achievements">
+        <div class="section-title"><span class="icon">◈</span>Key Achievements</div>
+        <div class="achievement-grid">
+          <div class="ach-card">
+            <div class="ach-metric">18+ Yrs</div>
+            <div class="ach-label">Heavy Industry E&amp;I Full Lifecycle<br>Mineral Processing · Chemical · Power</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">−45%</div>
+            <div class="ach-label">Nuisance trips eliminated after<br>control logic &amp; filter algorithm optimisation</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">100+</div>
+            <div class="ach-label">Instrument nodes managed end-to-end:<br>selection · calibration · commissioning · RCA</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">Zero Trips</div>
+            <div class="ach-label">6 consecutive months of grid instability<br>— compressor anti-surge control: zero shutdown</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">5–10%</div>
+            <div class="ach-label">E&amp;I procurement cost reduction via<br>design optimisation &amp; vendor negotiation</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">−1 Month</div>
+            <div class="ach-label">As-built drawings completed ahead<br>of schedule in close coordination with design institute</div>
+          </div>
+          <div class="ach-card" style="grid-column: 1 / -1; border-left: 3px solid var(--accent);">
+            <div class="ach-metric" style="font-size:15px;">30+ Technical Reviews</div>
+            <div class="ach-label">Led critical instrument specification reviews &amp; material assurance in corrosive slurry environments, covering <strong style="color:var(--accent);">density meters / flow meters / level gauges / pH-ORP analysers</strong> and wetted-material qualification — systematically reducing field instrument failure rates.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section" id="experience">
+        <div class="section-title"><span class="icon">◈</span>Work Experience</div>
+
+        <!-- JOB 1 - Ganfeng -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">Ganfeng International Trading (Shanghai) Co., Ltd.<span class="company-type">Listed Company · Ganfeng Lithium Overseas Project</span></div>
+            <div class="exp-period">Mar 2025 – Apr 2026</div>
+          </div>
+          <div class="exp-role">Overseas Design Dept. · E&amp;I Supervisor (Owner's Representative)</div>
+          <div class="exp-location">📍 Shanghai / Salta, Argentina</div>
+
+          <div class="subsection-label">Harsh-Environment Instrumentation Management</div>
+          <ul class="duties">
+            <li><strong>Instrument Selection &amp; Technical Assurance:</strong> Under highly corrosive, crystallisation-prone conditions (KCl/MgCl₂ &gt;300 g/L brine — directly analogous to copper mine slurry service), led plant-wide instrument technical assurance covering <strong>microwave density meters (Valmet DS), 80GHz high-frequency radar level gauges, electromagnetic flow meters and online pH/ORP analysers</strong>. Enforced SS2205 duplex stainless steel and N10276 Hastelloy wetted-material requirements to eliminate blind-zone measurement failures and chronic drift faults.</li>
+            <li><strong>Calibration &amp; Inspection Programme:</strong> Established plant-wide instrument <strong>calibration, verification and inspection schedules</strong>; authored standard SOP documents for radar level gauges, mass flow meters and control valve calibration to ensure measurement accuracy remains within process and regulatory requirements.</li>
+            <li><strong>Fault Diagnosis &amp; Root Cause Analysis:</strong> Applied <strong>5Why / Fishbone RCA</strong> methodology to instrument failures (drift, plugging, corrosion perforation) in corrosive slurry service; defined permanent corrective actions — material upgrades, structural modifications and revised maintenance frequencies — systematically reducing instrument failure rates.</li>
+          </ul>
+
+          <div class="subsection-label">DCS/PLC Automation Maintenance &amp; Control Optimisation</div>
+          <ul class="duties">
+            <li><strong>Daily Control System Maintenance:</strong> Responsible for plant-wide Siemens S7-1200/1500 PLC and DCS daily maintenance, <strong>control logic modification and HMI screen configuration</strong>; resolved Modbus TCP and Profinet communication faults to maintain continuous stable operation.</li>
+            <li><strong>Process Loop Control Optimisation:</strong> For slurry transfer (pump interlock + flow closed-loop), centrifuge separation (speed control + vibration protection) and filtration (differential pressure control + auto-backwash sequence), analysed <strong>loop response speed and control accuracy</strong> issues; tuned PID parameters and sliding-average filter algorithms to reduce process disturbances and nuisance alarms.</li>
+            <li><strong>Chemical Dosing &amp; Water Treatment Automation:</strong> Optimised control logic and HMI screens for RO water treatment and chemical dosing systems (analogous to flotation reagent addition); continually adjusted control valve response parameters per process requirements to raise automation level.</li>
+            <li><strong>FAT / SAT Management:</strong> Led Factory Acceptance Testing and Site Acceptance Testing to verify control logic, loop tuning and interlock integrity; tracked contractor punch-list closure.</li>
+          </ul>
+<!--
+          <div class="subsection-label">100MW PV Power Station Electrical System Experience</div>
+          <ul class="duties">
+            <li><strong>PV Monitoring System Integration:</strong> The Mariana salt-flat facility is served by both a large (~100MW) and a small PV station supplying renewable power to the entire plant. Led <strong>data communication integration</strong> between both solar generation zones and the plant DCS monitoring platform; established cross-segment IT/OT data links and coordinated with the IT department to complete real-time collection and visualisation of generation output and equipment status data.</li>
+            <li><strong>Inverter &amp; Grid Connection Fundamentals:</strong> Familiar with the basic grid-connection principles and protection configuration of string inverters (anti-islanding, over/under-voltage, over/under-frequency); participated in inverter–SCADA communication integration commissioning (Modbus TCP/RS485), resolving device dropout and data drift issues.</li>
+            <li><strong>PV Box Transformer &amp; MV Distribution:</strong> Gained foundational knowledge of PV pad-mount transformer (0.4kV/33kV) routine maintenance procedures including insulation checks, grounding continuity verification and cooling-system inspection; familiar with the PV plant power flow path from string combiner → AC collection → box transformer → step-up substation.</li>
+            <li><strong>Generation Data Analysis &amp; Energy Efficiency:</strong> Established real-time monitoring of solar generation versus plant load consumption; supported process and production teams in formulating peak-generation dispatch strategies to increase renewable self-consumption and reduce purchased electricity costs.</li>
+          </ul>
+-->
+          <div class="subsection-label">Team Guidance &amp; EHS Compliance</div>
+          <ul class="duties">
+            <li><strong>Local Team Technical Training:</strong> Coached on-site instrument technicians and electricians in instrument loop checks, single-instrument calibration and basic DCS/PLC fault diagnosis; produced equipment operation and maintenance SOPs to drive technical knowledge transfer and local talent development.</li>
+            <li><strong>Electrical Safety &amp; EHS Compliance:</strong> Responsible for JSA and risk assessments for all E&amp;I field activities, ensuring strict adherence to safety standards and EHS requirements.</li>
+          </ul>
+
+          <div class="result-box">
+            <div class="rb-title">▌ Key Results</div>
+            <ul class="results">
+              <li><strong>Nuisance Trips Reduced by ~45%:</strong> Optimised ISA-S88 batch sequential interlock logic and key signal filter algorithms; eliminated control valve response lag and flow meter signal disturbance, significantly extending MTBF of slurry transfer and separation systems.</li>
+              <li><strong>Instrument Anti-Corrosion Upgrade Delivered:</strong> Led corrosion-resistance upgrade of critical process instruments; introduced microwave density meters and mandated SS2205/N10276 high-grade wetted materials — <strong>permanently eliminated blind-zone measurement failures</strong> in corrosive service, substantially reducing annual instrument replacement frequency.</li>
+              <li><strong>Key Process Unit Automation Delivered:</strong> Completed control-system upgrade and commissioning for RO water treatment, air compressor station, centrifuge station and filtration system, improving process stability and efficiency.</li>
+<!--
+              <li><strong>PV Monitoring Integration Delivered:</strong> Led data-communication integration between Mariana large/small PV zones and the plant DCS platform; completed cross-segment IT/OT commissioning, <strong>achieving real-time visualisation of generation output and equipment status</strong> to support production team energy-optimisation decisions.</li>
+-->
+              <li><strong>Remote Industrial Network Commissioned:</strong> Designed and commissioned flexible industrial networks across remote site areas (MikroTik routing / ZeroTier SD-WAN), enabling remote equipment fault diagnosis for the remote salt-flat plant and improving emergency response capability.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- JOB 2 - CCCE -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">Beijing CCC-Engineering Co., Ltd. (CCCE)<span class="company-type">Multinational Private Enterprise</span></div>
+            <div class="exp-period">Jun 2016 – Feb 2025</div>
+          </div>
+          <div class="exp-role">Overseas Dept. · E&amp;I Supervisor / Chief Technical Engineer</div>
+          <div class="exp-location">📍 Shanghai / Dhaka, Bangladesh</div>
+
+          <div class="subsection-label">Automation System Maintenance &amp; Control Optimisation</div>
+          <ul class="duties">
+            <li><strong>DCS/PLC/SCADA System Maintenance:</strong> Responsible for daily maintenance, control logic modification and HMI screen configuration on GE Mark VIe DCS, Foxboro ArchestrA DCS and Siemens PLC platforms for a large combined-cycle power plant; continuously optimised <strong>loop response speed and control accuracy</strong> for fuel gas compression, demineralised water treatment, cooling water and lube oil systems.</li>
+            <li><strong>VFD Drive Management:</strong> Maintained variable-frequency drive systems for large motor-driven equipment (compressors, cooling water pumps, MCC feeders); handled Siemens / ABB / Schneider VFD <strong>parameter tuning and drive fault diagnosis</strong> to ensure stable motor control.</li>
+            <li><strong>Control Optimisation (Analogous to Mineral Processing):</strong> Led <strong>anti-surge control loop optimisation</strong> for the fuel gas booster compressor (same principles as mill surge control); introduced feedforward strategy to eliminate lag-response issues. Performed <strong>automatic control system optimisation</strong> for chemical water treatment (analogous to flotation reagent dosing control) to improve dosing stability and accuracy.</li>
+          </ul>
+
+          <div class="subsection-label">Power Distribution &amp; Critical Electrical Equipment Management</div>
+          <ul class="duties">
+            <li><strong>Power Transformer Management:</strong> Responsible for technical management and maintenance of the plant main step-up transformer (11kV/132kV, ~250MVA ONAF forced-air-cooled) and auxiliary transformers (11kV/6.6kV/0.4kV); supervised preventive maintenance: dissolved gas analysis (DGA), winding insulation resistance and polarisation index testing, DC resistance measurement, breather and seal integrity checks; verified OLTC on-load tap-changer operation and contact wear to ensure sustained voltage quality and transformer output.</li>
+            <li><strong>HV Switchgear &amp; Circuit Breaker Management:</strong> Responsible for periodic PM and testing of 11kV/6.6kV HV switchgear (ABB/Siemens withdrawable vacuum circuit breakers and GIS panels) — including operating mechanism checks (spring charging, closing/tripping coils, auxiliary contacts), AC hipot / leakage-current testing, circuit breaker timing and simultaneous-pole tests, busbar and cable insulation measurement; diagnosed and resolved typical HV faults including failure-to-close, protection misoperation and vacuum interrupter degradation; ensured compliance with IEC 62271.</li>
+            <li><strong>10kV Generator Electrical System Management:</strong> Managed electrical systems for the GE 9F gas turbine generator (10.5kV / ~185MVA, water-hydrogen-hydrogen cooled), including: excitation system (AVR) parameter setting and functional testing, stator winding insulation monitoring (PI absorption ratio, partial discharge), generator circuit breaker (GCB) maintenance and protection set-point verification. Participated in pre-synchronisation checks (voltage, frequency and phase-angle three-in-one conditions verified step by step), coordinating with grid dispatch to complete first grid synchronisation, on-load commissioning and disconnection safely.</li>
+            <li><strong>Protection Relay Testing &amp; Management:</strong> Participated in periodic calibration and functional testing of plant protection systems — generator-transformer unit differential (87T/87G), overcurrent (50/51), zero-sequence earth fault (50N/51N), under-frequency/voltage load-shedding and busbar differential (87B) protection schemes; reviewed protection settings and coordination calculations to ensure selectivity, speed and dependability met Bangladesh BPDB regulations and IEC 60255 requirements, eliminating cascading-trip risk.</li>
+            <li><strong>MCC &amp; LV Distribution Maintenance:</strong> Maintained plant-wide MCC (0.4kV), LV distribution boards (LVDB) and UPS/220V DC systems; resolved common LV faults — feeder short circuits, contactor failure, thermal relay mis-setting; organised annual shutdown insulation testing and connection-torque inspection to ensure continuous auxiliary power supply.</li>
+            <li><strong>HV Safety Management:</strong> Established and enforced <strong>switching operation permits and LOTO (lockout/tagout)</strong> procedures in HV switchrooms; supervised all live-work and de-energised maintenance activities; applied JSA and PTW approvals for every HV task — achieving <strong>zero safety incidents across the entire operating period</strong>.</li>
+          </ul>
+
+          <div class="subsection-label">Instrumentation Management &amp; Maintenance</div>
+          <ul class="duties">
+            <li><strong>Plant Instrumentation Management:</strong> Coordinated plant-wide <strong>calibration, verification and inspection schedules</strong> for flow meters (FT), pressure transmitters (PT), temperature instruments (TT), level gauges and control valves; managed spare-parts requests and inventory to ensure sustained measurement accuracy.</li>
+            <li><strong>24/7 Emergency Fault Response:</strong> Provided round-the-clock maintenance, fault diagnosis and technical retrofit support for all equipment within EPC scope (DCS/PLC/SIS and field instruments); implemented RCA and tracked corrective actions to systematically reduce unplanned downtime.</li>
+            <li><strong>EPC Design Review &amp; Technical Control:</strong> Co-established technical principles with design institutes; reviewed system designs for IEC/GB compliance; led FAT inspection of major rotating equipment, DCS/PLC panels, HIMatrix/Triconex SIS and FPP systems.</li>
+          </ul>
+
+          <div class="subsection-label">Procedure Development &amp; Team Training</div>
+          <ul class="duties">
+            <li><strong>Technical Procedures:</strong> Authored E&amp;I equipment operating, inspection, maintenance and servicing procedures (including OTPs); monitored compliance and maintained document management system.</li>
+            <li><strong>Technical Training &amp; Handover:</strong> Delivered system operation, instrument maintenance and DCS/PLC basic troubleshooting training to owner operating personnel, achieving effective knowledge transfer; built a talent pipeline within the multinational commissioning team.</li>
+          </ul>
+
+          <div class="result-box">
+            <div class="rb-title">▌ Key Results</div>
+            <ul class="results">
+              <li><strong>Procurement Cost Reduction:</strong> Through design optimisation and vendor negotiation, reduced equipment and material procurement costs by <strong>5–10%</strong> versus comparable projects.</li>
+              <li><strong>Anti-Surge Control Optimisation:</strong> Recalibrated surge-margin setpoints and introduced feedforward strategy; achieved <strong>zero compressor trips over 6 consecutive months of severe grid instability</strong>, ensuring continuous stable power generation.</li>
+              <li><strong>Signal Algorithm Improvement:</strong> Optimised multi-channel flow and pressure signal acquisition algorithms, eliminating high-frequency noise and delivering measurable improvement in data stability and DCS control-input quality.</li>
+              <li><strong>Chemical Water Treatment Automation:</strong> Upgraded automatic control system for chemical water treatment process (analogous to flotation reagent control) per owner requirements, raising automation level and improving product-water stability.</li>
+              <li><strong>Instrument Localisation:</strong> Led <strong>domestic-brand substitution</strong> of selected pressure/flow/level instruments on GT auxiliary systems, reducing spare-part procurement and logistics costs while strengthening continuous-operation supply assurance.</li>
+              <li><strong>Zero Protection Misoperations:</strong> Led periodic calibration and set-point verification for generator-transformer differential (87T/87G) and main transformer HV-side overcurrent (50/51) protection; achieved <strong>zero misoperations and zero failures-to-operate</strong> throughout the 2-year commercial operation period, meeting owner SLA requirements.</li>
+              <li><strong>Schedule Performance:</strong> Through close coordination with the design institute, completed as-built drawings <strong>one month ahead of schedule</strong>, accelerating project handover.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- JOB 3 - GE Granite -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">GE-Granite Technical Services (Beijing) Co., Ltd.<span class="company-type">Foreign-Invested Enterprise · GE Affiliate</span></div>
+            <div class="exp-period">Apr 2010 – May 2016</div>
+          </div>
+          <div class="exp-role">Site Manager / Lead Engineer</div>
+          <div class="exp-location">📍 Beijing (Resident at project sites nationwide: Xinjiang, Ningxia, Shaanxi, Guangzhou, etc.)</div>
+          <ul class="duties">
+            <li><strong>Multi-Site Concurrent Site Management:</strong> Coordinated E&amp;I installation and commissioning of 14+ large gas-driven compressor units (GE PGT25) across West-East Gas Pipeline Phase I &amp; II compressor stations and the SBM FPSO offshore power system; independently managed construction schedule, quality and safety at each site.</li>
+            <li><strong>DCS/PLC System Commissioning:</strong> Led GE Mark VIe DCS commissioning — control logic verification, interlock protection testing and start/stop sequence optimisation; performed deep fault diagnosis on complex logic conflicts to ensure all units met performance test milestones on schedule.</li>
+            <li><strong>Instrument Installation &amp; Calibration:</strong> Per P&amp;ID drawings and I/O lists, organised and supervised installation, single-instrument calibration, loop checks (LC) and control system parameter configuration for the complete instrument suite (temperature / pressure / flow / level / vibration / analysers), verifying compliance with OEM technical specifications.</li>
+            <li><strong>Auxiliary Systems Management:</strong> Within GE contract scope, managed installation, commissioning, warranty, operation and spare-parts for all auxiliary control systems (lube oil, hydraulic oil, seal gas, cooling water, fuel supply, MCC, fire &amp; gas systems); responded to all field E&amp;I emergency faults.</li>
+            <li><strong>Technical Training &amp; Customer Support:</strong> Delivered technical training for owner operating personnel on newly commissioned units; authored daily / weekly site reports for timely feedback to HQ engineering teams.</li>
+          </ul>
+          <div class="result-box">
+            <div class="rb-title">▌ Key Results</div>
+            <ul class="results">
+              <li><strong>On-Time Delivery:</strong> Ensured all 14+ units completed performance acceptance and were successfully handed over within extremely compressed schedules — zero major HSE incidents.</li>
+              <li><strong>Equipment Availability Improvement:</strong> Delivered rapid, thorough fault resolution that substantially improved operating reliability and availability (uptime) across multiple project sites.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- JOB 4 - CAGT -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">AVIC Shixin Gas Turbine Co., Ltd. – Shenyang Branch<span class="company-type">State-Owned Enterprise (formerly Shenyang Liming Gas Turbine)</span></div>
+            <div class="exp-period">Jul 2007 – Apr 2010</div>
+          </div>
+          <div class="exp-role">Electrical, Instrumentation &amp; Control Engineer</div>
+          <div class="exp-location">📍 Shenyang / Fujian / Zhejiang / Guangdong project sites</div>
+          <ul class="duties">
+            <li><strong>Instrument Installation &amp; Calibration:</strong> Directed installation and wiring per general arrangement drawings, P&amp;IDs, cable-routing diagrams and I/O lists; tested and calibrated the full instrument suite — solenoid valves, temperature/pressure/level/flow instruments, chemical analysers (pH / turbidity / concentration meters), vibration sensors; completed signal loop checks.</li>
+            <li><strong>Sub-System Commissioning:</strong> Responsible for commissioning and coordinated functional verification of auxiliary sub-systems including lube oil, hydraulic oil, seal/cooling gas, cooling water, instrument air, fuel supply, MCC and fire systems; verified control logic, alarm setpoints and safety interlocks; configured control system parameters; participated in full-unit commissioning and ignition test runs.</li>
+            <li><strong>Major Inspection &amp; Maintenance:</strong> Participated in GE 6B and 9E gas turbine major inspections and fault diagnosis; commissioned Hitachi H25 gas turbine and 2 × GE 9E units for the FREP / ExxonMobil / Saudi Aramco Fujian Petrochemical COGEN project (total investment ~RMB 40 billion).</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section" id="projects">
+        <div class="section-title"><span class="icon">◈</span>Major Projects In latest 10 Yrs</div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">Argentina Mariana &amp; Guemes LiCl Mineral Extraction Plant (mineral processing — highly analogous to mining)</div>
+            <div class="project-period">Mar 2025 – Apr 2026</div>
+          </div>
+          <div class="project-company">Employer: Ganfeng International Trading (Shanghai) Co., Ltd. · Role: E&amp;I Supervisor (Owner's Rep) · Location: Salta Province, Argentina (elev. 3,750m)</div>
+          <div class="project-desc">USD 600M, 20,000 t/yr lithium chloride mineral extraction plant processing <strong>high-concentration brine slurry (analogous to mine-site slurry)</strong> through centrifuge separation, filtration, RO water treatment and chemical dosing. Led plant-wide PLC/DCS system design, maintenance and instrumentation management in harsh corrosive service; established calibration and inspection framework; optimised key process control loop response and accuracy.</div>
+          <div class="project-tags">
+            <span class="tag accent">Mineral Processing · Highly Analogous to Mining ✓</span>
+            <span class="tag">Corrosive Slurry Instrumentation</span>
+            <span class="tag">Microwave Density Meter</span>
+            <span class="tag">pH/ORP Analyser</span>
+            <span class="tag">Siemens TIA Portal</span>
+            <span class="tag">ISA-S88 Batch Control</span>
+            <span class="tag">OPC UA / MES Integration</span>
+            <span class="tag">~100MW PV Power Station</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">KHULNA 330MW Dual-Fuel Combined Cycle Power Plant EPC (Bangladesh)</div>
+            <div class="project-period">Feb 2019 – Feb 2025</div>
+          </div>
+          <div class="project-company">Employer: Beijing CCCE · Role: Chief Technical Engineer</div>
+          <div class="project-desc"><strong>GE 9F.03AGP gas turbine + A651 steam turbine + HRSG</strong> dual-fuel CCPP EPC turnkey project. Responsible throughout for DCS/PLC/SCADA maintenance, instrumentation management, control logic optimisation, 24/7 fault emergency response and 2-year commercial operation warranty. Led chemical water treatment (dosing control) automation upgrade and compressor anti-surge control optimisation.</div>
+          <div class="project-tags">
+            <span class="tag accent">330MW Large Industrial Project ✓</span>
+            <span class="tag">GE 9F / Mark VIe DCS</span>
+            <span class="tag">Foxboro ArchestrA</span>
+            <span class="tag">VFD Drives</span>
+            <span class="tag">Chemical Dosing Control</span>
+            <span class="tag">24/7 Maintenance</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">SHAHJIBAZAR 100MW Gas Turbine Power Plant EPC (Bangladesh)</div>
+            <div class="project-period">Oct 2016 – Nov 2020</div>
+          </div>
+          <div class="project-company">Employer: Beijing CCCE · Role: Chief Technical Engineer</div>
+          <div class="project-desc">GE LMS100Mw single-cycle gas turbine power plant EPC turnkey project. Led LMS100 gas turbine and IR MSG-6R3 gas booster compressor E&amp;I commissioning; completed full instrument calibration, loop testing and interlock verification; managed plant-wide I&amp;C system maintenance and fault response during commercial operation.</div>
+          <div class="project-tags">
+            <span class="tag">GE LMS100</span>
+            <span class="tag">Gas Booster System</span>
+            <span class="tag">Instrument Calibration Management</span>
+            <span class="tag">Turnkey EPC</span>
+          </div>
+        </div>
+<!--
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">PetroChina West-East Gas Pipeline Phase II – Compressor Stations (China)</div>
+            <div class="project-period">Jun 2010 – Feb 2013</div>
+          </div>
+          <div class="project-company">Employer: GE-Granite · Role: Lead E&amp;I Engineer</div>
+          <div class="project-desc">Installation and commissioning of <strong>14+ GE PGT25 gas turbine + centrifugal compressor units</strong> across Horgos, Hongliu, Hami, Zhangye and Guyuan compressor stations on the West-East Pipeline Phase II. Completed full instrument calibration, loop checks, GE Mark VIe DCS logic verification and anti-surge control commissioning; managed concurrent multi-site activities.</div>
+          <div class="project-tags">
+            <span class="tag">GE PGT25</span>
+            <span class="tag">Centrifugal Compressor</span>
+            <span class="tag">Mark VIe DCS</span>
+            <span class="tag">14 Units · Multi-Site</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">SBM FPSO Cidade de Ilhabela / Topside Power System (China)</div>
+            <div class="project-period">Apr 2013 – Oct 2013</div>
+          </div>
+          <div class="project-company">Employer: GE-Granite · Role: Lead Control Engineer</div>
+          <div class="project-desc">Installation and commissioning of 4 × <strong>GE LM2500+G4 gas turbine generator sets</strong> for a large Brazilian oil tanker at Guangzhou shipyard; executed full E&amp;I commissioning of the offshore platform topside power system to strict marine HSE standards.</div>
+          <div class="project-tags">
+            <span class="tag">GE LM2500+G4</span>
+            <span class="tag">FPSO Offshore Platform</span>
+            <span class="tag">Strict Offshore HSE Standards</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">FREP / ExxonMobil / Saudi Aramco 1.1MTA Ethylene COGEN Project (China)</div>
+            <div class="project-period">Jan 2008 – May 2009</div>
+          </div>
+          <div class="project-company">Employer: AVIC Shixin Gas Turbine · Role: E&amp;I Control Engineer</div>
+          <div class="project-desc">Fujian Refining &amp; Petrochemical Co. (SINOPEC / ExxonMobil / Saudi Aramco JV, total investment ~RMB 40B) captive power plant — installation and commissioning of 2 × <strong>GE 9E-class gas turbine generator sets</strong> and auxiliary systems; completed full instrument calibration, control logic verification and system integration testing in a large-scale petrochemical environment.</div>
+          <div class="project-tags">
+            <span class="tag">GE 9E</span>
+            <span class="tag">Major Petrochemical COGEN</span>
+            <span class="tag">ExxonMobil / Saudi Aramco</span>
+          </div>
+        </div>
+-->
+      </section>
+
+    </main>
+
+    <!-- ══ SIDE COLUMN ══ -->
+    <aside class="side-col">
+
+      <!-- CORE COMPETENCIES -->
+      <div class="side-section">
+        <div class="side-title">Core Technical Skills</div>
+		
+        <div class="skill-category">
+          <div class="skill-cat-name">PLC / DCS Platforms</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">Foxboro ArchestrA IDE</span>            
+			<span class="skill-tag highlight">Siemens TIA Portal</span>
+            <span class="skill-tag highlight">Rockwell (AB) Studio5000</span>
+            <span class="skill-tag highlight">GE Mark VIe DCS</span>
+            <span class="skill-tag highlight">Emerson Delta V</span>
+            <span class="skill-tag">Honeywell Experion PKS</span>
+            <span class="skill-tag">HIMatrix / Triconex SIS</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">Process Instrumentation</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">Microwave Density / Concentration Meter</span>
+            <span class="skill-tag highlight">EM / Mass Flow Meter</span>
+            <span class="skill-tag highlight">Radar / Guided-Wave Level Gauge</span>
+            <span class="skill-tag highlight">Pressure / DP Transmitter</span>
+            <span class="skill-tag highlight">Online pH / ORP Analyser</span>
+            <span class="skill-tag">Control Valve / Actuator</span>
+            <span class="skill-tag">Vibration / Speed Sensor</span>
+            <span class="skill-tag">Calibration / Verification / Inspection</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">Electrical Systems</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">VFD Drives (Siemens / ABB / AB)</span>
+            <span class="skill-tag highlight">HV Switchgear (GIS/AIS Vacuum CB)</span>
+            <span class="skill-tag highlight">Power Transformer (DGA / Insulation / OLTC)</span>
+            <span class="skill-tag highlight">Generator Synchronisation (AVR / Paralleling)</span>
+            <span class="skill-tag highlight">PV Station Monitoring Integration (Inverter / Box Tx)</span>
+            <span class="skill-tag">PV Grid Protection (Anti-islanding / OVP / UVP)</span>
+            <span class="skill-tag">Relay Protection (87T/87G/50N/51N)</span>
+            <span class="skill-tag">MCC / LV Distribution Board (LVDB)</span>
+            <span class="skill-tag">LOTO / HV Switching Permit</span>
+            <span class="skill-tag">UPS / DC Battery Systems</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">Maintenance Management</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">RCA – 5Why / Fishbone</span>
+            <span class="skill-tag highlight">TPM / PM / PdM Framework</span>
+            <span class="skill-tag">SOP Authoring &amp; Standardisation</span>
+            <span class="skill-tag">24/7 Emergency Response</span>
+            <span class="skill-tag">Spare-Part Planning &amp; Inventory</span>
+            <span class="skill-tag">FAT / SAT Management</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">Protocols &amp; Tools</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">HART</span>
+            <span class="skill-tag highlight">Modbus TCP</span>
+            <span class="skill-tag highlight">Profinet / OPC UA</span>
+            <span class="skill-tag">Ethernet/IP / CANopen</span>
+            <span class="skill-tag">AutoCAD / E-Plan</span>
+          </div>
+        </div>
+
+
+		<div class="skill-category">
+          <div class="skill-cat-name">AI Tools</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">Claude Code</span>
+            <span class="skill-tag highlight">Codex</span>
+            <span class="skill-tag">Gemini</span>
+            <span class="skill-tag">WorkBuddy</span>
+          </div>
+        </div>        
+      </div>
+
+      <!-- JD MATCH ANALYSIS 
+      <div class="side-section">
+        <div class="side-title">Job Match Analysis</div>
+        <div style="font-size:11px; line-height:1.85; color:var(--text);">
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>Degree · Relevant Major</span>
+            <span style="color:#2a7a2a; font-weight:700;">Industrial Automation ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>5+ Yrs E&amp;I Experience</span>
+            <span style="color:#2a7a2a; font-weight:700;">18 Years ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>Mining / Heavy Industry Process</span>
+            <span style="color:#2a7a2a; font-weight:700;">Lithium Mining + Power ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>DCS/PLC Commissioning &amp; Maintenance</span>
+            <span style="color:#2a7a2a; font-weight:700;">Expert · Multi-Brand ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>Siemens / AB / Schneider PLC</span>
+            <span style="color:#2a7a2a; font-weight:700;">All Hands-On ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>All Process Instrument Types</span>
+            <span style="color:#2a7a2a; font-weight:700;">Expert ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>pH / ORP Analyser</span>
+            <span style="color:#2a7a2a; font-weight:700;">Ganfeng Project ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>VFD Drives</span>
+            <span style="color:#2a7a2a; font-weight:700;">Siemens / ABB / AB ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>RCA Root Cause Analysis</span>
+            <span style="color:#2a7a2a; font-weight:700;">5Why / Fishbone ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>Local Team Training</span>
+            <span style="color:#2a7a2a; font-weight:700;">Multi-Country Practice ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0;">
+            <span>English Working Language</span>
+            <span style="color:#2a7a2a; font-weight:700;">CET-6 Fluent ✓</span>
+          </div>
+        </div>
+      </div>
+-->
+
+      <!-- PERSONAL INFO -->
+      <div class="side-section">
+        <div class="side-title">Personal Info</div>
+        <div class="kv-item"><span class="kv-key">Phone</span><span class="kv-val"><a href="tel:+8613889810081">+86 138-8981-0081</a></span></div>
+        <div class="kv-item"><span class="kv-key">Email</span><span class="kv-val"><a href="mailto:winlee136@msn.com">winlee136@msn.com</a></span></div>
+        <div class="kv-item"><span class="kv-key">Location</span><span class="kv-val">Shanghai, China</span></div>
+        <div class="kv-item"><span class="kv-key">Mobility</span><span class="kv-val">Prefer long-term overseas<br>assignment (Africa / SE Asia / S. America)</span></div>
+        <div class="kv-item"><span class="kv-key">Salary</span><span class="kv-val">Negotiable<br>Social insurance required</span></div>
+        <div class="kv-item"><span class="kv-key">Notice</span><span class="kv-val">1–2 Weeks</span></div>
+      </div>
+
+      <!-- LANGUAGE -->
+      <div class="side-section">
+        <div class="side-title">Languages</div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">Mandarin</span><span class="lang-level">Native</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">English</span><span class="lang-level">CET-6 · Primary Working Language</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+        </div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">Spanish</span><span class="lang-level">Elementary</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:20%"></div></div>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="side-section" id="education">
+        <div class="side-title">Education &amp; Training</div>
+        <div class="edu-item">
+          <div class="edu-title">Foxboro DCS System Training</div>
+          <div class="edu-sub">Foxboro Shanghai Training Centre<br>Sep 2025 – Oct 2025</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">GE Mark VIe Control System Certification</div>
+          <div class="edu-sub">GE Energy Learning Center (GE ELC) · USA<br>Feb 2012 – Mar 2012</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">Industrial Electrical Automation</div>
+          <div class="edu-sub">Shenyang Institute of Engineering<br>Sep 2004 – Jul 2007</div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

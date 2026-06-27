@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李朝珲 · 资深电气仪表工程师 · Khoemacau铜矿</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+  :root {
+    --navy: #0d2240;
+    --steel: #1c3a5e;
+    --accent: #c8922a;
+    --accent2: #e8a83a;
+    --light: #f5f7fa;
+    --border: #d0d8e4;
+    --text: #1a2535;
+    --muted: #5a6a7e;
+    --tag-bg: #e8f0fb;
+    --tag-text: #1c3a5e;
+    --page-width: 900px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    background: #e8ecf2;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.75;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .page-wrapper {
+    max-width: var(--page-width);
+    margin: 32px auto;
+    background: #fff;
+    box-shadow: 0 8px 48px rgba(13,34,64,0.18);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--steel) 100%);
+    color: #fff;
+    padding: 40px 48px 32px;
+    position: relative;
+    border-bottom: 4px solid var(--accent);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 50%, transparent 100%);
+  }
+  .header-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .name-block h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .name-block .subtitle {
+    margin-top: 8px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--accent2);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .contact-block {
+    text-align: right;
+    font-size: 12.5px;
+    line-height: 2;
+    color: rgba(255,255,255,0.82);
+  }
+  .contact-block a { color: var(--accent2); }
+
+  .header-tags {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .header-tag {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    color: rgba(255,255,255,0.9);
+    font-size: 11.5px;
+    padding: 3px 12px;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── NAV ── */
+  .toc-nav {
+    background: var(--light);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+  .toc-nav a {
+    color: var(--muted);
+    font-size: 12px;
+    padding: 10px 14px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+  }
+  .toc-nav a:hover {
+    color: var(--navy);
+    border-bottom-color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* ── BODY ── */
+  .body-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 0;
+  }
+  .main-col { padding: 36px 40px 40px 48px; border-right: 1px solid var(--border); }
+  .side-col { padding: 32px 28px; background: var(--light); }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 32px; }
+  .section:last-child { margin-bottom: 0; }
+  .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .icon { color: var(--accent); font-size: 15px; }
+
+  /* ── SUMMARY ── */
+  .summary-text {
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: var(--text);
+    border-left: 3px solid var(--accent);
+    padding-left: 14px;
+    margin-bottom: 14px;
+  }
+
+  /* ── KEY ACHIEVEMENTS ── */
+  .achievement-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .ach-card {
+    background: linear-gradient(135deg, #f0f4fa 0%, #e8eef8 100%);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 2px;
+  }
+  .ach-card .ach-metric {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.2;
+  }
+  .ach-card .ach-label {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  /* ── EXPERIENCE ── */
+  .exp-item { margin-bottom: 26px; padding-bottom: 26px; border-bottom: 1px solid var(--border); }
+  .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+  .exp-company {
+    font-weight: 700;
+    font-size: 14.5px;
+    color: var(--navy);
+  }
+  .exp-company .company-type {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 6px;
+  }
+  .exp-period {
+    font-size: 11.5px;
+    color: var(--muted);
+    white-space: nowrap;
+    background: var(--tag-bg);
+    padding: 2px 10px;
+    border-radius: 2px;
+  }
+  .exp-role {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+  .exp-location {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .subsection-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 12px 0 6px;
+    padding: 3px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+
+  ul.duties {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul.duties li {
+    font-size: 13px;
+    padding: 3px 0 3px 18px;
+    position: relative;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  ul.duties li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+    top: 5px;
+  }
+  ul.duties li strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .result-box {
+    background: linear-gradient(135deg, #fdf8f0, #faf3e5);
+    border: 1px solid #e8d5b0;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 2px;
+    margin-top: 10px;
+  }
+  .result-box .rb-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  ul.results {
+    list-style: none;
+    padding: 0;
+  }
+  ul.results li {
+    font-size: 12.5px;
+    padding: 2px 0 2px 16px;
+    position: relative;
+    color: #4a3800;
+    line-height: 1.65;
+  }
+  ul.results li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 9px;
+    top: 5px;
+  }
+  ul.results li strong { color: #7a4800; }
+
+  /* ── PROJECTS ── */
+  .project-item {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .project-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
+  .project-name { font-size: 13px; font-weight: 700; color: var(--navy); line-height: 1.4; }
+  .project-period {
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    margin-left: 8px;
+    background: var(--tag-bg);
+    padding: 1px 8px;
+    border-radius: 2px;
+  }
+  .project-company { font-size: 11.5px; color: var(--muted); margin-bottom: 4px; }
+  .project-desc { font-size: 12.5px; color: var(--text); line-height: 1.65; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .tag {
+    font-size: 10.5px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 1px 8px;
+    border-radius: 2px;
+    border: 1px solid #c8d8f0;
+  }
+  .tag.accent { background: #fef3e2; color: #7a4a00; border-color: #e8c880; }
+
+  /* ── SIDE ── */
+  .side-section { margin-bottom: 24px; }
+  .side-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+  }
+
+  .skill-category { margin-bottom: 12px; }
+  .skill-cat-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .skill-tag {
+    font-size: 11px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 2px 8px;
+    border-radius: 2px;
+    border: 1px solid #c8d8f0;
+    line-height: 1.6;
+  }
+  .skill-tag.highlight {
+    background: #0d2240;
+    color: #fff;
+    border-color: #0d2240;
+  }
+
+  .kv-item {
+    display: flex;
+    font-size: 12.5px;
+    margin-bottom: 7px;
+    line-height: 1.5;
+  }
+  .kv-key { color: var(--muted); min-width: 56px; flex-shrink: 0; }
+  .kv-val { color: var(--text); font-weight: 500; }
+
+  .edu-item { margin-bottom: 10px; }
+  .edu-title { font-size: 12.5px; font-weight: 600; color: var(--navy); }
+  .edu-sub { font-size: 11.5px; color: var(--muted); }
+
+  .lang-bar { margin-bottom: 8px; }
+  .lang-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px; }
+  .lang-label .lang-name { font-weight: 600; color: var(--navy); }
+  .lang-label .lang-level { color: var(--muted); font-size: 11px; }
+  .bar-track { background: #dde4ee; border-radius: 2px; height: 4px; }
+  .bar-fill { background: linear-gradient(90deg, var(--navy), var(--accent)); height: 4px; border-radius: 2px; }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: #fff; font-size: 12px; }
+    .page-wrapper { margin: 0; box-shadow: none; border-radius: 0; }
+    .toc-nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header" id="top">
+    <div class="header-top">
+      <div class="name-block">
+        <h1>李朝珲</h1>
+        <div class="subtitle">资深电气仪表工程师 · Senior E&amp;I Engineer</div>
+      </div>
+      <div class="contact-block">
+        <div>📞 <a href="tel:+8613889810081">+86 138-8981-0081</a></div>
+        <div>✉️ <a href="mailto:winlee136@msn.com">winlee136@msn.com</a></div>
+        <div>📍 上海 / 长期海外驻场</div>
+      </div>
+    </div>
+    <div class="header-tags">
+      <span class="header-tag">18年+ 重工业 E&amp;I 全生命周期</span>
+      <span class="header-tag">矿物加工 · 化工精制 · 大型发电流程</span>
+      <span class="header-tag">Siemens TIA Portal · Rockwell (AB) · GE Mark VIe</span>
+      <span class="header-tag">DCS/PLC/SCADA 维护优化 · 控制回路调优</span>
+      <span class="header-tag">严苛工况仪表管理 · 密度/流量/液位/pH/ORP</span>
+      <span class="header-tag">VFD 变频驱动 · RCA 根因分析 · TPM 体系</span>
+      <span class="header-tag">海外驻场 · 孟加拉 / 阿根廷 / 巴基斯坦</span>
+    </div>
+  </header>
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="toc-nav">
+    <a href="#summary">个人小结</a>
+    <a href="#achievements">核心成就</a>
+    <a href="#experience">工作经历</a>
+    <a href="#projects">主要项目</a>
+    <a href="#education">教育培训</a>
+  </nav>
+
+  <!-- ═══ BODY ═══ -->
+  <div class="body-wrapper">
+
+    <!-- ══ MAIN COLUMN ══ -->
+    <main class="main-col">
+
+      <!-- SUMMARY -->
+      <section class="section" id="summary">
+        <div class="section-title"><span class="icon">◈</span>个人小结</div>
+        <p class="summary-text">
+          拥有 <strong>18年+</strong> 重工业电气仪表全生命周期经验，深耕矿物提取精制、化工流程及大型发电行业，在锂盐矿物加工（阿根廷 Ganfeng Mariana 项目）和联合循环电厂等严苛连续流程中，长期担任 <strong>E&amp;I 主责工程师</strong>，主导电气仪控系统建设、日常维护、故障根因分析（RCA）及自动化优化工作。熟练掌握 <strong>Foxboro ArchestrA IDE、Siemens TIA Portal、Rockwell（AB）Studio5000、GE Mark VIe、Emerson Delta V</strong> 等主流 DCS/PLC 系统的维护、控制逻辑修改与画面组态。
+        </p>
+        <p class="summary-text">
+          具备 <strong>浓度计（微波密度计）、电磁流量计、压力变送器、雷达液位计、在线 pH/ORP 分析仪</strong> 等过程仪表在高腐蚀严苛工况下的选型、校准、检定与故障诊断全流程经验；擅长从 <strong>5Why/鱼骨图根因分析</strong> 角度推动系统性纠正措施落地，建立 TPM 点检与预防性维护（PM/PdM）体系；具备 <strong>VFD 变频驱动、高压供配电及 MCC 系统</strong>运行维护经验。曾主导多专业国际项目的 <strong>本地化团队技术培训</strong>，编制操作维护 SOP，实现技术转移。英语（CET6）为工作语言，可独立对接海外设备供应商及总部技术部门。
+        </p>
+      </section>
+
+      <!-- ACHIEVEMENTS -->
+      <section class="section" id="achievements">
+        <div class="section-title"><span class="icon">◈</span>核心成就</div>
+        <div class="achievement-grid">
+          <div class="ach-card">
+            <div class="ach-metric">18年+</div>
+            <div class="ach-label">重工业 E&amp;I 全生命周期<br>矿物加工 · 化工精制 · 大型发电</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">−45%</div>
+            <div class="ach-label">优化控制逻辑滤波算法后<br>系统误跳车事件大幅减少</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">100+</div>
+            <div class="ach-label">仪表节点跨项目完成选型/<br>校准/调试/故障诊断全流程管理</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">零跳闸</div>
+            <div class="ach-label">连续 6 个月高扰动工况<br>防喘振控制优化后压缩机零停机</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">5–10%</div>
+            <div class="ach-label">通过技术方案优化与供应商谈判<br>电气仪表采购成本降低</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">−1月</div>
+            <div class="ach-label">与设计院高效协同<br>竣工图提前 1 个月完成出版</div>
+          </div>
+          <div class="ach-card" style="grid-column: 1 / -1; border-left: 3px solid var(--accent);">
+            <div class="ach-metric" style="font-size:16px;">30次+</div>
+            <div class="ach-label">主持关键仪表方案技术评审与确权（涵盖高腐蚀矿浆工况下<strong style="color:var(--accent);">密度计/流量计/液位计/pH-ORP 分析仪</strong>选型及接液材质确认），系统性降低严苛工况下仪表失效风险</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section" id="experience">
+        <div class="section-title"><span class="icon">◈</span>工作经历</div>
+
+        <!-- JOB 1 - Ganfeng Lithium (most recent, most relevant) -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">赣锋国际贸易（上海）有限公司<span class="company-type">上市公司 · 赣锋锂业海外项目</span></div>
+            <div class="exp-period">03/2025 – 04/2026</div>
+          </div>
+          <div class="exp-role">海外设计部 · 电气仪表主管（业主代表）</div>
+          <div class="exp-location">📍 上海 / 萨尔塔（阿根廷）</div>
+
+          <div class="subsection-label">严苛工况仪表管理</div>
+          <ul class="duties">
+            <li><strong>工艺仪表选型与确权：</strong>在高浓度卤水（KCl/MgCl₂ &gt;300 g/L）强腐蚀、易结晶工况下（与铜矿矿浆环境高度类似），主导全厂关键工艺仪表技术确权，涵盖<strong>微波密度计（Valmet DS）、80GHz 高频雷达液位计、电磁流量计、在线 pH/ORP 分析仪</strong>等；强制执行 SS2205 双相不锈钢 / N10276 哈氏合金耐腐蚀接液材质要求，解决传统仪表"盲区测量"与频繁漂移故障。</li>
+            <li><strong>仪表校准与巡检体系建设：</strong>制定全厂仪表定期<strong>校准、检定与巡检计划</strong>；编制雷达液位计/质量流量计/调节阀校验标准 SOP 文件，确保测量精度持续符合工艺要求及计量规程。</li>
+            <li><strong>仪表故障诊断与根因分析：</strong>应用 <strong>5Why/鱼骨图</strong> 方法对高腐蚀性矿浆工况下仪表失效（漂移、堵塞、腐蚀穿孔）开展根因分析，制定持久性纠正措施（含材质升级、结构改造、维护频次调整），系统性降低仪表故障率。</li>
+          </ul>
+
+          <div class="subsection-label">DCS/PLC 自动化维护与控制优化</div>
+          <ul class="duties">
+            <li><strong>控制系统日常维护：</strong>负责全厂 Siemens S7-1200/1500 PLC 及 DCS 控制系统的日常运行维护、<strong>控制逻辑修改与画面组态</strong>，确保系统长期稳定运行；处理 Modbus TCP、Profinet 通讯故障。</li>
+            <li><strong>关键工艺回路控制优化：</strong>针对浆料输送（泵联锁 + 流量闭环）、离心分离（转速控制 + 振动保护）、过滤（压差控制 + 自动反冲洗顺控）等核心工艺环节，分析<strong>控制回路响应速度与控制精度</strong>问题，优化 PID 参数与滑动平均滤波算法，降低工艺波动和误报警率。</li>
+            <li><strong>化学给药与水处理自控：</strong>负责 RO 水处理系统、化学药剂添加系统（类浮选给药）的控制逻辑优化与 DCS 画面组态，根据工艺要求持续调整调节阀响应参数，提升自动化水平。</li>
+            <li><strong>FAT/SAT 组织与验收：</strong>主导控制系统工厂验收测试（FAT）与现场验收测试（SAT），验证控制逻辑、回路调节和联锁保护完整性；督促承包商整改并关闭测试缺陷。</li>
+          </ul>
+
+          <div class="subsection-label">100MW 光伏电站电力系统参与经验</div>
+          <ul class="duties">
+            <li><strong>光伏电站监控系统集成：</strong>Mariana 盐沼工厂配套建有大型（约 100MW）及小型光伏电站为全厂提供可再生能源供电；主导两个光伏发电区域与厂区 DCS 监控平台的<strong>数据通讯互联集成</strong>，打通 IT/OT 跨网段数据链路，协调 IT 部门完成发电量、设备状态等关键数据的实时采集与可视化展示。</li>
+            <li><strong>逆变器与并网基础：</strong>了解组串式光伏逆变器（String Inverter）的基本并网原理与保护配置（孤岛保护/反孤岛、过欠压、过欠频保护）；参与逆变器与 SCADA 系统的通讯集成调试（Modbus TCP/RS485 协议），处理设备通讯掉线与数据漂移问题。</li>
+            <li><strong>光伏箱变与升压配电：</strong>接触并了解光伏箱式变压器（0.4kV/33kV）的基础运行维护规程，包括绝缘检查、接地连续性验证及散热系统巡检；熟悉光伏场站从组串汇流箱→交流集电→箱变→升压站的电力流转路径。</li>
+            <li><strong>发电数据分析与能效优化：</strong>建立光伏发电量与工厂用电负荷的实时数据对比监控机制，配合工艺和生产团队制定高峰发电时段的用电优化策略，提升可再生能源自用比例，降低外购电成本。</li>
+          </ul>
+
+          <div class="subsection-label">团队指导与 EHS 合规</div>
+          <ul class="duties">
+            <li><strong>本地团队技术培训：</strong>指导现场仪表工、电工开展仪表回路检查（Loop Check）、单体校验及 DCS/PLC 基础故障排除；编制设备操作与维护 SOP，推动技术转移与本地化人才培养。</li>
+            <li><strong>电气安全与 EHS 合规：</strong>负责现场 E&amp;I 作业的 JSA（作业安全分析）和风险评估，确保所有电气仪表工作严格符合安全标准及 EHS 要求。</li>
+          </ul>
+
+          <div class="result-box">
+            <div class="rb-title">▌ 主要业绩</div>
+            <ul class="results">
+              <li><strong>误跳车大幅减少：</strong>通过优化 ISA-S88 批处理顺控逻辑联锁步序与关键信号滤波算法，消除调节阀响应滞后与流量计信号扰动，使浆料输送及分离系统因信号突变导致的<strong>误跳车事件减少约 45%</strong>，MTBF（平均无故障时间）显著延长。</li>
+              <li><strong>仪表防腐升级成功：</strong>主导关键工艺仪表防腐改造，引入微波密度计并强制要求 SS2205/N10276 等高等级耐腐蚀接液材质，<strong>彻底解决高腐蚀工况下盲区测量问题</strong>，年度仪表因腐蚀更换频次大幅下降。</li>
+              <li><strong>关键工艺单元自动化交付：</strong>完成 RO 水处理系统、空压机站、离心机站、过滤系统等关键单元控制升级改造，提升工艺稳定性与效率。</li>
+              <li><strong>光伏电站监控互联交付：</strong>主导 Mariana 大/小型光伏发电区域与厂区 DCS 平台的数据通讯集成，完成跨网段 IT/OT 互联调试，<strong>实现发电量、设备状态数据实时可视化</strong>，为生产团队用电优化决策提供数据支撑。</li>
+              <li><strong>工业网络远程维护：</strong>设计并调试跨远程厂区灵活工业网络（MikroTik/ZeroTier SD-WAN），实现偏远矿区设备远程故障诊断，提高应急响应能力。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- JOB 2 - CCCE -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">北京中缆通达电气成套有限公司（上海分公司）<span class="company-type">跨国私企</span></div>
+            <div class="exp-period">06/2016 – 02/2025</div>
+          </div>
+          <div class="exp-role">海外事业部 · 电气仪表主管 / 项目技术总工</div>
+          <div class="exp-location">📍 上海 / 达卡（孟加拉国）</div>
+
+          <div class="subsection-label">自动化系统维护与控制优化</div>
+          <ul class="duties">
+            <li><strong>DCS/PLC/SCADA 系统维护：</strong>负责大型联合循环电厂 GE Mark VIe DCS、Foxboro ArchestrA DCS、Siemens 系列 PLC 控制系统的日常运行维护、控制逻辑修改与 HMI 画面组态；持续优化关键工艺回路（天然气增压、除盐水处理、冷却水、润滑油系统）的<strong>控制回路响应速度与控制精度</strong>。</li>
+            <li><strong>变频驱动（VFD）系统管理：</strong>负责大型电机驱动设备（压缩机、冷却水泵、MCC 馈线）的变频驱动系统运行维护，处理 Siemens/ABB/Schneider VFD <strong>参数整定与驱动故障诊断</strong>，确保电机控制稳定可靠。</li>
+            <li><strong>控制优化实践（类选矿控制）：</strong>主导天然气增压压缩机<strong>防喘振控制回路优化</strong>（类磨矿机喘振控制原理），引入前馈控制策略消除滞后响应；对化学水处理工艺（类浮选给药控制）进行<strong>自动控制系统优化设计</strong>，提升给药稳定性与精度。</li>
+          </ul>
+
+          <div class="subsection-label">供配电系统与大型关键电气设备管理</div>
+          <ul class="duties">
+            <li><strong>主变压器技术管理：</strong>负责电厂主升压变压器（11kV/132kV，约 250MVA 级 ONAF 强迫风冷型）及厂用变压器（11kV/6.6kV/0.4kV）的技术管理与运行维护；监督预防性维护作业：绝缘油溶解气体色谱分析（DGA）、绕组绝缘电阻及吸收比测试、直流电阻测量、变压器呼吸器及密封性检查；核查 OLTC 有载分接开关调压功能与触头磨损，确保变压器出力与电压质量长期稳定合格。</li>
+            <li><strong>高压开关柜与断路器管理：</strong>负责 11kV/6.6kV 高压开关柜（含 ABB/Siemens 手车式真空断路器和 GIS 柜）的定期预防性维护与试验，内容涵盖断路器操动机构（弹簧储能、分合闸线圈及辅助触点）功能检查、绝缘耐压试验（AC 耐压/泄漏电流）、断路器分合闸时间与同期性测试、母线及电缆绝缘检测；排查并处理合闸失败、保护误动、真空灭弧室老化等高压开关典型故障，确保开关设备满足 IEC 62271 标准要求。</li>
+            <li><strong>10kV 发电机电气系统管理：</strong>负责 GE 9F 燃气轮机发电机（10.5kV/约 185MVA，水氢氢冷却）的电气系统技术管理，包括：励磁系统（AVR 自动电压调节器）参数整定与功能测试、定子绕组绝缘（PI 吸收比、局放检测）监测、发电机出口断路器（GCB）维护与保护定值核查；参与机组<strong>并网前同期检查</strong>（电压、频率、相角差三合一条件逐项确认），协调调度完成机组首次并网、带负荷试运行及解列操作，确保并网过程安全无冲击。</li>
+            <li><strong>继电保护校验与管理：</strong>参与电厂继电保护系统的<strong>定期校验与功能测试</strong>，涵盖发变组差动保护（87T/87G）、过流保护（50/51）、零序接地保护（50N/51N）、低频低压减载保护及母线差动保护（87B）等关键保护回路；审核保护定值与整定计算，确保保护配合关系（选择性、速动性、可靠性）满足孟加拉国 BPDB 电力法规及 IEC 60255 系列规范要求，杜绝越级跳闸风险。</li>
+            <li><strong>MCC 与低压配电系统维护：</strong>负责全厂 MCC（电机控制中心，0.4kV）、低压配电盘（LVDB）及 UPS/220V 直流系统的运行维护；处理低压馈线短路、接触器损坏、热继电器整定偏差等常见故障；组织年度大修期间低压开关柜绝缘测试与接线紧固作业，保障全厂辅机电源供给连续稳定。</li>
+            <li><strong>高压作业安全管理：</strong>建立并推行高压配电室<strong>倒闸操作票与 LOTO（挂牌上锁）</strong>制度，规范高压操作流程，防止误操作；组织并监督所有高压带电作业及停电检修，执行 JSA（作业安全分析）和 PTW（工作许可证）审批，确保高压作业<strong>全周期零安全事故</strong>。</li>
+          </ul>
+
+          <div class="subsection-label">仪表设备管理与维护</div>
+          <ul class="duties">
+            <li><strong>全厂仪表管理：</strong>统筹管理全厂流量计（FT）、压力变送器（PT）、温度仪表（TT）、液位计及调节阀的<strong>定期校准、检定与巡检计划</strong>；组织备件申请与库存管理，确保仪表测量精度持续合格。</li>
+            <li><strong>7×24 故障应急响应：</strong>为合同范围内设备提供全天候维护、故障排除及技术改造支持（含 DCS/PLC/SIS 系统及现场仪表）；实施 RCA 根因分析，制定长效纠正措施并跟踪落实，系统性降低非计划停机率。</li>
+            <li><strong>EPC 设计审核与技术管控：</strong>与设计院联合确立技术原则；审查系统设计符合 IEC/GB 规范；参与主要旋转设备 FAT 验收（DCS、PLC 控制柜、HIMatrix/Triconex SIS 安全控制系统），管控技术风险。</li>
+          </ul>
+
+          <div class="subsection-label">制度建设与团队培训</div>
+          <ul class="duties">
+            <li><strong>规程编制：</strong>编制电气仪控设备运行、点检、维护、保养技术规程及操作测试规程（OTP），监督规程落实情况，建立文档管理体系。</li>
+            <li><strong>技术培训与移交：</strong>为业主运行人员提供系统操作、仪表维护和 DCS/PLC 基础故障排除培训，实现技术转移；建立跨国调试团队人才梯队。</li>
+          </ul>
+
+          <div class="result-box">
+            <div class="rb-title">▌ 主要业绩</div>
+            <ul class="results">
+              <li><strong>采购成本降低：</strong>采购阶段通过技术方案优化与供应商谈判，设备和材料采购成本较同类项目<strong>降低 5%–10%</strong>。</li>
+              <li><strong>压缩机防喘振优化：</strong>重新标定防喘振控制裕度并引入前馈控制策略，在随后<strong>连续 6 个月气网剧烈波动期内实现压缩机零跳闸</strong>，保障机组连续稳定发电。</li>
+              <li><strong>控制算法优化：</strong>优化多路流量与压力信号采集算法，消除高频噪声干扰，使生产数据稳定性和可靠性显著提升，DCS 控制输入质量改善。</li>
+              <li><strong>化学水处理自控改造：</strong>根据业主运行需求对化学水处理工艺（类选矿给药控制）进行自动控制系统优化改造，提升自动化水平和产水稳定性。</li>
+              <li><strong>仪表国产化替代：</strong>推进燃机辅助系统部分压力/流量/液位仪表<strong>国产化替代</strong>，降低备件采购及物流成本，增强系统持续运行保障能力。</li>
+              <li><strong>继电保护零误动：</strong>主导电厂发变组差动保护（87T/87G）及主变高压侧过流保护（50/51）定期校验与整定核查，2年商业运行期内保护系统<strong>零误动/零拒动</strong>，系统高可用性持续满足业主 SLA 要求。</li>
+              <li><strong>进度控制：</strong>在设计阶段通过与设计院高效协作，<strong>提前 1 个月</strong>完成竣工图纸出版，加速项目交付。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- JOB 3 - GE Granite -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">通用电气 – 格兰尼技术咨询（北京）有限公司<span class="company-type">外企</span></div>
+            <div class="exp-period">04/2010 – 05/2016</div>
+          </div>
+          <div class="exp-role">现场经理 / 主管工程师</div>
+          <div class="exp-location">📍 北京（常驻全国各项目现场：新疆、宁夏、陕西、广州等）</div>
+          <ul class="duties">
+            <li><strong>多站点并发现场管理：</strong>统筹协调西气东输一线、二线 14 个以上压气站大型燃驱压缩机组（GE PGT25）及 FPSO 海洋平台动力系统的 E&amp;I 安装调试，独立管理各站点施工进度、质量与安全。</li>
+            <li><strong>DCS/PLC 系统调试：</strong>主导 GE Mark VIe DCS 控制系统调试，完成控制逻辑验证、联锁保护测试、启停顺序优化；对复杂控制逻辑冲突进行深度故障诊断与修复，确保机组按期完成性能考核。</li>
+            <li><strong>仪表安装校验：</strong>按照 P&amp;ID 图纸与 IO 表，组织和监督全套工艺仪表（温度/压力/流量/液位/振动/分析仪表）的安装、单体校验、信号回路测试（Loop Check）及控制系统参数组态，确保满足设备厂家技术规范。</li>
+            <li><strong>辅助系统管理：</strong>在 GE 合同范围内全面管理辅助控制系统（润滑油、液压油、密封气、冷却水、燃料供应、MCC、消防系统）的安装调试、质保、运行及备件管理；处理各类现场电气仪控紧急故障。</li>
+            <li><strong>技术培训与客户支持：</strong>为新安装机组的业主运行人员提供技术培训，建立良好客户关系；编制现场日报/周报，及时向总部技术团队反馈现场技术问题。</li>
+          </ul>
+          <div class="result-box">
+            <div class="rb-title">▌ 主要业绩</div>
+            <ul class="results">
+              <li><strong>高效交付：</strong>在极端压缩工期内，确保全部 14+ 台机组按时完成性能考核并成功移交，零重大 HSE 事故。</li>
+              <li><strong>提升设备可用性：</strong>通过快速深度故障排除，显著提升多个现场生产设备的运行可靠性（Availability）与可用性。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- JOB 4 - CAGT -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">中航世新燃气轮机股份有限公司沈阳分公司<span class="company-type">国企（原沈阳黎明燃机）</span></div>
+            <div class="exp-period">07/2007 – 04/2010</div>
+          </div>
+          <div class="exp-role">电气仪表控制工程师</div>
+          <div class="exp-location">📍 沈阳 / 福建 / 浙江 / 广东等项目现场</div>
+          <ul class="duties">
+            <li><strong>仪表安装与校验：</strong>按整体布局图、P&amp;ID 图、电缆敷设图及 IO 表指导安装与接线；对全套工艺仪表进行测试与校验，涵盖电磁阀、温度/压力/液位/流量仪表、化学分析仪（pH/浊度/浓度计）、振动传感器等；完成信号回路测试（Loop Check）。</li>
+            <li><strong>分系统调试：</strong>负责润滑油、液压油、密封冷却气、冷却水、仪表空气、燃料供应、MCC、消防系统等辅助系统的分系统调试及协调功能验证；校验控制系统逻辑、报警设定和安全联锁；配置控制系统参数；参与整机调试与点火试运行。</li>
+            <li><strong>大修维护：</strong>参与 GE 6B、9E 燃气轮机大修维护和故障诊断；安装调试日立 H25 型燃机及 2 台 GE 9E 级燃机（福建联合石化 COGEN 项目，总投资约 400 亿元）。</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section" id="projects">
+        <div class="section-title"><span class="icon">◈</span>近10年主要工程项目</div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">阿根廷 Mariana &amp; Guemes 氯化锂矿物提取工厂（矿物加工流程，与选矿高度同源）</div>
+            <div class="project-period">2025/03 – 2026/04</div>
+          </div>
+          <div class="project-company">在职单位：赣锋国际贸易（上海）有限公司 · 角色：E&amp;I 主管（业主代表）· 地点：阿根廷萨尔塔省（海拔 3,750m）</div>
+          <div class="project-desc">6 亿美元年产 2 万吨氯化锂矿物提取工厂，涉及<strong>高浓度卤水浆料处理（类矿浆环境）</strong>、离心分离、过滤、RO 水处理、化学给药等工艺单元。主导全厂 PLC/DCS 系统架构设计与维护，实施严苛工况下密度计/流量计/液位计/pH-ORP 仪表管理，建立仪表校准检定体系与 TPM 点检机制，优化关键工艺控制回路响应速度与精度。</div>
+          <div class="project-tags">
+            <span class="tag accent">矿物加工流程 · 高度类矿山 ✓</span>
+            <span class="tag">高腐蚀矿浆仪表</span>
+            <span class="tag">微波密度计</span>
+            <span class="tag">pH/ORP 分析仪</span>
+            <span class="tag">Siemens TIA Portal</span>
+            <span class="tag">ISA-S88 批控制</span>
+            <span class="tag">OPC UA / MES 集成</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">KHULNA 330MW 联合循环双燃料发电厂 EPC（孟加拉国）</div>
+            <div class="project-period">2019/02 – 2025/02</div>
+          </div>
+          <div class="project-company">在职单位：北京中缆通达电气成套有限公司 · 角色：项目技术总工</div>
+          <div class="project-desc">1 台 <strong>GE 9F.03AGP 燃气轮机 + A651 汽轮机 + 余热锅炉</strong> 联合循环双燃料 EPC Turnkey 项目，全程负责 DCS/PLC/SCADA 系统维护、仪表管理、控制逻辑优化、7×24 故障应急响应及 2 年商业运行质保期维护。主导化学水处理（给药控制）自动化改造，实施压缩机防喘振控制优化。</div>
+          <div class="project-tags">
+            <span class="tag accent">330MW 大型工业项目 ✓</span>
+            <span class="tag">GE 9F / Mark VIe DCS</span>
+            <span class="tag">Foxboro ArchestrA</span>
+            <span class="tag">变频驱动 VFD</span>
+            <span class="tag">化学给药控制</span>
+            <span class="tag">7×24 维护</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">SHAHJIBAZAR 100MW 燃气轮机发电厂 EPC（孟加拉国）</div>
+            <div class="project-period">2016/10 – 2020/11</div>
+          </div>
+          <div class="project-company">在职单位：北京中缆通达电气成套有限公司 · 角色：项目技术总工</div>
+          <div class="project-desc">1 台 <strong>GE LMS100Mw 燃气轮机</strong> 单循环 EPC Turnkey 项目。主导 LMS100 燃气轮机及 IR MSG-6R3 天然气增压机各辅助系统 E&amp;I 调试；完成全套仪表校验、回路测试、联锁保护验证；负责商业运营期全厂仪控系统维护与故障处理。</div>
+          <div class="project-tags">
+            <span class="tag">GE LMS100</span>
+            <span class="tag">天然气增压系统</span>
+            <span class="tag">仪表校验管理</span>
+            <span class="tag">Turnkey EPC</span>
+          </div>
+        </div>
+<!--
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">中石油西气东输 2 线天然气增压站（中国）</div>
+            <div class="project-period">2010/06 – 2013/02</div>
+          </div>
+          <div class="project-company">在职单位：通用电气 – 格兰尼 · 角色：Lead E&amp;I Engineer</div>
+          <div class="project-desc">西气东输 2 线霍尔果斯、红柳、哈密、张掖、固原等压气站，安装调试 <strong>14 台 GE PGT25 燃气轮机 + 离心式压缩机机组</strong>。完成全套工艺仪表校验、信号回路测试、GE Mark VIe DCS 逻辑验证与防喘振控制调试，多站点并发管理。</div>
+          <div class="project-tags">
+            <span class="tag">GE PGT25</span>
+            <span class="tag">离心压缩机</span>
+            <span class="tag">Mark VIe DCS</span>
+            <span class="tag">14台 · 多站点</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">SBM FPSO Cidade de Ilhabela / Topside 动力系统（中国）</div>
+            <div class="project-period">2013/04 – 2013/10</div>
+          </div>
+          <div class="project-company">在职单位：通用电气 – 格兰尼 · 角色：Lead Control Engineer</div>
+          <div class="project-desc">广州船坞巴西大型油轮 4 台 <strong>GE LM2500+G4 燃气轮机发电机组</strong>安装调试，承担海洋平台顶部模块动力系统全套 E&amp;I 调试工作，严格执行离岸 HSE 标准。</div>
+          <div class="project-tags">
+            <span class="tag">GE LM2500+G4</span>
+            <span class="tag">FPSO 海洋平台</span>
+            <span class="tag">严苛离岸标准</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">福建联合石化（FREP/EMCP&amp;P/SAAC）1.1MTA 乙烯装置 COGEN 项目（中国）</div>
+            <div class="project-period">2008/01 – 2009/05</div>
+          </div>
+          <div class="project-company">在职单位：中航世新燃气轮机 · 角色：电气仪表控制工程师</div>
+          <div class="project-desc">福建联合石化（中石化/埃克森美孚/沙特阿美合资，总投资约 400 亿元）自备电厂 2 台 <strong>GE 9E 级燃气轮机发电机组</strong>及配套辅助系统安装调试；完成大型石化装置环境下全套仪表校验、控制逻辑验证与系统联调。</div>
+          <div class="project-tags">
+            <span class="tag">GE 9E</span>
+            <span class="tag">大型石化 COGEN</span>
+            <span class="tag">ExxonMobil/Saudi Aramco</span>
+          </div>
+        </div>
+-->
+      </section>
+
+    </main>
+
+    <!-- ══ SIDE COLUMN ══ -->
+    <aside class="side-col">
+
+      <!-- CORE COMPETENCIES -->
+      <div class="side-section">
+        <div class="side-title">核心技术能力</div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">PLC / DCS 系统（JD要求）</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">Foxboro ArchestrA IDE</span>
+			<span class="skill-tag highlight">Siemens TIA Portal</span>
+            <span class="skill-tag highlight">Rockwell (AB) Studio5000</span>
+            <span class="skill-tag highlight">GE Mark VIe DCS</span>
+            <span class="skill-tag highlight">Emerson Delta V</span>
+            <span class="skill-tag">Honeywell Experion PKS</span>
+            <span class="skill-tag">HIMatrix / Triconex SIS</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">过程仪表管理</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">微波密度/浓度计</span>
+            <span class="skill-tag highlight">电磁/质量流量计</span>
+            <span class="skill-tag highlight">雷达/导波液位计</span>
+            <span class="skill-tag highlight">压力/差压变送器</span>
+            <span class="skill-tag highlight">在线 pH/ORP 分析仪</span>
+            <span class="skill-tag">调节阀/执行机构</span>
+            <span class="skill-tag">振动/转速传感器</span>
+            <span class="skill-tag">仪表校准/检定/巡检</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">电气系统</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">VFD 变频驱动（Siemens/ABB/AB）</span>
+            <span class="skill-tag highlight">高压开关柜（GIS/AIS 真空断路器）</span>
+            <span class="skill-tag highlight">主变压器维护（DGA/绝缘/OLTC）</span>
+            <span class="skill-tag highlight">发电机并网（同期合闸/AVR整定）</span>
+            <span class="skill-tag highlight">光伏电站监控集成（逆变器/箱变）</span>
+            <span class="skill-tag">光伏并网保护（孤岛/过欠压/过欠频）</span>
+            <span class="skill-tag">继电保护（87T/87G/50N/51N）</span>
+            <span class="skill-tag">MCC / 低压配电盘（LVDB）</span>
+            <span class="skill-tag">LOTO / 高压操作票</span>
+            <span class="skill-tag">UPS / 直流系统</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">维护管理体系</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">RCA 根因分析（5Why/鱼骨图）</span>
+            <span class="skill-tag highlight">TPM / PM / PdM 体系</span>
+            <span class="skill-tag">SOP 编制与标准化</span>
+            <span class="skill-tag">7×24 故障应急响应</span>
+            <span class="skill-tag">备件计划与库存管理</span>
+            <span class="skill-tag">FAT / SAT 管理</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">通讯协议 &amp; 工具</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">HART</span>
+            <span class="skill-tag highlight">Modbus TCP</span>
+            <span class="skill-tag highlight">Profinet / OPC UA / MQTT</span>
+            <span class="skill-tag">Ethernet/IP / CANopen</span>
+            <span class="skill-tag">E-TAP / AutoCAD / E-Plan</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">AI 工具应用</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">Claude</span>
+            <span class="skill-tag highlight">ChatGPT</span>
+            <span class="skill-tag">Gemini</span>
+            <span class="skill-tag">WorkBuddy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATCH ANALYSIS -->
+      <div class="side-section">
+        <div class="side-title">岗位匹配分析</div>
+        <div style="font-size:11.5px; line-height:1.8; color:var(--text);">
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>本科+相关专业</span>
+            <span style="color:#2a7a2a; font-weight:700;">工业自动化 ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>5年+ E&amp;I 经验</span>
+            <span style="color:#2a7a2a; font-weight:700;">18年 ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>选矿/重工业流程</span>
+            <span style="color:#2a7a2a; font-weight:700;">锂矿加工+发电 ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>DCS/PLC 调试维护</span>
+            <span style="color:#2a7a2a; font-weight:700;">精通·多品牌 ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>Siemens/AB/Schneider</span>
+            <span style="color:#2a7a2a; font-weight:700;">均有实操 ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>过程仪表全类型</span>
+            <span style="color:#2a7a2a; font-weight:700;">精通 ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>pH/ORP 分析仪</span>
+            <span style="color:#2a7a2a; font-weight:700;">Ganfeng 项目 ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>VFD 变频驱动</span>
+            <span style="color:#2a7a2a; font-weight:700;">Siemens/ABB/AB ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>RCA 根因分析</span>
+            <span style="color:#2a7a2a; font-weight:700;">5Why/鱼骨图 ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(--border);">
+            <span>本地团队培训</span>
+            <span style="color:#2a7a2a; font-weight:700;">多国实践 ✓</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:4px 0;">
+            <span>英语工作语言</span>
+            <span style="color:#2a7a2a; font-weight:700;">CET6 ✓</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERSONAL INFO -->
+      <div class="side-section">
+        <div class="side-title">基本信息</div>
+        <div class="kv-item"><span class="kv-key">手机</span><span class="kv-val"><a href="tel:+8613889810081">138-8981-0081</a></span></div>
+        <div class="kv-item"><span class="kv-key">邮箱</span><span class="kv-val"><a href="mailto:winlee136@msn.com">winlee136@msn.com</a></span></div>
+        <div class="kv-item"><span class="kv-key">现居</span><span class="kv-val">上海</span></div>
+        <div class="kv-item"><span class="kv-key">出差</span><span class="kv-val">长期海外驻场优先<br>（非洲/东南亚/南美）</span></div>
+        <div class="kv-item"><span class="kv-key">薪资</span><span class="kv-val">面议<br>五险一金（上海）</span></div>
+        <div class="kv-item"><span class="kv-key">到岗</span><span class="kv-val">1–2 周</span></div>
+      </div>
+
+      <!-- LANGUAGE -->
+      <div class="side-section">
+        <div class="side-title">语言能力</div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">中文</span><span class="lang-level">母语</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">英语</span><span class="lang-level">CET6 · 第一工作语言</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+        </div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">西班牙语</span><span class="lang-level">初学</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:20%"></div></div>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="side-section" id="education">
+        <div class="side-title">教育培训</div>
+        <div class="edu-item">
+          <div class="edu-title">Foxboro DCS 系统培训</div>
+          <div class="edu-sub">Foxboro 上海培训中心<br>2025/09 – 2025/10</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">GE Mark VIe 控制系统原理培训</div>
+          <div class="edu-sub">通用电气能源培训中心（GE ELC）· 美国<br>2012/02 – 2012/03</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">工业电气自动化</div>
+          <div class="edu-sub">沈阳工程学院<br>2004/09 – 2007/07</div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

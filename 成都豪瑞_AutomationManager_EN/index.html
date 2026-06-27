@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sundy Lee · Automation Manager · Large-Scale Process Industry</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --navy: #0d2240;
+    --steel: #1c3a5e;
+    --accent: #c8922a;
+    --accent2: #e8a83a;
+    --light: #f5f7fa;
+    --border: #d0d8e4;
+    --text: #1a2535;
+    --muted: #5a6a7e;
+    --tag-bg: #e8f0fb;
+    --tag-text: #1c3a5e;
+    --green: #2a7a2a;
+    --page-width: 960px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: #e8ecf2;
+    color: var(--text);
+    font-size: 13.5px;
+    line-height: 1.72;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .page-wrapper {
+    max-width: var(--page-width);
+    margin: 32px auto;
+    background: #fff;
+    box-shadow: 0 8px 48px rgba(13,34,64,0.18);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--steel) 100%);
+    color: #fff;
+    padding: 38px 48px 30px;
+    position: relative;
+    border-bottom: 4px solid var(--accent);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 50%, transparent 100%);
+  }
+  .header-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .name-block h1 {
+    font-family: 'Inter', serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    line-height: 1.15;
+  }
+  .name-block .name-cn {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 3px;
+    margin-left: 4px;
+  }
+  .name-block .subtitle {
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent2);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .contact-block {
+    text-align: right;
+    font-size: 12.5px;
+    line-height: 2.1;
+    color: rgba(255,255,255,0.82);
+  }
+  .contact-block a { color: var(--accent2); }
+  .header-tags {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .header-tag {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    color: rgba(255,255,255,0.9);
+    font-size: 11.5px;
+    padding: 3px 12px;
+    border-radius: 2px;
+    letter-spacing: 0.4px;
+  }
+  .header-tag.hot {
+    background: rgba(200,146,42,0.28);
+    border-color: var(--accent);
+    color: var(--accent2);
+    font-weight: 600;
+  }
+
+  /* NAV */
+  .toc-nav {
+    background: var(--light);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+  .toc-nav a {
+    color: var(--muted);
+    font-size: 12px;
+    padding: 10px 14px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+  }
+  .toc-nav a:hover {
+    color: var(--navy);
+    border-bottom-color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* LAYOUT */
+  .body-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 290px;
+    gap: 0;
+  }
+  .main-col { padding: 36px 40px 40px 48px; border-right: 1px solid var(--border); }
+  .side-col { padding: 32px 26px; background: var(--light); }
+
+  /* SECTION */
+  .section { margin-bottom: 32px; }
+  .section:last-child { margin-bottom: 0; }
+  .section-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .icon { color: var(--accent); font-size: 15px; }
+
+  /* SUMMARY */
+  .summary-text {
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: var(--text);
+    border-left: 3px solid var(--accent);
+    padding-left: 14px;
+    margin-bottom: 14px;
+  }
+
+  /* ACHIEVEMENTS */
+  .achievement-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .ach-card {
+    background: linear-gradient(135deg, #f0f4fa 0%, #e8eef8 100%);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 2px;
+  }
+  .ach-card.wide { grid-column: 1 / -1; }
+  .ach-card .ach-metric {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.2;
+  }
+  .ach-card .ach-label {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 3px;
+    line-height: 1.45;
+  }
+  .ach-card .ach-label strong { color: var(--navy); }
+
+  /* EXPERIENCE */
+  .exp-item { margin-bottom: 26px; padding-bottom: 26px; border-bottom: 1px solid var(--border); }
+  .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+  .exp-company {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--navy);
+  }
+  .exp-company .company-type {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 6px;
+  }
+  .exp-period {
+    font-size: 11.5px;
+    color: var(--muted);
+    white-space: nowrap;
+    background: var(--tag-bg);
+    padding: 2px 10px;
+    border-radius: 2px;
+  }
+  .exp-role {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+  }
+  .exp-location {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .subsection-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 12px 0 6px;
+    padding: 3px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  ul.duties {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul.duties li {
+    font-size: 13px;
+    padding: 3px 0 3px 18px;
+    position: relative;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  ul.duties li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+    top: 5px;
+  }
+  ul.duties li strong { color: var(--navy); font-weight: 600; }
+  ul.duties li em { color: var(--muted); font-style: normal; font-size: 12px; }
+
+  .result-box {
+    background: linear-gradient(135deg, #fdf8f0, #faf3e5);
+    border: 1px solid #e8d5b0;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 2px;
+    margin-top: 10px;
+  }
+  .result-box .rb-title {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  ul.results {
+    list-style: none;
+    padding: 0;
+  }
+  ul.results li {
+    font-size: 12.5px;
+    padding: 2px 0 2px 16px;
+    position: relative;
+    color: #4a3800;
+    line-height: 1.65;
+  }
+  ul.results li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 9px;
+    top: 5px;
+  }
+  ul.results li strong { color: #7a4800; }
+
+  /* PROJECTS */
+  .project-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .project-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
+  .project-name { font-size: 13px; font-weight: 700; color: var(--navy); line-height: 1.4; }
+  .project-period {
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    margin-left: 8px;
+    background: var(--tag-bg);
+    padding: 1px 8px;
+    border-radius: 2px;
+  }
+  .project-company { font-size: 11.5px; color: var(--muted); margin-bottom: 4px; }
+  .project-desc { font-size: 12.5px; color: var(--text); line-height: 1.65; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .tag {
+    font-size: 10.5px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 1px 8px;
+    border-radius: 2px;
+    border: 1px solid #c8d8f0;
+  }
+  .tag.accent { background: #fef3e2; color: #7a4a00; border-color: #e8c880; }
+  .tag.green { background: #e8f5e8; color: #1a5c1a; border-color: #a0d0a0; }
+
+  /* SIDEBAR */
+  .side-section { margin-bottom: 22px; }
+  .side-title {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+  }
+  .skill-category { margin-bottom: 12px; }
+  .skill-cat-name {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .skill-tag {
+    font-size: 11px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 2px 8px;
+    border-radius: 2px;
+    border: 1px solid #c8d8f0;
+    line-height: 1.6;
+  }
+  .skill-tag.highlight {
+    background: #0d2240;
+    color: #fff;
+    border-color: #0d2240;
+  }
+  .skill-tag.jd {
+    background: #fffbe6;
+    color: #7a4a00;
+    border-color: #e8c860;
+    font-weight: 600;
+  }
+
+  /* JD CHECKLIST */
+  .jd-item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 11.5px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    gap: 8px;
+    line-height: 1.5;
+  }
+  .jd-item:last-child { border-bottom: none; }
+  .jd-check { font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+  .jd-check.ok { color: var(--green); }
+  .jd-check.partial { color: #c87820; }
+  .jd-item .jd-text { color: var(--text); flex: 1; }
+  .jd-item .jd-proof { color: var(--muted); font-size: 10.5px; }
+
+  .kv-item {
+    display: flex;
+    font-size: 12.5px;
+    margin-bottom: 7px;
+    line-height: 1.5;
+  }
+  .kv-key { color: var(--muted); min-width: 60px; flex-shrink: 0; }
+  .kv-val { color: var(--text); font-weight: 500; }
+
+  .edu-item { margin-bottom: 10px; }
+  .edu-title { font-size: 12.5px; font-weight: 600; color: var(--navy); }
+  .edu-sub { font-size: 11.5px; color: var(--muted); }
+
+  .lang-bar { margin-bottom: 8px; }
+  .lang-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px; }
+  .lang-label .lang-name { font-weight: 600; color: var(--navy); }
+  .lang-label .lang-level { color: var(--muted); font-size: 11px; }
+  .bar-track { background: #dde4ee; border-radius: 2px; height: 4px; }
+  .bar-fill { background: linear-gradient(90deg, var(--navy), var(--accent)); height: 4px; border-radius: 2px; }
+
+  .score-badge {
+    background: linear-gradient(135deg, var(--navy), var(--steel));
+    color: #fff;
+    text-align: center;
+    padding: 12px 10px;
+    border-radius: 3px;
+    margin-bottom: 14px;
+    border: 1px solid var(--accent);
+  }
+  .score-badge .score-num {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent2);
+    line-height: 1.1;
+  }
+  .score-badge .score-label {
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 2px;
+    letter-spacing: 1px;
+  }
+
+  @media print {
+    body { background: #fff; font-size: 12px; }
+    .page-wrapper { margin: 0; box-shadow: none; border-radius: 0; }
+    .toc-nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- HEADER -->
+  <header class="header" id="top">
+    <div class="header-top">
+      <div class="name-block">
+        <h1>Sundy Lee <span class="name-cn">李朝珲</span></h1>
+        <div class="subtitle">Automation Manager · Process Industry DCS/PLC Full Lifecycle</div>
+      </div>
+      <div class="contact-block">
+        <div>📞 <a href="tel:+8613889810081">+86 138-8981-0081</a></div>
+        <div>✉️ <a href="mailto:winlee136@msn.com">winlee136@msn.com</a></div>
+        <div>📍 Shanghai / Open to Relocation</div>
+        <div>⏱️ Available: 1–2 weeks</div>
+      </div>
+    </div>
+    <div class="header-tags">
+      <span class="header-tag hot">18+ Years Process Industry Automation Management</span>
+      <span class="header-tag hot">WHR Power · Chemical Process · Energy Plant</span>
+      <span class="header-tag">Siemens TIA Portal / S7 Series</span>
+      <span class="header-tag">DCS: GE MarkVIe / Emerson DeltaV / Foxboro</span>
+      <span class="header-tag">Modbus · Profibus-DP · Profinet · MQTT · OPC UA</span>
+      <span class="header-tag">Control Loop Optimization · RCA Analysis</span>
+      <span class="header-tag">OT/IT Segmentation · IEC 62443 Cybersecurity</span>
+      <span class="header-tag">IIoT · Historian · Edge Computing · Energy Efficiency</span>
+      <span class="header-tag">English CET-6 · Primary Working Language</span>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="toc-nav">
+    <a href="#summary">Profile</a>
+    <a href="#achievements">Key Achievements</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+  </nav>
+
+  <!-- BODY -->
+  <div class="body-wrapper">
+
+    <!-- MAIN COLUMN -->
+    <main class="main-col">
+
+      <!-- PROFILE SUMMARY -->
+      <section class="section" id="summary">
+        <div class="section-title"><span class="icon">◈</span>Profile Summary</div>
+        <p class="summary-text">
+          Senior Automation Manager with <strong>18+ years</strong> of full-lifecycle automation management experience in large-scale continuous process industries, including energy generation (330MW combined cycle plants with <strong>Waste Heat Recovery / HRSG systems</strong>) and chemical mineral processing. Brings <strong>9+ years</strong> of automation department leadership and technical decision-making experience. Expert in the end-to-end management of <strong>DCS/PLC/SCADA systems</strong> — from architecture design and control loop tuning to APC-level advanced control, predictive maintenance systems, and OT network security. Proven track record in driving cross-functional change under high-pressure operating conditions.
+        </p>
+        <p class="summary-text">
+          Proficient in <strong>Siemens TIA Portal/S7 Series PLC</strong> and GE MarkVIe/Emerson DeltaV/Foxboro DCS platforms; hands-on expertise in <strong>Modbus TCP/RTU, Profibus-DP, Profinet, and OPC UA</strong> industrial communication protocols for multi-system integration. Proven delivery of <strong>OT/IT network segmentation, IEC 62443 industrial cybersecurity frameworks, industrial Historian data governance</strong>, and IIoT edge computing platforms. English CET-6 — used as primary working language for 15+ years across international technical negotiations, documentation, and multi-stakeholder coordination.
+        </p>
+      </section>
+
+      <!-- KEY ACHIEVEMENTS -->
+      <section class="section" id="achievements">
+        <div class="section-title"><span class="icon">◈</span>Key Achievements</div>
+        <div class="achievement-grid">
+          <div class="ach-card">
+            <div class="ach-metric">18 Yrs+</div>
+            <div class="ach-label">Process Industry Automation<br><strong>Power · Chemical · WHR Plant</strong></div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">Alarms ↓70%</div>
+            <div class="ach-label">DCS Alarm Rationalization per ISA-18.2<br>Steady-state hourly alarm count cut<br>Fault isolation <strong>MTTR halved</strong></div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">Zero Trips · 6 Mo</div>
+            <div class="ach-label">Anti-surge control loop re-tuning<br>Feedforward strategy deployed —<br>compressor <strong>zero unplanned shutdown</strong></div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">OEE +8.7%</div>
+            <div class="ach-label">Chemical process control loop rewrite<br>Sliding-average filter + PID deadband<br>False trips reduced by <strong>45.3%</strong></div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">PdM Deployed</div>
+            <div class="ach-label">OPC UA edge gateway + CMMS linkage<br>4 major failure events intercepted early<br>Annual spare parts cost <strong>−12.2%</strong></div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">5–10%</div>
+            <div class="ach-label">Automation equipment &amp; instrumentation<br><strong>procurement cost reduction</strong><br>via technical optimization &amp; negotiation</div>
+          </div>
+          <div class="ach-card wide" style="border-left: 3px solid var(--accent); background: linear-gradient(135deg,#fdf9f0,#faf4e2);">
+            <div class="ach-metric" style="font-size:14px;">9 Years Process Industry Automation Department Leadership · WHR / Chemical / Energy Plant DCS Lifecycle Owner</div>
+            <div class="ach-label" style="margin-top:5px;">Full coverage: DCS/PLC system architecture, control loop optimization, RCA fault analysis, OT network security, IIoT data governance, and team development — directly aligned with all six JD responsibilities</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section" id="experience">
+        <div class="section-title"><span class="icon">◈</span>Professional Experience</div>
+
+        <!-- JOB 1 - Ganfeng -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">Ganfeng Lithium International Trading Co., Ltd.<span class="company-type">Listed Company · New Energy Minerals</span></div>
+            <div class="exp-period">Mar 2025 – Apr 2026</div>
+          </div>
+          <div class="exp-role">Chief I&amp;C Engineer, Overseas Design Dept. / Owner's Representative</div>
+          <div class="exp-location">📍 Shanghai / Salta, Argentina · USD 600M Project · 20,000 T/yr Lithium Chloride Plant</div>
+
+          <div class="subsection-label">OT Network Architecture &amp; Industrial Cybersecurity</div>
+          <ul class="duties">
+            <li><strong>OT/IT Network Segmentation Design:</strong> Designed and implemented plant-wide OT network architecture, enforcing strict <strong>physical separation between production and office networks</strong>; configured MikroTik enterprise-grade routers (NAT/DNS/Mangle rules) and ZeroTier SD-WAN for secure cross-site routing, fully compliant with <strong>IEC 62443 industrial cybersecurity standards</strong>, preventing all unauthorized access.</li>
+            <li><strong>Industrial Historian &amp; Data Governance (PIMS Foundation):</strong> Led OPC UA data architecture design, integrating Siemens PLCs, Emerson DeltaV DCS, and MES in real time; established industrial Historian platform with unified naming conventions, sampling rates, and data quality standards — providing the reliable data backbone for PIMS-class process information management.</li>
+            <li><strong>IIoT &amp; Edge Computing Deployment:</strong> Deployed industrial edge gateways using OPC UA + MQTT to break data silos across multi-brand control systems; installed wireless vibration and temperature sensors on critical rotating equipment, establishing real-time remote monitoring and predictive maintenance data pipelines.</li>
+          </ul>
+
+          <div class="subsection-label">DCS/PLC Full Lifecycle Management &amp; Control Loop Optimization</div>
+          <ul class="duties">
+            <li><strong>Control System Architecture &amp; Selection:</strong> Designed the plant-wide PLC+DCS+SCADA control hierarchy; led Siemens S7-1200/1500 PLC selection and Profinet integration with Emerson DeltaV DCS; <strong>standardized all plant PLC programming using IEC 61131-3 SCL</strong> and ISA-S88 batch control architecture, achieving coordinated sequencing across 100+ equipment nodes — commissioning cycle cut by 67%.</li>
+            <li><strong>Control Algorithm &amp; Loop Parameter Optimization (APC-Adjacent Practice):</strong> Redesigned control strategies for brine transfer (pump interlock + flow closed-loop), centrifuge separation (speed control + vibration protection), and filtration (differential pressure control + auto-backwash sequencing) — introducing <strong>feedforward compensation and sliding-average filtering</strong> to eliminate signal disturbance and control lag. This feedforward + feedback compound strategy is directly analogous to APC model-based control and forms a transferable foundation for multi-variable APC deployment.</li>
+            <li><strong>Quality Closed-Loop Control &amp; Online Analyzer Integration (LIMS-Equivalent):</strong> Led selection and system integration of Valmet microwave density meters and online pH/ORP analyzers, establishing a <strong>quality data auto-collection → DCS closed-loop control → report output</strong> chain — functionally equivalent to LIMS quality data acquisition and precision control support.</li>
+            <li><strong>Energy Monitoring &amp; Carbon Data Support:</strong> Real-time collection of energy KPIs (compressed air consumption, RO water treatment power) via OPC UA with Historian trending, providing bottom-layer data for plant energy efficiency optimization decisions and carbon emission accounting.</li>
+          </ul>
+
+          <div class="subsection-label">Preventive Maintenance, RCA &amp; Operations System Building</div>
+          <ul class="duties">
+            <li><strong>RCA-Driven Systemic Improvement:</strong> Applied <strong>5Why/fishbone analysis</strong> to brine transfer system false trips (signal spikes + valve response lag), rewrote SCL control logic with PID deadband and interlock delay tolerance — implemented permanent corrective actions that delivered lasting <strong>unplanned downtime reduction</strong>.</li>
+            <li><strong>Predictive Maintenance (PdM) Rollout:</strong> Deployed OPC UA edge gateway data architecture; linked online vibration/temperature monitoring for 30 critical assets to CMMS work-order system, enabling <strong>automated PdM alert triggering</strong> — intercepted 4 bearing-failure-driven major shutdown events.</li>
+            <li><strong>SOP / PM Framework Building:</strong> Authored 20+ core E&amp;I SOP documents covering PLC hardware diagnostics, VFD parameter backup/swap procedures, and critical instrument calibration; implemented TPM autonomous inspection — reduced average MTTR for common night-shift faults by 30 minutes.</li>
+          </ul>
+
+          <div class="result-box">
+            <div class="rb-title">▌ Quantified Outcomes</div>
+            <ul class="results">
+              <li><strong>OEE +8.7%:</strong> Rewrote key process loop SCL logic with sliding-average filter and PID deadband — false trip events in the separation system reduced by <strong>45.3%</strong>, MTBF significantly extended.</li>
+              <li><strong>Predictive Maintenance Impact:</strong> Upgraded 30 critical assets from PM to PdM strategy; intercepted 4 major shutdown events early; annual maintenance spare parts cost reduced by <strong>12.2%</strong>.</li>
+              <li><strong>OT Cybersecurity:</strong> IEC 62443-compliant OT/IT segmentation architecture deployed plant-wide — zero cybersecurity incidents throughout operational period.</li>
+              <li><strong>Commissioning Efficiency:</strong> ISA-S88 modular programming reduced 100+ node commissioning cycle from 6 weeks to 2 weeks — <strong>67% faster</strong>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- JOB 2 - CCCE -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">CCC Engineering Ltd. (CCCE) – Shanghai Branch<span class="company-type">Multinational Private · Power Plant EPC</span></div>
+            <div class="exp-period">Jun 2016 – Feb 2025</div>
+          </div>
+          <div class="exp-role">Automation Director / Technical Chief Engineer, Overseas Power Division</div>
+          <div class="exp-location">📍 Shanghai / Dhaka, Bangladesh · Led 330MW Combined Cycle (incl. WHR System) + 100MW Gas Turbine Plant</div>
+
+          <div class="subsection-label">DCS/PLC Full Lifecycle Management — Including WHR / HRSG System</div>
+          <ul class="duties">
+            <li><strong>Waste Heat Recovery System DCS Management (Direct Parallel to Cement WHR):</strong> Managed GE MarkVIe DCS full lifecycle for the <strong>330MW HRSG + steam turbine WHR system</strong>, covering steam temperature/pressure/flow loop adjustment, waste heat recovery efficiency monitoring, and steam turbine start-stop sequence optimization — the exact same DCS management scope as cement plant WHR sections.</li>
+            <li><strong>Cross-Platform DCS/PLC System Integration:</strong> Delivered cross-platform integration of GE MarkVIe DCS, Siemens S7-1200/1500 PLC, and Emerson DeltaV DCS, spanning <strong>Modbus TCP, Profinet, Profibus-DP, and OPC UA</strong> protocols; led FAT/SAT for HIMatrix/Triconex SIS safety systems and fire protection panels.</li>
+            <li><strong>Chemical Water Treatment Quality Closed-Loop Control:</strong> Redesigned the <strong>automated control system</strong> for chemical water treatment (including pH/conductivity online analyzers) per owner requirements — achieved auto-dosage adjustment and real-time water quality data upload, forming a quality data collection → control adjustment → quality reporting closed loop analogous to LIMS integration.</li>
+            <li><strong>Energy Efficiency Optimization &amp; Emission Data Management:</strong> Maintained continuous DCS parameter optimization for combined-cycle thermal efficiency; used <strong>Historian trend analysis</strong> to detect fuel consumption anomalies; established real-time monitoring dashboards for key energy KPIs (heat rate, auxiliary power ratio), providing data foundation for carbon reduction management.</li>
+          </ul>
+
+          <div class="subsection-label">Control Loop Optimization, Alarm Management &amp; RCA</div>
+          <ul class="duties">
+            <li><strong>Advanced Control Practice — Anti-Surge Loop Re-Engineering:</strong> Re-calibrated the fuel gas compressor <strong>anti-surge control loop</strong> — rebuilt the surge curve, then deployed a feedforward strategy: inlet pressure drop detected → ASV bypass pre-calculated and opened ahead of time, eliminating pure feedback lag. This feedforward + feedback compound control is a single-variable realization of <strong>APC model-based control methodology</strong>, transferable to multi-variable APC in kiln and mill applications.</li>
+            <li><strong>DCS Alarm Rationalization per ISA-18.2:</strong> Rationalized thousands of DCS alarm points per <strong>ISA-18.2 standard</strong> — eliminated informational nuisance alarms, reclassified process alarms into Emergency/High/Low tiers, applied deadbands and delays to filter chattering signals; developed "one-click diagnostic" HMI faceplates for critical equipment integrating I/O channel status and communication health.</li>
+            <li><strong>RCA Fault Analysis &amp; Unplanned Downtime Reduction:</strong> Conducted <strong>RCA investigations</strong> for multiple process disturbance events during commercial operation, identifying DCS response lag and valve-travel mismatch as root causes; implemented permanent corrective actions and established a fault closed-loop rectification mechanism — unplanned downtime consistently below contracted SLA throughout warranty period.</li>
+            <li><strong>Multi-Channel Signal Acquisition Algorithm Optimization:</strong> Rewrote flow and pressure signal acquisition algorithms with digital filtering to eliminate high-frequency noise, significantly improving <strong>PIMS-class process data reliability</strong> as the operational optimization input.</li>
+          </ul>
+
+          <div class="subsection-label">Team Management, Cross-Functional Coordination &amp; Framework Building</div>
+          <ul class="duties">
+            <li><strong>Automation Team Building &amp; Talent Development:</strong> Led multinational construction and technical teams of 100+ people; coordinated engineers, commissioning crews, subcontractors, and OEM vendors; built talent pipelines and delivered DCS/PLC operation and instrument maintenance training for owner operating teams across multiple nationalities.</li>
+            <li><strong>Cross-Functional Change Management:</strong> Coordinated process, mechanical, IT, and owner teams to deliver control optimization initiatives; made rapid technical decisions during high-pressure events (midnight trips, emergency field faults); championed "my system, my responsibility" on-site ownership culture.</li>
+            <li><strong>Technical Documentation:</strong> Organized and authored equipment technical specifications, Operation Test Procedures (OTP), Control Narratives, Cause &amp; Effect Matrices, and as-built documentation — established comprehensive document management systems.</li>
+          </ul>
+
+          <div class="result-box">
+            <div class="rb-title">▌ Quantified Outcomes</div>
+            <ul class="results">
+              <li><strong>Alarm Rationalization:</strong> Steady-state hourly alarm count reduced by <strong>70%+</strong>; operator miss-alarm rate significantly lowered; fault isolation MTTR cut by nearly 50%.</li>
+              <li><strong>Anti-Surge Compressor — Zero Trips:</strong> After re-tuning, compressor system achieved <strong>zero unplanned trips over 6 consecutive months</strong> of severe grid fluctuation, sustaining uninterrupted WHR power generation.</li>
+              <li><strong>Procurement Cost Reduction:</strong> Through technical scheme optimization and vendor negotiation, automation equipment procurement costs reduced by <strong>5–10%</strong> vs. comparable projects.</li>
+              <li><strong>Schedule Performance:</strong> Coordinated with design institute to complete as-built drawings <strong>1 month ahead of schedule</strong>, accelerating project delivery.</li>
+              <li><strong>Annual Shutdown Excellence:</strong> Applied critical path method to major turnaround planning — on-schedule completion rate reached <strong>95%+</strong>; all units achieved first-fire successful grid synchronization post-shutdown with zero punch list carryovers.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- JOB 3 - GE -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">GE-Granite Service International Inc.<span class="company-type">Multinational · GE Energy Division</span></div>
+            <div class="exp-period">Apr 2010 – May 2016</div>
+          </div>
+          <div class="exp-role">Site Manager / Lead Engineer</div>
+          <div class="exp-location">📍 Beijing (Deployed to Xinjiang, Ningxia, Shaanxi, Guangzhou and overseas sites)</div>
+          <ul class="duties">
+            <li><strong>Large-Scale Process Industry DCS Commissioning &amp; O&M:</strong> Commissioned and maintained GE MarkVIe DCS control systems across 14+ natural gas compressor stations on the West-East Gas Pipeline; performed <strong>control logic verification, interlock protection testing, and control loop tuning</strong>; managed concurrent multi-site deployments under extreme schedule pressure.</li>
+            <li><strong>Auxiliary System Full-Scope Management:</strong> Within GE contract scope, managed lube oil, hydraulic, control air, fuel gas, cooling water, fire protection, and ESD system installation, commissioning, operation, and spare parts management; delivered operator training and built long-term customer relationships.</li>
+            <li><strong>Complex Fault Resolution:</strong> Handled multiple high-complexity control logic conflicts and field E&amp;I faults on compressed timelines through deep RCA analysis, restoring production quickly and significantly improving equipment availability (Availability %) across all stations.</li>
+          </ul>
+        </div>
+
+        <!-- JOB 4 - CAGT -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">China Aviation Gas Turbine Co., Ltd. – Shenyang Branch<span class="company-type">State-Owned Enterprise</span></div>
+            <div class="exp-period">Jul 2007 – Apr 2010</div>
+          </div>
+          <div class="exp-role">Electrical, Instrument &amp; Control Engineer</div>
+          <div class="exp-location">📍 Shenyang / Fujian / Zhejiang / Guangdong</div>
+          <ul class="duties">
+            <li>Supervised gas turbine generator set installation, instrument calibration, and system commissioning per P&amp;ID drawings, electrical wiring diagrams, and control logic diagrams; completed subsystem function testing and loop verification for lube oil, hydraulics, MCC, and fire protection systems.</li>
+            <li>Participated in installation and commissioning of 2 × GE 9E gas turbine generator sets at the FREP/ExxonMobil/Saudi Aramco Ethylene COGEN project (Fujian, total investment approx. RMB 40 billion) — accumulated large-scale petrochemical process industry E&amp;I field engineering experience.</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section" id="projects">
+        <div class="section-title"><span class="icon">◈</span>Major Project Experience</div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">Ganfeng Mariana &amp; Guemes — 20,000 T/yr LiCl Plant Automation (Argentina)</div>
+            <div class="project-period">Mar 2025 – Apr 2026</div>
+          </div>
+          <div class="project-company">Ganfeng Lithium International Trading · Role: Chief Automation Engineer / Owner's Rep · Altitude 3,750m · Highly corrosive brine chemical process</div>
+          <div class="project-desc">USD 600M chemical process plant covering brine slurry treatment, centrifuge separation, filtration, RO water treatment, and chemical dosing units (process complexity equivalent to cement chemical treatment). Led Siemens PLC + Emerson DeltaV DCS system architecture, lifecycle management, IEC 62443 OT/IT segmentation, OPC UA Historian data governance, ISA-S88 control standardization, and online analyzer quality closed-loop integration.</div>
+          <div class="project-tags">
+            <span class="tag green">Chemical Process Industry · Direct Match ✓</span>
+            <span class="tag green">OT Cybersecurity IEC 62443 ✓</span>
+            <span class="tag accent">Chief Automation Engineer</span>
+            <span class="tag">Siemens S7-1500</span>
+            <span class="tag">Emerson DeltaV DCS</span>
+            <span class="tag">Online Analyzer Integration</span>
+            <span class="tag">OPC UA Historian</span>
+            <span class="tag">IIoT / Edge Gateway</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">KHULNA 330MW Combined Cycle Dual-Fuel Power Plant EPC (Bangladesh) — incl. WHR System</div>
+            <div class="project-period">Feb 2019 – Feb 2025</div>
+          </div>
+          <div class="project-company">CCC Engineering Ltd. · Role: Automation Director / Technical Chief Engineer</div>
+          <div class="project-desc">GE 9F.03AGP Gas Turbine + A651 Steam Turbine + <strong>Waste Heat Recovery Boiler (HRSG)</strong> combined-cycle EPC Turnkey — design through 2-year commercial warranty. The HRSG WHR system shares identical technology architecture with cement kiln WHR power sections. Led DCS/PLC/SCADA/SIS system planning, control loop optimization, alarm rationalization per ISA-18.2, and energy efficiency monitoring.</div>
+          <div class="project-tags">
+            <span class="tag green">WHR / HRSG System · Direct Match ✓</span>
+            <span class="tag accent">330MW · Large Process Industry</span>
+            <span class="tag">GE MarkVIe DCS</span>
+            <span class="tag">HRSG Control</span>
+            <span class="tag">DCS Alarm Rationalization</span>
+            <span class="tag">Energy Efficiency KPIs</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">SHAHJIBAZAR 100MW Gas Turbine Power Plant EPC (Bangladesh)</div>
+            <div class="project-period">Oct 2016 – Nov 2020</div>
+          </div>
+          <div class="project-company">CCC Engineering Ltd. · Role: Automation Project Lead</div>
+          <div class="project-desc">GE LMS100 single-cycle gas turbine EPC Turnkey project — led full plant automation system build, commissioning, and 2-year warranty O&M. Managed chemical water treatment DCS automation redesign (quality closed-loop control equivalent) and built comprehensive equipment maintenance and fault-response frameworks.</div>
+          <div class="project-tags">
+            <span class="tag">100MW · Large Process Industry</span>
+            <span class="tag">GE LMS100</span>
+            <span class="tag">Quality Closed-Loop</span>
+            <span class="tag">Turnkey EPC</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">PetroChina West-East Gas Pipeline Phase I &amp; II — Compressor Station Clusters (China)</div>
+            <div class="project-period">Jun 2010 – Oct 2014</div>
+          </div>
+          <div class="project-company">GE-Granite Service International · Role: Site Manager / Lead Engineer</div>
+          <div class="project-desc">Installed and commissioned 14+ GE PGT25 gas turbines + centrifugal compressor trains at pipeline stations spanning Horgos, Hami, Zhangye, and Guyuan in extreme operating environments. Delivered GE MarkVIe DCS logic verification, control loop tuning, and anti-surge commissioning under concurrent multi-site management.</div>
+          <div class="project-tags">
+            <span class="tag">14+ Stations · Multi-Site Concurrent</span>
+            <span class="tag">GE PGT25 / MarkVIe DCS</span>
+            <span class="tag">Control Loop Tuning</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">SBM FPSO Cidade de Ilhabela — Topside Power System (China)</div>
+            <div class="project-period">Apr 2013 – Oct 2013</div>
+          </div>
+          <div class="project-company">GE-Granite Service International · Role: Lead Control Engineer</div>
+          <div class="project-desc">Commissioned 4 × GE LM2500+G4 gas turbine generator sets for a large Brazilian FPSO offshore vessel at Guangzhou shipyard, executing full E&amp;I commissioning under strict offshore HSE standards.</div>
+          <div class="project-tags">
+            <span class="tag">GE LM2500+G4</span>
+            <span class="tag">FPSO Offshore</span>
+            <span class="tag">Offshore HSE Compliance</span>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- SIDE COLUMN -->
+    <aside class="side-col">
+
+      <!-- SCORE 
+      <div class="side-section">
+        <div class="score-badge">
+          <div class="score-num">92%</div>
+          <div class="score-label">JD Match · Process Industry Automation Mgr</div>
+        </div>
+      </div>
+	-->
+      <!-- JD CHECKLIST 
+      <div class="side-section">
+        <div class="side-title">JD Requirement Mapping</div>
+
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">5+ yrs process industry experience</div>
+            <div class="jd-proof">18 years (energy / chemical / minerals)</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">2+ yrs management experience</div>
+            <div class="jd-proof">9 yrs dept. management / tech. chief</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">Bachelor's · Automation or related</div>
+            <div class="jd-proof">Industrial Automation — Shenyang Inst. Engineering</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">Siemens DCS/PLC — proficient</div>
+            <div class="jd-proof">TIA Portal / PCS7 / S7 full range</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">Modbus / Profibus / OPC UA</div>
+            <div class="jd-proof">Full coverage + Profinet / Ethernet-IP</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">Control loop optimization / RCA</div>
+            <div class="jd-proof">Zero-trip anti-surge · Alarm −70% · Proven</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">IEC 62443 industrial cybersecurity</div>
+            <div class="jd-proof">Ganfeng project — fully deployed</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">OT / office network segmentation</div>
+            <div class="jd-proof">MikroTik + ZeroTier SD-WAN deployed</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">IIoT / edge computing / data warehouse</div>
+            <div class="jd-proof">OPC UA + MQTT + Historian + Edge GW</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">WHR power system management</div>
+            <div class="jd-proof">330MW HRSG + steam turbine — full scope</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">Quality closed-loop / online analyzers</div>
+            <div class="jd-proof">pH/ORP/density meters integrated + DCS closed-loop</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">English proficiency (mandatory)</div>
+            <div class="jd-proof">CET-6 · Primary working language · 10+ yrs</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check partial">⚡</span>
+          <div>
+            <div class="jd-text">APC / Expert System deployment</div>
+            <div class="jd-proof">Feedforward control practice (anti-surge model-driven) ≈ APC foundation; fast ramp-up</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check partial">⚡</span>
+          <div>
+            <div class="jd-text">Cement process (kiln / raw meal / mill)</div>
+            <div class="jd-proof">WHR system direct match; kiln process transferable from flow industry expertise</div>
+          </div>
+        </div>
+      </div>
+	-->
+      <!-- SKILLS -->
+      <div class="side-section">
+        <div class="side-title">Core Technical Skills</div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">PLC Platforms (JD Required)</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">Siemens TIA Portal</span>
+            <span class="skill-tag highlight">Siemens S7-1500/1200</span>
+            <span class="skill-tag highlight">Siemens PCS7</span>
+            <span class="skill-tag jd">STEP7 / S7-300/400</span>
+            <span class="skill-tag">Rockwell Studio5000</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">DCS Platforms</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">GE MarkVIe</span>
+            <span class="skill-tag highlight">Emerson DeltaV</span>
+            <span class="skill-tag highlight">Foxboro ArchestrA IDE</span>
+            <span class="skill-tag">Honeywell Experion PKS</span>
+            <span class="skill-tag">HIMatrix / Triconex SIS</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">Industrial Protocols (JD Required)</div>
+          <div class="skill-tags">
+            <span class="skill-tag jd">Modbus TCP/RTU</span>
+            <span class="skill-tag jd">Profibus-DP</span>
+            <span class="skill-tag jd">OPC UA</span>
+            <span class="skill-tag jd">Profinet</span>
+            <span class="skill-tag">Ethernet/IP</span>
+            <span class="skill-tag">HART / CANopen</span>
+            <span class="skill-tag">MQTT</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">OT Security &amp; Digitalization</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">IEC 62443 Architecture</span>
+            <span class="skill-tag highlight">OT/IT Network Segmentation</span>
+            <span class="skill-tag jd">Industrial Historian Governance</span>
+            <span class="skill-tag jd">IIoT Edge Computing Platform</span>
+            <span class="skill-tag">MikroTik / ZeroTier SD-WAN</span>
+            <span class="skill-tag">OPC UA → MES Integration</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">Control Optimization &amp; Maintenance</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">Control Loop Opt. / PID Tuning</span>
+            <span class="skill-tag highlight">RCA — 5Why / Fishbone</span>
+            <span class="skill-tag jd">Alarm Rationalization (ISA-18.2)</span>
+            <span class="skill-tag jd">APC (Feedforward Compensation)</span>
+            <span class="skill-tag">TPM / PM / PdM Systems</span>
+            <span class="skill-tag">FAT / SAT Management</span>
+            <span class="skill-tag">ISA-S88 Batch Control</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">SCADA / HMI</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">CIMPLICITY</span>
+            <span class="skill-tag highlight">WinCC</span>
+            <span class="skill-tag">FactoryTalk View</span>
+            <span class="skill-tag">AVEVA Edge</span>
+            <span class="skill-tag">Foxboro ControlHMI</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">AI Tools</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">Claude</span>
+            <span class="skill-tag highlight">Codex</span>
+            <span class="skill-tag">Gemini</span>
+            <span class="skill-tag">WorkBuddy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERSONAL INFO -->
+      <div class="side-section">
+        <div class="side-title">Personal Info</div>
+        <div class="kv-item"><span class="kv-key">Phone</span><span class="kv-val"><a href="tel:+8613889810081">+86 138-8981-0081</a></span></div>
+        <div class="kv-item"><span class="kv-key">Email</span><span class="kv-val"><a href="mailto:winlee136@msn.com">winlee136@msn.com</a></span></div>
+        <div class="kv-item"><span class="kv-key">Location</span><span class="kv-val">Shanghai / Chengdu</span></div>
+        <div class="kv-item"><span class="kv-key">Mobility</span><span class="kv-val">Open to domestic &amp; overseas<br>long-term assignments</span></div>
+        <div class="kv-item"><span class="kv-key">Available</span><span class="kv-val">1–2 weeks</span></div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="side-section">
+        <div class="side-title">Languages</div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">Mandarin</span><span class="lang-level">Native</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">English</span><span class="lang-level">CET-6 · Primary Working Language</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+        </div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">Spanish</span><span class="lang-level">Elementary</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:18%"></div></div>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="side-section" id="education">
+        <div class="side-title">Education &amp; Training</div>
+        <div class="edu-item">
+          <div class="edu-title">Foxboro DCS Advanced System Training</div>
+          <div class="edu-sub">Foxboro Shanghai Training Centre<br>Sep 2025 – Oct 2025</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">GE MarkVIe Control System Certification</div>
+          <div class="edu-sub">GE Energy Learning Center (ELC) · USA<br>Feb 2012 – Mar 2012</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">Industrial Automation</div>
+          <div class="edu-sub">Shenyang Institute of Engineering<br>Sep 2004 – Jul 2007</div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
