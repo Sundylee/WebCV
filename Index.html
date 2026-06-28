@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>WebCV 智能链接分发控制台</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
+            padding: 30px; 
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        h2 { color: #24292e; margin-bottom: 5px; }
+        .tip { color: #586069; font-size: 14px; margin-bottom: 25px; line-height: 1.6; }
+        
+        /* 表格样式 */
+        table { 
+            border-collapse: collapse; 
+            width: 100%; 
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        th, td { 
+            border: 1px solid #e1e4e8; 
+            padding: 14px 18px; 
+            text-align: left; 
+            font-size: 14px;
+        }
+        th { background-color: #f6f8fa; color: #586069; font-weight: 600; }
+        
+        /* 默认链接状态：蓝色 */
+        .cv-link { 
+            color: #0366d6; 
+            text-decoration: none; 
+            font-weight: 500; 
+            word-break: break-all;
+        }
+        .cv-link:hover { text-decoration: underline; }
+        
+        /* 点击后的内存状态：强制变紫 */
+        .cv-link.clicked { 
+            color: #800080 !important; 
+        }
+        .loading { color: #666; font-style: italic; }
+        .error { color: #cb2431; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>WebCV 智能链接分发控制台 (实时同步版)</h2>
+    <div class="tip">
+        💡 <b>全自动流：</b>本页面利用 JavaScript 动态读取您的 GitHub 仓库。您在本地用 Git 增删或重命名任何简历文件夹并 Push 后，这里<b>无需修改代码，刷新即刻同步</b>。<br>
+        点击链接将在新窗口打开。点击后该链接在当前页面会变成<b>紫色</b>。一旦刷新网页或关闭重开，所有颜色将<b>自动复位</b>为蓝色。
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th width="35%">代码仓库文件夹名称 (实时监测)</th>
+                <th>专属网页链接 (已自动进行标准安全编码)</th>
+            </tr>
+        </thead>
+        <tbody id="link-table-body">
+            <tr>
+                <td colspan="2" class="loading">正在实时同步 GitHub 仓库最新目录，请稍候...</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // 你的 GitHub 信息配置
+    const username = 'Sundylee';
+    const repo = 'WebCV';
+    const tableBody = document.getElementById('link-table-body');
+
+    // 自动动态获取你仓库根目录下的文件结构
+    fetch(`https://api.github.com/repos/${username}/${repo}/contents`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('无法读取仓库，请确保该仓库在 GitHub 上是公开的 (Public)');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // 过滤掉普通文件，只保留文件夹，并排除掉隐藏文件夹（如.github）
+            const folders = data.filter(item => item.type === 'dir' && !item.name.startsWith('.'));
+            
+            if (folders.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="2" class="error">未在仓库根目录下找到任何文件夹！请确认代码已成功 Push。</td></tr>';
+                return;
+            }
+
+            // 清空等待提示
+            tableBody.innerHTML = '';
+
+            // 遍历文件夹，自动生成完美的表格行
+            folders.forEach(folder => {
+                const row = document.createElement('tr');
+                
+                // 1. 文件夹名称列
+                const nameCell = document.createElement('td');
+                nameCell.textContent = folder.name;
+                
+                // 2. 链接列
+                const linkCell = document.createElement('td');
+                const link = document.createElement('a');
+                
+                // 【自动化核心】使用浏览器内置算法对中文、特殊字符进行标准 URL 编码，彻底绝交 404
+                const encodedName = encodeURIComponent(folder.name);
+                const fullUrl = `https://${username.toLowerCase()}.github.io/${repo}/${encodedName}/`;
+                
+                link.href = fullUrl;
+                link.target = '_blank';
+                link.className = 'cv-link';
+                // 界面上显示干净可读的未编码网址，给客户看很专业
+                link.textContent = `https://${username.toLowerCase()}.github.io/${repo}/${folder.name}/`;
+                
+                // 3. 点击变紫逻辑（基于内存 class，刷新即刻复位）
+                link.onclick = function() {
+                    this.classList.add('clicked');
+                };
+                
+                linkCell.appendChild(link);
+                row.appendChild(nameCell);
+                row.appendChild(linkCell);
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(error => {
+            tableBody.innerHTML = `<tr><td colspan="2" class="error">API 错误: ${error.message}</td></tr>`;
+        });
+</script>
+</body>
+</html>
