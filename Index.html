@@ -2,139 +2,210 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>WebCV 智能链接分发控制台</title>
+    <title>WebCV 智能分发与数据监测控制台</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
-            padding: 30px; 
-            color: #333;
-            background-color: #f8f9fa;
+            padding: 30px; color: #333; background-color: #f8f9fa;
         }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1100px; margin: 0 auto; }
         h2 { color: #24292e; margin-bottom: 5px; }
         .tip { color: #586069; font-size: 14px; margin-bottom: 25px; line-height: 1.6; }
-        
-        /* 表格样式 */
         table { 
-            border-collapse: collapse; 
-            width: 100%; 
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-collapse: collapse; width: 100%; background: #fff;
+            border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
         }
-        th, td { 
-            border: 1px solid #e1e4e8; 
-            padding: 14px 18px; 
-            text-align: left; 
-            font-size: 14px;
-        }
+        th, td { border: 1px solid #e1e4e8; padding: 14px 18px; text-align: left; font-size: 14px; }
         th { background-color: #f6f8fa; color: #586069; font-weight: 600; }
-        
-        /* 默认链接状态：蓝色 */
-        .cv-link { 
-            color: #0366d6; 
-            text-decoration: none; 
-            font-weight: 500; 
-            word-break: break-all;
-        }
+        .cv-link { color: #0366d6; text-decoration: none; font-weight: 500; word-break: break-all; }
         .cv-link:hover { text-decoration: underline; }
-        
-        /* 点击后的内存状态：强制变紫 */
-        .cv-link.clicked { 
-            color: #800080 !important; 
-        }
+        .cv-link.clicked { color: #800080 !important; }
+        .badge { background: #e1f5fe; color: #0288d1; padding: 3px 8px; border-radius: 12px; font-size: 12px; font-weight: bold; }
+        .badge-total { background: #e8f5e9; color: #388e3c; }
+        .chart-box { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
         .loading { color: #666; font-style: italic; }
-        .error { color: #cb2431; font-weight: bold; }
+        .error { color: #cb2431; font-weight: bold; line-height: 1.5; white-space: pre-line; }
     </style>
 </head>
 <body>
 <div class="container">
-    <h2>WebCV 智能链接分发控制台 (实时同步版)</h2>
+    <h2>WebCV 智能分发与数据监测控制台 (Analytics 2.0 + 状态诊断版)</h2>
     <div class="tip">
-        💡 <b>全自动流：</b>本页面利用 JavaScript 动态读取您的 GitHub 仓库。您在本地用 Git 增删或重命名任何简历文件夹并 Push 后，这里<b>无需修改代码，刷新即刻同步</b>。<br>
-        点击链接将在新窗口打开。点击后该链接在当前页面会变成<b>紫色</b>。一旦刷新网页或关闭重开，所有颜色将<b>自动复位</b>为蓝色。
+        📈 <b>数据与网络双监测：</b>本控制台已集成 GitHub API 状态码诊断。如果连接失败，系统会明确指出是 403 频率限制还是其他网络拦截。<br>
+        下方折线图会自动展示<b>最近 30 天的每日访问趋势</b>，累计数据最长留存 180 天。刷新、重开浏览器数据不会丢失。
     </div>
 
     <table>
         <thead>
             <tr>
-                <th width="35%">代码仓库文件夹名称 (实时监测)</th>
-                <th>专属网页链接 (已自动进行标准安全编码)</th>
+                <th width="30%">文件夹名称</th>
+                <th width="45%">专属网页链接</th>
+                <th width="12%">今日点击</th>
+                <th width="12%">累计点击 (180天)</th>
             </tr>
         </thead>
         <tbody id="link-table-body">
-            <tr>
-                <td colspan="2" class="loading">正在实时同步 GitHub 仓库最新目录，请稍候...</td>
-            </tr>
+            <tr><td colspan="4" class="loading">正在实时连接 GitHub 仓库并安全装载数据模块...</td></tr>
         </tbody>
     </table>
+
+    <div class="chart-box">
+        <h3 style="margin-top:0; color:#24292e;">📊 30天访问趋势分析图</h3>
+        <canvas id="analyticsChart" height="100"></canvas>
+    </div>
 </div>
 
 <script>
-    // 你的 GitHub 信息配置
     const username = 'Sundylee';
     const repo = 'WebCV';
     const tableBody = document.getElementById('link-table-body');
+    let myChart = null;
 
-    // 自动动态获取你仓库根目录下的文件结构
-    fetch(`https://api.github.com/repos/${username}/${repo}/contents`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('无法读取仓库，请确保该仓库在 GitHub 上是公开的 (Public)');
+    // 获取当前的日期字符串格式 (YYYY-MM-DD)
+    const getTodayStr = () => new Date().toISOString().split('T')[0];
+
+    // 初始化并生成最近 30 天的日期标签
+    const generateDateLabels = () => {
+        const labels = [];
+        for (let i = 29; i >= 0; i--) {
+            const d = new Date();
+            d.setDate(d.getDate() - i);
+            labels.push(d.toISOString().split('T')[0]);
+        }
+        return labels;
+    };
+
+    // 核心网络状态码诊断函数（可复用）
+    const handleNetworkResponse = (response) => {
+        if (!response.ok) {
+            if (response.status === 403) {
+                throw new Error(`[错误 403] GitHub API 访问受限！\n原因：当前网络 IP 每小时 60 次的公共调用配额耗尽。\n解决办法：1. 尝试切换手机热点测试；2. 开启、关闭或调整电脑上的网络代理软件。`);
+            } else if (response.status === 404) {
+                throw new Error(`[错误 404] 未找到对应的公开仓库！\n原因：请核对代码中的用户名【${username}】和仓库名【${repo}】大小写是否与 GitHub 完全一致。`);
+            } else {
+                throw new Error(`[服务器状态码: ${response.status}] 网络请求失败！\n请按下 F12 查看 Console 或 Network 面板检查真实拦截阻断原因。`);
             }
-            return response.json();
-        })
+        }
+        return response.json();
+    };
+
+    // 核心统计存储逻辑
+    const getStats = (folderName) => {
+        let data = localStorage.getItem(`analytics_${folderName}`);
+        if (!data) {
+            data = { daily: {}, total: 0, createdAt: new Date().getTime() };
+        } else {
+            data = JSON.parse(data);
+        }
+        // 自动清理超过 180 天的累计老数据
+        if (new Date().getTime() - data.createdAt > 180 * 24 * 60 * 60 * 1000) {
+            data = { daily: {}, total: 0, createdAt: new Date().getTime() };
+        }
+        return data;
+    };
+
+    const recordClick = (folderName) => {
+        const stats = getStats(folderName);
+        const today = getTodayStr();
+        
+        stats.daily[today] = (stats.daily[today] || 0) + 1;
+        stats.total += 1;
+        
+        localStorage.setItem(`analytics_${folderName}`, JSON.stringify(stats));
+        updateChart(); // 触发折线图重绘
+    };
+
+    // 渲染和刷新折线统计图
+    const updateChart = () => {
+        const labels = generateDateLabels();
+        
+        fetch(`https://api.github.com/repos/${username}/${repo}/contents`)
+            .then(handleNetworkResponse) // 注入诊断流
+            .then(data => {
+                const folders = data.filter(item => item.type === 'dir' && !item.name.startsWith('.'));
+                const datasets = folders.map((folder, index) => {
+                    const stats = getStats(folder.name);
+                    const colorList = ['#0366d6', '#28a745', '#cb2431', '#f9c513', '#6f42c1', '#e36209', '#005cc5', '#22863a', '#b31d28'];
+                    const color = colorList[index % colorList.length];
+                    const chartData = labels.map(date => stats.daily[date] || 0);
+                    
+                    return {
+                        label: folder.name,
+                        data: chartData,
+                        borderColor: color,
+                        backgroundColor: color + '11',
+                        borderWidth: 2,
+                        tension: 0.3
+                    };
+                });
+
+                if (myChart) { myChart.destroy(); }
+
+                const ctx = document.getElementById('analyticsChart').getContext('2d');
+                myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: { labels: labels, datasets: datasets },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                        }
+                    }
+                });
+            })
+            .catch(error => {
+                console.error("更新图表时发生网络异常:", error);
+            });
+    };
+
+    // 初始化动态生成主表格
+    fetch(`https://api.github.com/repos/${username}/${repo}/contents`)
+        .then(handleNetworkResponse) // 注入诊断流
         .then(data => {
-            // 过滤掉普通文件，只保留文件夹，并排除掉隐藏文件夹（如.github）
             const folders = data.filter(item => item.type === 'dir' && !item.name.startsWith('.'));
             
             if (folders.length === 0) {
-                tableBody.innerHTML = '<tr><td colspan="2" class="error">未在仓库根目录下找到任何文件夹！请确认代码已成功 Push。</td></tr>';
+                tableBody.innerHTML = '<tr><td colspan="4" class="error">未在仓库根目录下找到任何文件夹！请确认代码已成功 Push。</td></tr>';
                 return;
             }
 
-            // 清空等待提示
             tableBody.innerHTML = '';
 
-            // 遍历文件夹，自动生成完美的表格行
             folders.forEach(folder => {
+                const stats = getStats(folder.name);
+                const today = getTodayStr();
+                const todayCount = stats.daily[today] || 0;
+
                 const row = document.createElement('tr');
-                
-                // 1. 文件夹名称列
-                const nameCell = document.createElement('td');
-                nameCell.textContent = folder.name;
-                
-                // 2. 链接列
-                const linkCell = document.createElement('td');
-                const link = document.createElement('a');
-                
-                // 【自动化核心】使用浏览器内置算法对中文、特殊字符进行标准 URL 编码，彻底绝交 404
                 const encodedName = encodeURIComponent(folder.name);
                 const fullUrl = `https://${username.toLowerCase()}.github.io/${repo}/${encodedName}/`;
-                
-                link.href = fullUrl;
-                link.target = '_blank';
-                link.className = 'cv-link';
-                // 界面上显示干净可读的未编码网址，给客户看很专业
-                link.textContent = `https://${username.toLowerCase()}.github.io/${repo}/${folder.name}/`;
-                
-                // 3. 点击变紫逻辑（基于内存 class，刷新即刻复位）
-                link.onclick = function() {
+
+                row.innerHTML = `
+                    <td><b>${folder.name}</b></td>
+                    <td><a href="${fullUrl}" target="_blank" class="cv-link">${fullUrl}</a></td>
+                    <td><span class="badge" id="today-${folder.name}">${todayCount} 次</span></td>
+                    <td><span class="badge badge-total" id="total-${folder.name}">${stats.total} 次</span></td>
+                `;
+
+                row.querySelector('.cv-link').addEventListener('click', function() {
                     this.classList.add('clicked');
-                };
-                
-                linkCell.appendChild(link);
-                row.appendChild(nameCell);
-                row.appendChild(linkCell);
+                    recordClick(folder.name);
+                    
+                    const newStats = getStats(folder.name);
+                    document.getElementById(`today-${folder.name}`).textContent = (newStats.daily[today] || 0) + ' 次';
+                    document.getElementById(`total-${folder.name}`).textContent = newStats.total + ' 次';
+                });
+
                 tableBody.appendChild(row);
             });
+            
+            updateChart(); 
         })
         .catch(error => {
-            tableBody.innerHTML = `<tr><td colspan="2" class="error">API 错误: ${error.message}</td></tr>`;
+            // 在表格正中间极其醒目地打印出错误诊断报告
+            tableBody.innerHTML = `<tr><td colspan="4" class="error">${error.message}</td></tr>`;
         });
 </script>
 </body>
