@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李朝珲 · 热控专业经理 · 国际EPC电厂项目</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+  :root {
+    --navy: #0d2240;
+    --steel: #1c3a5e;
+    --accent: #c8922a;
+    --accent2: #e8a83a;
+    --light: #f5f7fa;
+    --border: #d0d8e4;
+    --text: #1a2535;
+    --muted: #5a6a7e;
+    --tag-bg: #e8f0fb;
+    --tag-text: #1c3a5e;
+    --green: #2a7a2a;
+    --warn: #c87820;
+    --page-width: 920px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif; background: #e8ecf2; color: var(--text); font-size: 14px; line-height: 1.75; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .page-wrapper { max-width: var(--page-width); margin: 32px auto; background: #fff; box-shadow: 0 8px 48px rgba(13,34,64,0.18); border-radius: 4px; overflow: hidden; }
+  .header { background: linear-gradient(135deg, var(--navy) 0%, var(--steel) 100%); color: #fff; padding: 38px 48px 30px; position: relative; border-bottom: 4px solid var(--accent); }
+  .header::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 50%, transparent 100%); }
+  .header-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+  .name-block h1 { font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 700; letter-spacing: 4px; color: #fff; line-height: 1.1; }
+  .name-block .subtitle { margin-top: 8px; font-size: 13.5px; font-weight: 500; color: var(--accent2); letter-spacing: 2px; text-transform: uppercase; }
+  .contact-block { text-align: right; font-size: 12.5px; line-height: 2.1; color: rgba(255,255,255,0.82); }
+  .contact-block a { color: var(--accent2); }
+  .header-tags { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .header-tag { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); color: rgba(255,255,255,0.9); font-size: 11.5px; padding: 3px 12px; border-radius: 2px; letter-spacing: 0.5px; }
+  .header-tag.hot { background: rgba(200,146,42,0.28); border-color: var(--accent); color: var(--accent2); font-weight: 600; }
+  .toc-nav { background: var(--light); border-bottom: 1px solid var(--border); padding: 0 48px; display: flex; gap: 0; overflow-x: auto; }
+  .toc-nav a { color: var(--muted); font-size: 12px; padding: 10px 14px; white-space: nowrap; border-bottom: 2px solid transparent; font-weight: 500; letter-spacing: 0.3px; transition: all 0.2s; }
+  .toc-nav a:hover { color: var(--navy); border-bottom-color: var(--accent); text-decoration: none; }
+  .body-wrapper { display: grid; grid-template-columns: 1fr 285px; gap: 0; }
+  .main-col { padding: 36px 40px 40px 48px; border-right: 1px solid var(--border); }
+  .side-col { padding: 32px 26px; background: var(--light); }
+  .section { margin-bottom: 32px; }
+  .section:last-child { margin-bottom: 0; }
+  .section-title { font-family: 'Noto Serif SC', serif; font-size: 12.5px; font-weight: 700; color: var(--navy); letter-spacing: 3px; text-transform: uppercase; border-bottom: 2px solid var(--accent); padding-bottom: 6px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .section-title .icon { color: var(--accent); font-size: 15px; }
+  .summary-text { font-size: 13.5px; line-height: 1.85; color: var(--text); border-left: 3px solid var(--accent); padding-left: 14px; margin-bottom: 14px; }
+  .achievement-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 4px; }
+  .ach-card { background: linear-gradient(135deg, #f0f4fa 0%, #e8eef8 100%); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 2px; }
+  .ach-card.wide { grid-column: 1 / -1; }
+  .ach-card .ach-metric { font-size: 19px; font-weight: 700; color: var(--accent); font-family: 'Noto Serif SC', serif; line-height: 1.2; }
+  .ach-card .ach-label { font-size: 11.5px; color: var(--muted); margin-top: 2px; line-height: 1.45; }
+  .ach-card .ach-label strong { color: var(--navy); }
+  .exp-item { margin-bottom: 26px; padding-bottom: 26px; border-bottom: 1px solid var(--border); }
+  .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
+  .exp-company { font-weight: 700; font-size: 14.5px; color: var(--navy); }
+  .exp-company .company-type { font-size: 11px; font-weight: 400; color: var(--muted); margin-left: 6px; }
+  .exp-period { font-size: 11.5px; color: var(--muted); white-space: nowrap; background: var(--tag-bg); padding: 2px 10px; border-radius: 2px; }
+  .exp-role { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 8px; letter-spacing: 0.5px; }
+  .exp-location { font-size: 11.5px; color: var(--muted); margin-bottom: 10px; }
+  .subsection-label { font-size: 11px; font-weight: 700; color: var(--navy); letter-spacing: 2px; text-transform: uppercase; margin: 12px 0 6px; padding: 3px 0; border-bottom: 1px dashed var(--border); }
+  ul.duties { list-style: none; padding: 0; margin: 0; }
+  ul.duties li { font-size: 13px; padding: 3px 0 3px 18px; position: relative; color: var(--text); line-height: 1.7; }
+  ul.duties li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 5px; }
+  ul.duties li strong { color: var(--navy); font-weight: 600; }
+  .result-box { background: linear-gradient(135deg, #fdf8f0, #faf3e5); border: 1px solid #e8d5b0; border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 2px; margin-top: 10px; }
+  .result-box .rb-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; margin-bottom: 6px; }
+  ul.results { list-style: none; padding: 0; }
+  ul.results li { font-size: 12.5px; padding: 2px 0 2px 16px; position: relative; color: #4a3800; line-height: 1.65; }
+  ul.results li::before { content: '✦'; position: absolute; left: 0; color: var(--accent); font-size: 9px; top: 5px; }
+  ul.results li strong { color: #7a4800; }
+  .project-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .project-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
+  .project-name { font-size: 13px; font-weight: 700; color: var(--navy); line-height: 1.4; }
+  .project-period { font-size: 11px; color: var(--muted); white-space: nowrap; margin-left: 8px; background: var(--tag-bg); padding: 1px 8px; border-radius: 2px; }
+  .project-company { font-size: 11.5px; color: var(--muted); margin-bottom: 4px; }
+  .project-desc { font-size: 12.5px; color: var(--text); line-height: 1.65; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .tag { font-size: 10.5px; background: var(--tag-bg); color: var(--tag-text); padding: 1px 8px; border-radius: 2px; border: 1px solid #c8d8f0; }
+  .tag.accent { background: #fef3e2; color: #7a4a00; border-color: #e8c880; }
+  .tag.green { background: #e8f5e8; color: #1a5c1a; border-color: #a0d0a0; }
+  .tag.warn { background: #fdf0e0; color: #8a4a00; border-color: #e8b880; }
+  .side-section { margin-bottom: 22px; }
+  .side-title { font-size: 11px; font-weight: 700; color: var(--navy); letter-spacing: 2.5px; text-transform: uppercase; border-bottom: 2px solid var(--accent); padding-bottom: 5px; margin-bottom: 12px; }
+  .skill-category { margin-bottom: 12px; }
+  .skill-cat-name { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .skill-tag { font-size: 11px; background: var(--tag-bg); color: var(--tag-text); padding: 2px 8px; border-radius: 2px; border: 1px solid #c8d8f0; line-height: 1.6; }
+  .skill-tag.highlight { background: #0d2240; color: #fff; border-color: #0d2240; }
+  .skill-tag.jd { background: #fffbe6; color: #7a4a00; border-color: #e8c860; font-weight: 600; }
+  .jd-item { display: flex; align-items: flex-start; font-size: 11.5px; padding: 5px 0; border-bottom: 1px solid var(--border); gap: 8px; line-height: 1.5; }
+  .jd-item:last-child { border-bottom: none; }
+  .jd-check { font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+  .jd-check.ok { color: var(--green); }
+  .jd-check.partial { color: var(--warn); }
+  .jd-check.gap { color: #b3311f; }
+  .jd-item .jd-text { color: var(--text); flex: 1; }
+  .jd-item .jd-proof { color: var(--muted); font-size: 10.5px; }
+  .kv-item { display: flex; font-size: 12.5px; margin-bottom: 7px; line-height: 1.5; }
+  .kv-key { color: var(--muted); min-width: 52px; flex-shrink: 0; }
+  .kv-val { color: var(--text); font-weight: 500; }
+  .edu-item { margin-bottom: 10px; }
+  .edu-title { font-size: 12.5px; font-weight: 600; color: var(--navy); }
+  .edu-sub { font-size: 11.5px; color: var(--muted); }
+  .lang-bar { margin-bottom: 8px; }
+  .lang-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px; }
+  .lang-label .lang-name { font-weight: 600; color: var(--navy); }
+  .lang-label .lang-level { color: var(--muted); font-size: 11px; }
+  .bar-track { background: #dde4ee; border-radius: 2px; height: 4px; }
+  .bar-fill { background: linear-gradient(90deg, var(--navy), var(--accent)); height: 4px; border-radius: 2px; }
+  .score-badge { background: linear-gradient(135deg, var(--navy), var(--steel)); color: #fff; text-align: center; padding: 12px 10px; border-radius: 3px; margin-bottom: 14px; border: 1px solid var(--accent); }
+  .score-badge .score-num { font-size: 28px; font-weight: 700; color: var(--accent2); font-family: 'Noto Serif SC', serif; line-height: 1.1; }
+  .score-badge .score-label { font-size: 10.5px; color: rgba(255,255,255,0.75); margin-top: 2px; letter-spacing: 1px; }
+  .score-badge .score-note { font-size: 9.5px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+  @media print { body { background: #fff; font-size: 12px; } .page-wrapper { margin: 0; box-shadow: none; border-radius: 0; } .toc-nav { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <header class="header" id="top">
+    <div class="header-top">
+      <div class="name-block">
+        <h1>李朝珲</h1>
+        <div class="subtitle">热控/电气仪表工程经理 · 国际EPC电厂项目</div>
+      </div>
+      <div class="contact-block">
+        <div>📞 <a href="tel:+8613889810081">+86 138-8981-0081</a></div>
+        <div>✉️ <a href="mailto:winlee136@msn.com">winlee136@msn.com</a></div>
+        <div>📍 上海 / 可长期海外驻场</div>
+        <div>⏱️ 到岗：1–4周</div>
+      </div>
+    </div>
+    <div class="header-tags">
+      <span class="header-tag hot">18年+ 国际EPC热控/电气仪表管理经验</span>
+      <span class="header-tag hot">330MW+100MW EPC 投标-设计-采购-调试全周期</span>
+      <span class="header-tag">FIDIC合同 / 变更单管控</span>
+      <span class="header-tag">ISO9001内审员 / CEMS在线监测</span>
+      <span class="header-tag">DCS：GE MarkVie / Foxboro / DeltaV / Siemens PCS7</span>
+    </div>
+  </header>
+
+  <nav class="toc-nav">
+    <a href="#summary">定位</a>
+    <a href="#achievements">核心成就</a>
+    <a href="#skills">核心技能</a>
+    <a href="#experience">工作经历</a>
+    <a href="#projects">主要项目</a>
+    <a href="#education">教育培训</a>
+  </nav>
+
+  <div class="body-wrapper">
+
+    <main class="main-col">
+
+      <section class="section" id="summary">
+        <div class="section-title"><span class="icon">◈</span>定位</div>
+        <p class="summary-text">
+          <strong>18年+</strong>火电/燃气轮机联合循环电厂EPC热控与电气仪表专业全流程管理经验，其中<strong>9年以上</strong>担任电仪总工/技术经理，全面负责热控专业<strong>投标技术支撑、设计全过程管理、设备采购技术评标、现场安装调试及分部试运</strong>闭环管理。主导过330MW联合循环电厂、100MW燃机电厂两个大型国际EPC项目从投标、施工图设计管理、设备制造监造到现场调试、分部试运的完整周期，合同均以<strong>FIDIC条款</strong>为基础编制，熟悉图纸版本管控、设计变更审批及工期责任认定流程。
+        </p>
+        <p class="summary-text">
+          具备<strong>ISO9001内审员</strong>资质及实操经验，主导两个电厂<strong>CEMS烟气在线监测系统</strong>（Sick、赛默飞机型）选型、调试与校准；同时精通DCS/PLC及联锁保护逻辑（GE Mark VIe、Foxboro ArchestrA、Emerson Delta V、Siemens PCS7/TIA Portal），能把控制系统架构、联锁保护逻辑与升压站一次设备接口一并管理。英语为第一工作语言，可独立编写英文技术方案，直接与业主/监理/海外分包开展技术谈判。
+        </p>
+      </section>
+
+      <section class="section" id="achievements">
+        <div class="section-title"><span class="icon">◈</span>核心成就</div>
+        <div class="achievement-grid">
+          <div class="ach-card">
+            <div class="ach-metric">18年+</div>
+            <div class="ach-label">热控/电气仪表<br><strong>全流程管理</strong>经验</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">330MW+100MW</div>
+            <div class="ach-label">两个EPC项目<br>投标-设计-采购-调试全周期主导</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">FIDIC</div>
+            <div class="ach-label">合同框架下<br>变更单审批/工期责任认定</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">ISO9001</div>
+            <div class="ach-label">内审员资质<br>图纸版本管控与文件闭环</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">CEMS</div>
+            <div class="ach-label">烟气在线监测系统<br>选型/调试/校准（Sick/赛默飞）</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">报警量↓70%+</div>
+            <div class="ach-label">依据 ISA-18.2 开展报警合理化<br>MTTR 缩短近一半</div>
+          </div>
+          <div class="ach-card wide" style="background: linear-gradient(135deg,#fdf9f0,#faf4e2);">
+            <div class="ach-metric" style="font-size:15px;">9年 电仪总工/技术经理 · 覆盖投标、施工图设计管理、设备采购技术评标、驻厂监造、现场调试全流程</div>
+            <div class="ach-label" style="margin-top:5px;">主导两个国际EPC项目从投标到分部试运的完整闭环，对应热控专业经理岗位核心职责链条</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="section-title"><span class="icon">◈</span>核心技能</div>
+        <ul class="duties">
+          <li><strong>投标阶段技术策划：</strong>牵头编制热控/自控专业投标技术方案、控制系统配置方案、测点布置方案、联锁保护逻辑方案，完成技术参数核算与方案对比论证，配合商务组答复业主技术澄清。</li>
+          <li><strong>设计全过程管理：</strong>对接设计院下达设计输入条件，分级审查施工图、系统图、逻辑图、测点清单；核实系统设计满足IEC/ISA标准，主导设计优化，平衡业主/EPC/OEM多方目标差异。</li>
+          <li><strong>图纸版本与文控管理（ISO9001）：</strong>内审员资质，建立图纸版本台账及技术文件闭环管理，满足海外项目竣工资料移交要求。</li>
+          <li><strong>设备采购技术支持：</strong>编制DCS/PLC、仪表、控制机柜设备技术规范书及采购技术协议，参与厂商技术评标，驻厂监造FAT出厂验收。</li>
+          <li><strong>现场施工与变更管控：</strong>组织图纸技术交底，审核工程洽商及设计变更通知单，FIDIC合同框架下履行变更单审批流程及工期延误责任认定。</li>
+          <li><strong>环保在线监测：</strong>CEMS烟气连续监测系统（Sick、赛默飞）选型确权、调试、校准及第三方检测数据审核。</li>
+          <li><strong>DCS及联锁保护：</strong>GE Mark VIe、Foxboro ArchestrA、Emerson Delta V、Siemens PCS7/TIA Portal组态、逻辑优化、联锁保护测试及ISA-18.2报警合理化。</li>
+        </ul>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="section-title"><span class="icon">◈</span>工作经历</div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">赣锋国际贸易（上海）有限公司<span class="company-type">上市公司</span></div>
+            <div class="exp-period">03/2025 – 04/2026</div>
+          </div>
+          <div class="exp-role">海外设计部自控总负责人 / 业主代表</div>
+          <div class="exp-location">📍 上海 / 萨尔塔（阿根廷）· 投资规模 6 亿美元连续化工工厂</div>
+          <ul class="duties">
+            <li>作为业主方技术负责人，审查并批准设计顾问提供的控制方案、仪表选型及PLC/DCS架构设计，主导核心仪表方案技术评审与确权30余次。</li>
+            <li>主导PLC选型设计及DCS通信集成，应用ISA-S88+OMAC批处理架构，实现100+设备节点顺控联动；监督FAT/SAT验证控制逻辑与联锁。</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">北京中缆通达电气成套有限公司（上海分公司）<span class="company-type">跨国私企 · 国际EPC总承包</span></div>
+            <div class="exp-period">06/2016 – 02/2025</div>
+          </div>
+          <div class="exp-role">海外电厂事业部电气仪表自动化控制总工程师 / 技术经理</div>
+          <div class="exp-location">📍 上海 / 达卡（孟加拉国）· 主导 330MW + 100MW 两个国际EPC Turnkey项目</div>
+
+          <div class="subsection-label">投标与设计阶段</div>
+          <ul class="duties">
+            <li>收集海外新项目信息，开展技术经济性和可行性评估并向总经理汇报；带领团队完成投标书技术卷编制，参与项目技术商务谈判。</li>
+            <li>与设计院合作确立EPC项目技术设计原则和框架，参与FEED与详细设计阶段技术把关，核实系统设计满足当地标准及IEC/ISA要求。</li>
+            <li>主导升压站一次设备及DCS/PLC/SIS二次系统技术规范书编制与技术评标，驻厂参加FAT出厂验收，核对设备参数与软硬件功能。</li>
+            <li><strong>孟加拉EPC项目合同以FIDIC条款为基础编制</strong>，参与工程变更单（Variation Order）审批流程及工期延误责任认定，协调总包、设计院、设备厂商、施工分包间的技术界面与责任划分。</li>
+          </ul>
+
+          <div class="subsection-label">施工与调试阶段</div>
+          <ul class="duties">
+            <li>管理现场电气、仪表、热控各专业施工的安全、质量、进度，协调各分包方施工接口；组织HSE会议、质量控制会议及现场协调会。</li>
+            <li><strong>组织实施ISO9001质量管理体系图纸版本管控与技术文件闭环管理</strong>（Shahjibazar 100MW项目期间取得内审员证书并承担内审工作），建立图纸版本台账，防止错图导致安装调试返工。</li>
+            <li><strong>主导两个项目CEMS烟气排放连续监测系统（Sick、赛默飞机型）</strong>技术规范确认、安装调试与定期校准，配合环保合规验收及第三方检测数据审核。</li>
+            <li>完成330MW联合循环电厂（GE 9F.03AGP+A651汽轮机+锅炉）和100MW单循环燃机电厂（GE LMS100）设计、采购、建设安装、调试全流程。</li>
+          </ul>
+
+          <div class="subsection-label">商业运营与质保阶段</div>
+          <ul class="duties">
+            <li>参照ISA-18.2标准开展DCS报警合理化整治：梳理数千个报警点，重新分级并设置报警死区过滤抖动信号。</li>
+            <li>以TPM为导向的年度大修管理：大修前60天深度介入计划编制，引入关键路径法排定OTP，严格推行LOTO隔离程序许可制度。</li>
+          </ul>
+
+          <div class="result-box">
+            <div class="rb-title">▌ 主要量化业绩</div>
+            <ul class="results">
+              <li><strong>进度控制：</strong>竣工图纸<strong>提前1个月</strong>完成出版；设备和材料采购成本<strong>降低5%–10%</strong>。</li>
+              <li><strong>质控体系：</strong>ISO9001图纸版本管控体系运行期间，两个EPC项目累计避免因错误版本图纸导致的现场返工事件。</li>
+              <li><strong>环保合规：</strong>CEMS系统调试及校准保障两电厂烟气排放数据连续达标上传，顺利通过环保验收。</li>
+              <li><strong>报警优化：</strong>机组稳态运行期间每小时平均报警量<strong>下降70%+</strong>，故障定位MTTR缩短近一半。</li>
+              <li><strong>继电保护：</strong>2年商业运行期内，主变压器差动保护（87T）及高压侧过流保护（50/51）<strong>零误动/零拒动</strong>。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">通用电气 – 格兰尼技术咨询（北京）有限公司<span class="company-type">外企</span></div>
+            <div class="exp-period">04/2010 – 05/2016</div>
+          </div>
+          <div class="exp-role">现场经理 / 主管工程师</div>
+          <div class="exp-location">📍 北京（常驻新疆、宁夏、陕西等现场）</div>
+          <ul class="duties">
+            <li>负责GE Mark VIe DCS/PLC控制系统现场安装、调试与运维，覆盖20+台燃气轮机发电机组及离心式压缩机；执行控制逻辑验证、联锁保护测试及性能调校。</li>
+            <li>统筹协调西气东输一二线14+压气站（霍尔果斯、哈密等极端环境）GE PGT25燃驱压缩机组自动化安装与联调，所有机组按期完成性能考核并成功并网移交。</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">中航世新燃气轮机股份有限公司沈阳分公司<span class="company-type">国企（原沈阳黎明燃机）</span></div>
+            <div class="exp-period">07/2007 – 04/2010</div>
+          </div>
+          <div class="exp-role">电气仪表控制工程师</div>
+          <div class="exp-location">📍 沈阳 / 福建、浙江、广东等项目现场</div>
+          <ul class="duties">
+            <li>按P&ID图、电气仪表接线图及控制逻辑图进行安装指导；完成分系统功能测试及控制逻辑/联锁/报警验证。</li>
+            <li>参与福建联合石化（FREP）乙烯COGEN项目2台GE 9E燃机发电机组安装与调试（总投资约400亿元）。</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-title"><span class="icon">◈</span>主要工程项目</div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">KHULNA 330MW（200–300MW级）联合循环双燃料发电厂 EPC</div>
+            <div class="project-period">2019/03 – 2025/02</div>
+          </div>
+          <div class="project-company">北京中缆通达 · 角色：技术经理/电仪总工/自动化项目总负责 · Khulna / 孟加拉国</div>
+          <div class="project-desc">1台GE 9F.03AGP燃气轮机+A651汽轮机+余热锅炉联合循环双燃料电厂EPC Turnkey项目，合同以FIDIC条款为基础，覆盖投标技术支撑、施工图设计管理、设备采购技术评标、建设安装、调试和2年商业运行质保期维护。负责升压站一二次系统及CEMS烟气在线监测系统技术管控。</div>
+          <div class="project-tags">
+            <span class="tag green">330MW ✓</span>
+            <span class="tag accent">FIDIC合同 ✓</span>
+            <span class="tag accent">CEMS Sick/赛默飞 ✓</span>
+            <span class="tag warn">燃气轮机联合循环（非燃煤）</span>
+            <span class="tag">GE Mark VIe DCS</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">SHAHJIBAZAR 100MW 燃气轮机发电厂 EPC</div>
+            <div class="project-period">2016/10 – 2020/11</div>
+          </div>
+          <div class="project-company">北京中缆通达 · 角色：技术经理/电仪总工 · Shahjibazar / 孟加拉国</div>
+          <div class="project-desc">1台GE LMS100燃气轮机单循环燃机电厂EPC Turnkey项目，ISO9001内审员资质在本项目取得并实际承担图纸版本管控内审工作，负责CEMS系统（Sick机型）选型调试及电气一次设备与热控二次系统接口统筹。</div>
+          <div class="project-tags">
+            <span class="tag accent">ISO9001内审员 ✓</span>
+            <span class="tag accent">CEMS选型调试 ✓</span>
+            <span class="tag warn">燃气轮机（非燃煤）</span>
+            <span class="tag">GE LMS100</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">中石油西气东输二线天然气压气站</div>
+            <div class="project-period">2010/06 – 2013/02</div>
+          </div>
+          <div class="project-company">GE-Granite · 角色：现场经理/主管工程师 · 新疆/宁夏/陕西等</div>
+          <div class="project-desc">西气东输2线14台以上GE PGT25燃气轮机+离心式压缩机自动化系统安装、集成与调试，覆盖霍尔果斯、哈密等多个极端环境压气站，DCS控制逻辑验证与联锁保护测试。</div>
+          <div class="project-tags">
+            <span class="tag">14台 GE PGT25</span>
+            <span class="tag">多站点并发管理</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">福建联合石化（FREP/EMCP&P/SAAC）乙烯装置 COGEN 项目</div>
+            <div class="project-period">2008/01 – 2009/05</div>
+          </div>
+          <div class="project-company">中航世新燃气轮机 · 角色：电气仪表控制工程师 · 福建</div>
+          <div class="project-desc">福建联合石化（中石化/埃克森美孚/沙特阿美合资，总投资约400亿元）自备电厂2台GE 9E级燃气轮机发电机组及配套辅助系统安装调试。</div>
+          <div class="project-tags">
+            <span class="tag">GE 9E</span>
+            <span class="tag">大型石化自备电厂</span>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <aside class="side-col">
+
+      <div class="side-section">
+        <div class="score-badge">
+          <div class="score-num">~78%</div>
+          <div class="score-label">岗位匹配度自评（如实）</div>
+          <div class="score-note">2项硬门槛未达标，见下方标注</div>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">JD硬性门槛逐条对照</div>
+
+        <div class="jd-item">
+          <span class="jd-check gap">❌</span>
+          <div>
+            <div class="jd-text">本科及以上（自动化/测控/热能工程/控制科学）</div>
+            <div class="jd-proof">沈阳工程学院工业自动化专业，大专学历；无法通过简历文字弥补，建议内推/猎头渠道</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check partial">⚡</span>
+          <div>
+            <div class="jd-text">10年+ 300MW+燃煤电厂国际EPC热控经验</div>
+            <div class="jd-proof">18年国际EPC热控管理经验，但主导项目为330MW联合循环+100MW燃机（天然气），非燃煤锅炉技术路线</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">5年+ EPC热控专业主管/工程师岗位</div>
+            <div class="jd-proof">9年+电仪总工/技术经理，覆盖投标-设计-采购-施工-调试全流程</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">海外EPC实操，FIDIC合同</div>
+            <div class="jd-proof">孟加拉EPC合同以FIDIC为基础，处理过变更单审批与工期责任认定</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">ISO9001质量管理体系</div>
+            <div class="jd-proof">内审员资质，图纸版本管控与文控闭环管理实操</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">英语工作语言</div>
+            <div class="jd-proof">CET6，第一工作语言，可独立编写英文技术方案</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">核心技术能力</div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">EPC全周期管理</div>
+          <div class="skill-tags">
+            <span class="skill-tag jd">投标技术支撑</span>
+            <span class="skill-tag jd">设计全过程管理</span>
+            <span class="skill-tag jd">设备采购技术评标</span>
+            <span class="skill-tag jd">驻厂监造</span>
+            <span class="skill-tag jd">FIDIC变更单管控</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">质量与合规</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">ISO9001内审员</span>
+            <span class="skill-tag highlight">CEMS（Sick/赛默飞）</span>
+            <span class="skill-tag">图纸版本台账</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">DCS / 联锁保护</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">GE Mark VIe</span>
+            <span class="skill-tag highlight">Foxboro ArchestrA</span>
+            <span class="skill-tag highlight">Emerson Delta V</span>
+            <span class="skill-tag highlight">Siemens PCS7/TIA Portal</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">电气一次二次</div>
+          <div class="skill-tags">
+            <span class="skill-tag">主变压器OLTC/DGA</span>
+            <span class="skill-tag">继电保护87T/50-51</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">基本信息</div>
+        <div class="kv-item"><span class="kv-key">手机</span><span class="kv-val"><a href="tel:+8613889810081">138-8981-0081</a></span></div>
+        <div class="kv-item"><span class="kv-key">邮箱</span><span class="kv-val"><a href="mailto:winlee136@msn.com">winlee136@msn.com</a></span></div>
+        <div class="kv-item"><span class="kv-key">现居</span><span class="kv-val">上海 / 沈阳</span></div>
+        <div class="kv-item"><span class="kv-key">出差</span><span class="kv-val">高度适应海外驻场</span></div>
+        <div class="kv-item"><span class="kv-key">薪资</span><span class="kv-val">面议</span></div>
+        <div class="kv-item"><span class="kv-key">到岗</span><span class="kv-val">1–4 周</span></div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">语言能力</div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">中文</span><span class="lang-level">母语</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">英语</span><span class="lang-level">CET6 · 工作语言</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+        </div>
+      </div>
+
+      <div class="side-section" id="education">
+        <div class="side-title">教育培训</div>
+        <div class="edu-item">
+          <div class="edu-title">工业自动化专业（大专）</div>
+          <div class="edu-sub">沈阳工程学院<br>2004/09 – 2007/07</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">ISO9001质量管理体系内审员</div>
+          <div class="edu-sub">早期职业阶段取得</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">GE Mark VIe 控制系统原理培训</div>
+          <div class="edu-sub">GE 能源学习中心（GE ELC）· 美国<br>2012/02 – 2012/03</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">Foxboro DCS 系统培训</div>
+          <div class="edu-sub">Foxboro 上海培训中心<br>2025/03 – 2025/04</div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
