@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E05GTYBL3K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E05GTYBL3K');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李朝珲 · 仪表专家 · 新希望集团</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+  :root {
+    --navy: #0d2240;
+    --steel: #1c3a5e;
+    --accent: #c8922a;
+    --accent2: #e8a83a;
+    --light: #f5f7fa;
+    --border: #d0d8e4;
+    --text: #1a2535;
+    --muted: #5a6a7e;
+    --tag-bg: #e8f0fb;
+    --tag-text: #1c3a5e;
+    --green: #2a7a2a;
+    --page-width: 920px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    background: #e8ecf2;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.75;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .page-wrapper {
+    max-width: var(--page-width);
+    margin: 32px auto;
+    background: #fff;
+    box-shadow: 0 8px 48px rgba(13,34,64,0.18);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--steel) 100%);
+    color: #fff;
+    padding: 38px 48px 30px;
+    position: relative;
+    border-bottom: 4px solid var(--accent);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 50%, transparent 100%);
+  }
+  .header-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .name-block h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .name-block .subtitle {
+    margin-top: 8px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--accent2);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .contact-block {
+    text-align: right;
+    font-size: 12.5px;
+    line-height: 2.1;
+    color: rgba(255,255,255,0.82);
+  }
+  .contact-block a { color: var(--accent2); }
+
+  .header-tags {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .header-tag {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    color: rgba(255,255,255,0.9);
+    font-size: 11.5px;
+    padding: 3px 12px;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+  }
+  .header-tag.hot {
+    background: rgba(200,146,42,0.28);
+    border-color: var(--accent);
+    color: var(--accent2);
+    font-weight: 600;
+  }
+
+  .toc-nav {
+    background: var(--light);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+  .toc-nav a {
+    color: var(--muted);
+    font-size: 12px;
+    padding: 10px 14px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+  }
+  .toc-nav a:hover {
+    color: var(--navy);
+    border-bottom-color: var(--accent);
+    text-decoration: none;
+  }
+
+  .body-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 285px;
+    gap: 0;
+  }
+  .main-col { padding: 36px 40px 40px 48px; border-right: 1px solid var(--border); }
+  .side-col { padding: 32px 26px; background: var(--light); }
+
+  .section { margin-bottom: 32px; }
+  .section:last-child { margin-bottom: 0; }
+  .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .icon { color: var(--accent); font-size: 15px; }
+
+  .summary-text {
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: var(--text);
+    border-left: 3px solid var(--accent);
+    padding-left: 14px;
+    margin-bottom: 14px;
+  }
+
+  .achievement-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .ach-card {
+    background: linear-gradient(135deg, #f0f4fa 0%, #e8eef8 100%);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 2px;
+  }
+  .ach-card.wide { grid-column: 1 / -1; }
+  .ach-card .ach-metric {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.2;
+  }
+  .ach-card .ach-label {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 2px;
+    line-height: 1.45;
+  }
+  .ach-card .ach-label strong { color: var(--navy); }
+
+  .exp-item { margin-bottom: 26px; padding-bottom: 26px; border-bottom: 1px solid var(--border); }
+  .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+  .exp-company {
+    font-weight: 700;
+    font-size: 14.5px;
+    color: var(--navy);
+  }
+  .exp-company .company-type {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 6px;
+  }
+  .exp-period {
+    font-size: 11.5px;
+    color: var(--muted);
+    white-space: nowrap;
+    background: var(--tag-bg);
+    padding: 2px 10px;
+    border-radius: 2px;
+  }
+  .exp-role {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  .exp-location {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .subsection-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 12px 0 6px;
+    padding: 3px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+
+  ul.duties {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul.duties li {
+    font-size: 13px;
+    padding: 3px 0 3px 18px;
+    position: relative;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  ul.duties li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+    top: 5px;
+  }
+  ul.duties li strong { color: var(--navy); font-weight: 600; }
+  ul.duties li em { color: var(--muted); font-style: normal; font-size: 12px; }
+
+  .result-box {
+    background: linear-gradient(135deg, #fdf8f0, #faf3e5);
+    border: 1px solid #e8d5b0;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 2px;
+    margin-top: 10px;
+  }
+  .result-box .rb-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  ul.results {
+    list-style: none;
+    padding: 0;
+  }
+  ul.results li {
+    font-size: 12.5px;
+    padding: 2px 0 2px 16px;
+    position: relative;
+    color: #4a3800;
+    line-height: 1.65;
+  }
+  ul.results li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 9px;
+    top: 5px;
+  }
+  ul.results li strong { color: #7a4800; }
+
+  .project-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .project-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
+  .project-name { font-size: 13px; font-weight: 700; color: var(--navy); line-height: 1.4; }
+  .project-period {
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    margin-left: 8px;
+    background: var(--tag-bg);
+    padding: 1px 8px;
+    border-radius: 2px;
+  }
+  .project-company { font-size: 11.5px; color: var(--muted); margin-bottom: 4px; }
+  .project-desc { font-size: 12.5px; color: var(--text); line-height: 1.65; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .tag {
+    font-size: 10.5px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 1px 8px;
+    border-radius: 2px;
+    border: 1px solid #c8d8f0;
+  }
+  .tag.accent { background: #fef3e2; color: #7a4a00; border-color: #e8c880; }
+  .tag.green { background: #e8f5e8; color: #1a5c1a; border-color: #a0d0a0; }
+
+  .side-section { margin-bottom: 22px; }
+  .side-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+  }
+
+  .skill-category { margin-bottom: 12px; }
+  .skill-cat-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .skill-tag {
+    font-size: 11px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 2px 8px;
+    border-radius: 2px;
+    border: 1px solid #c8d8f0;
+    line-height: 1.6;
+  }
+  .skill-tag.highlight {
+    background: #0d2240;
+    color: #fff;
+    border-color: #0d2240;
+  }
+  .skill-tag.jd {
+    background: #fffbe6;
+    color: #7a4a00;
+    border-color: #e8c860;
+    font-weight: 600;
+  }
+
+  .jd-item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 11.5px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    gap: 8px;
+    line-height: 1.5;
+  }
+  .jd-item:last-child { border-bottom: none; }
+  .jd-check {
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .jd-check.ok { color: var(--green); }
+  .jd-check.partial { color: #c87820; }
+  .jd-item .jd-text { color: var(--text); flex: 1; }
+  .jd-item .jd-proof { color: var(--muted); font-size: 10.5px; }
+
+  .kv-item {
+    display: flex;
+    font-size: 12.5px;
+    margin-bottom: 7px;
+    line-height: 1.5;
+  }
+  .kv-key { color: var(--muted); min-width: 52px; flex-shrink: 0; }
+  .kv-val { color: var(--text); font-weight: 500; }
+
+  .edu-item { margin-bottom: 10px; }
+  .edu-title { font-size: 12.5px; font-weight: 600; color: var(--navy); }
+  .edu-sub { font-size: 11.5px; color: var(--muted); }
+
+  .lang-bar { margin-bottom: 8px; }
+  .lang-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px; }
+  .lang-label .lang-name { font-weight: 600; color: var(--navy); }
+  .lang-label .lang-level { color: var(--muted); font-size: 11px; }
+  .bar-track { background: #dde4ee; border-radius: 2px; height: 4px; }
+  .bar-fill { background: linear-gradient(90deg, var(--navy), var(--accent)); height: 4px; border-radius: 2px; }
+
+  .score-badge {
+    background: linear-gradient(135deg, var(--navy), var(--steel));
+    color: #fff;
+    text-align: center;
+    padding: 12px 10px;
+    border-radius: 3px;
+    margin-bottom: 14px;
+    border: 1px solid var(--accent);
+  }
+  .score-badge .score-num {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent2);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.1;
+  }
+  .score-badge .score-label {
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 2px;
+    letter-spacing: 1px;
+  }
+  .score-badge .score-note {
+    font-size: 9.5px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 4px;
+  }
+
+  @media print {
+    body { background: #fff; font-size: 12px; }
+    .page-wrapper { margin: 0; box-shadow: none; border-radius: 0; }
+    .toc-nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <header class="header" id="top">
+    <div class="header-top">
+      <div class="name-block">
+        <h1>李朝珲</h1>
+        <div class="subtitle">仪表专家 · 化工/重工业仪表全生命周期管理</div>
+      </div>
+      <div class="contact-block">
+        <div>📞 <a href="tel:+8613889810081">+86 138-8981-0081</a></div>
+        <div>✉️ <a href="mailto:winlee136@msn.com">winlee136@msn.com</a></div>
+        <div>📍 上海 / 沈阳</div>
+        <div>⏱️ 到岗：1–4周</div>
+      </div>
+    </div>
+    <div class="header-tags">
+      <span class="header-tag hot">18年+ 工业仪表/自动化全生命周期管理经验</span>
+      <span class="header-tag hot">9年+ 部门总负责人/技术经理</span>
+      <span class="header-tag">阿根廷氯化锂化工项目 · 高腐蚀严苛工况仪表选型</span>
+      <span class="header-tag">DCS/PLC：GE MarkVie / Foxboro / Emerson DeltaV / Siemens PCS7</span>
+      <span class="header-tag">标准化体系 + 技术改造 + 备件成本管控三重经验</span>
+      <span class="header-tag">孟加拉/阿根廷 海外驻场</span>
+    </div>
+  </header>
+
+  <nav class="toc-nav">
+    <a href="#summary">个人小结</a>
+    <a href="#achievements">核心成就</a>
+    <a href="#skills">核心竞争力</a>
+    <a href="#experience">工作经历</a>
+    <a href="#projects">主要项目</a>
+    <a href="#education">教育培训</a>
+  </nav>
+
+  <div class="body-wrapper">
+
+    <main class="main-col">
+
+      <section class="section" id="summary">
+        <div class="section-title"><span class="icon">◈</span>个人小结</div>
+        <p class="summary-text">
+          <strong>18年+</strong>工业自动化与仪表系统<strong>全生命周期管理</strong>经验，覆盖仪表<strong>选型、安装调试、日常运维及故障诊断</strong>全流程，横跨氯化锂化工提取、燃气轮机联合循环电厂、石油天然气管道等高风险工况重流程工业领域。近2年在阿根廷 6 亿美元级氯化锂矿物提取项目担任自动化/仪表控制总负责人、业主方技术最高负责人，主导<strong>高腐蚀化学浆料（KCl/MgCl₂）</strong>工况下 30 余次仪表选型技术确权，建立全厂仪表<strong>校准/巡检标准化体系</strong>；此前<strong>9年以上</strong>在孟加拉火电 EPC 项目担任电仪总工/技术经理，负责 DCS/PLC 及一次仪表全生命周期管理与团队建设。
+        </p>
+        <p class="summary-text">
+          具备<strong>9年以上</strong>团队管理与项目统筹经验，主导 15+ 个中大型自动化新建及技改项目，精通仪表<strong>操作标准、维护规程与校验计划</strong>制定推行，擅长复杂工况下<strong>测量精度、信号干扰</strong>等核心技术问题的根因分析（RCA/5Why/鱼骨图）与技改落地，推动<strong>非计划停机率</strong>下降。具备备件 ABC 分级、国产化替代与数据化<strong>采购成本管控</strong>经验，累计降低备件采购成本 40% 以上；熟悉 CMMS/EAM/SAP 维护管理理念。具备<strong>跨部门（工艺/设备/生产）协同</strong>解决生产异常的实战经验，主导编制 SOP/培训教材 20 余份，持续跟踪 OPC UA/MQTT/IIoT 等前沿技术，推动工厂<strong>数字化转型</strong>中的仪表系统升级。
+        </p>
+      </section>
+
+      <section class="section" id="achievements">
+        <div class="section-title"><span class="icon">◈</span>核心成就</div>
+        <div class="achievement-grid">
+          <div class="ach-card">
+            <div class="ach-metric">18年+</div>
+            <div class="ach-label">工业仪表/自动化<br><strong>全生命周期管理</strong>经验</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">15+个</div>
+            <div class="ach-label">中大型自动化新建及技改项目<br>单体规模达数亿级别</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">30余次</div>
+            <div class="ach-label">高腐蚀化学浆料工况<br>仪表选型技术确权（阿根廷氯化锂项目）</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">MTTR↓1/3</div>
+            <div class="ach-label">30+现场仪表标准化<br>校准/维护规程6周建成</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">误跳车↓45.3%</div>
+            <div class="ach-label">顺控逻辑+信号滤波算法优化<br>产线OEE提升8.7%</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">备件成本↓40–60%</div>
+            <div class="ach-label">国产化替代+ABC分级库存管理<br>平衡备件保障与资金占用</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">报警量↓70%+</div>
+            <div class="ach-label">依据 ISA-18.2 开展报警合理化<br>故障定位MTTR缩短近一半</div>
+          </div>
+          <div class="ach-card wide" style="background: linear-gradient(135deg,#fdf9f0,#faf4e2);">
+            <div class="ach-metric" style="font-size:15px;">9年+ 仪表/自动化专业总负责人经历 · 覆盖仪表全生命周期管理、标准化体系建设、技术改造、备件成本管控、团队培训全链条</div>
+            <div class="ach-label" style="margin-top:5px;">主导仪表选型确权、故障诊断、RCA技改、跨部门生产异常分析与本地团队培训体系搭建，完整对应仪表专家岗位核心职责</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="section-title"><span class="icon">◈</span>核心竞争力</div>
+        <ul class="duties">
+          <li><strong>AI工具应用（Vibe Coding）：</strong>Claude Code、Codex、Gemini、WorkBuddy、Coze、Cursor——用于仪表故障诊断辅助分析、技术文档整理、培训教材编制及日常沟通效率提升。</li>
+          <li><strong>仪表全生命周期管理：</strong>温度/压力/流量/液位等各类工业仪表选型、安装调试、日常运维及故障诊断；严苛腐蚀工况（KCl/MgCl₂化学浆料）仪表选型确权，SS2205/N10276耐腐蚀材质应用；微波密度计、80GHz高频雷达液位计、电磁流量计、在线pH/ORP分析仪。</li>
+          <li><strong>标准化作业体系建设：</strong>仪表操作标准、维护规程、校验计划制定与落地推行；SOP/培训教材编制20余份；ISO9001内审员资质，图纸版本与文控闭环管理经验。</li>
+          <li><strong>技术改造与工艺优化：</strong>高风险工况下测量精度、信号干扰等核心技术问题诊断与解决；RCA根因分析（5Why/鱼骨图）；PID回路整定、防喘振控制优化、滑动平均+死区滤波算法应用，降低非计划停机率；Wireshark抓包/示波器信号完整性诊断EMI、接地干扰问题。</li>
+          <li><strong>备件与成本管控：</strong>ABC备件分级、国产化替代、CBM状态维护、全生命周期成本（LCC）分析，平衡备件保障与资金占用效率；熟悉CMMS/EAM维护管理理念，可快速上手SAP PM模块。</li>
+          <li><strong>技术培训体系：</strong>本地化人才培养方法论、技能地图矩阵、操作指导书/培训教材编制、TPM自主点检推行，提升一线运维团队技能水平与应急处理能力。</li>
+          <li><strong>跨部门协同与异常分析：</strong>工艺/设备/生产多专业协调，参与生产异常RCA分析与改善方案制定，保障仪表数据对产品质量的支撑。</li>
+          <li><strong>DCS/PLC系统架构：</strong>GE Mark VIe、Foxboro ArchestrA、Emerson Delta V、Siemens PCS7/TIA Portal/S7-1200/1500、Rockwell Studio5000；IEC 61131-3标准编程。</li>
+        </ul>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="section-title"><span class="icon">◈</span>工作经历</div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">赣锋国际贸易（上海）有限公司<span class="company-type">上市公司</span></div>
+            <div class="exp-period">03/2025 – 04/2026</div>
+          </div>
+          <div class="exp-role">海外设计部自控总负责人 / 业主代表</div>
+          <div class="exp-location">📍 上海 / 萨尔塔（阿根廷）· 投资规模 6 亿美元氯化锂化工提取项目群</div>
+          <ul class="duties">
+            <li><strong>仪表全生命周期管理：</strong>作为业主方技术最高负责人，主导全厂仪表选型、安装调试、日常运维及故障诊断，审查并批准设计顾问提供的仪表选型及 PLC/DCS 架构方案，核心仪表技术评审与确权 30 余次，确保生产工艺参数精准控制。</li>
+            <li><strong>严苛工况测量精度与选型确权：</strong>主导高腐蚀化学浆料（KCl、MgCl₂ 工艺）现场仪表选型确权，指定高频雷达物位计、微波密度计（Valmet DS），强制要求 SS2205、N10276 等高耐腐蚀接液材质，解决传统仪表"盲区测量"问题，从源头降低测量精度失准与信号干扰风险。</li>
+            <li><strong>操作标准与校验计划落地：</strong>制定全厂仪表定期校准、检定与巡检计划，编制雷达液位计/质量流量计/调节阀校验 SOP；应用 5Why/鱼骨图方法对仪表失效（漂移、堵塞、腐蚀穿孔）开展根因分析，推动标准化作业流程落地。</li>
+            <li><strong>技术改造与故障排除：</strong>监督 FAT/SAT 验证控制逻辑、回路调节与联锁完整性；解决矿处理设备（离心机、盐水输送泵、过滤系统）现场关键故障；重写关键流量/密度控制程序逻辑，引入滑动平均滤波与 PID 死区算法，降低工艺控制波动与误报警率。</li>
+            <li><strong>备件与智能运维体系：</strong>为关键泵组部署无线振动/温度传感器，与 CMMS 工单系统联动实现预测性维护告警自动触发；编制核心 SOP 文档 20 余份，推行 TPM 自主点检，明确操作工与维修工点检边界，提升一线运维团队应急处理能力。</li>
+            <li><strong>跨部门协同与应急处理：</strong>指导现场仪表工、电工开展回路检查与故障排除；负责现场作业 JSA 及风险评估；与工艺、设备团队协同分析生产异常并制定改善方案，保障仪表数据对产品质量的支撑。</li>
+          </ul>
+          <div class="result-box">
+            <div class="rb-title">▌ 主要业绩</div>
+            <ul class="results">
+              <li><strong>校准体系标准化：</strong>针对 30+ 个高腐蚀矿浆服役现场仪表建立标准化校准/维护规程，<strong>用时 6 周</strong>完成全面标准化，相关仪表 MTTR 降低约<strong>三分之一</strong>。</li>
+              <li><strong>联调效率提升：</strong>通过 ISA-S88 模块化编程标准，100+ 设备节点联调周期从 6 周压缩至 2 周，缩短<strong>67%</strong>。</li>
+              <li><strong>技术风险管控：</strong>通过严格审计承包商仪表选型方案，降低了严苛工况下的测量精度风险，仪表故障率显著下降。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">北京中缆通达电气成套有限公司（上海分公司）<span class="company-type">跨国私企 · 火电EPC总承包</span></div>
+            <div class="exp-period">06/2016 – 02/2025</div>
+          </div>
+          <div class="exp-role">海外电厂事业部电气仪表自动化控制总工程师 / 技术经理</div>
+          <div class="exp-location">📍 上海 / 达卡（孟加拉国）· 主导 330MW + 100MW 两个火电EPC总承包项目</div>
+
+          <div class="subsection-label">仪表全生命周期与技术标准管理</div>
+          <ul class="duties">
+            <li>主导升压站一次仪表及 DCS/PLC/SIS 二次系统的技术规范书编制与技术评标；参加大型旋转设备及 ICSS 硬件（DCS、PLC 控制柜、HIMatrix/Triconex SIS）的出厂验收测试（FAT），把关仪表选型满足当地标准及 IEC 要求。</li>
+            <li>负责关键设备调试程序设计，编制操作测试规程（OTP）与调试计划；组织实施 ISO9001 质量管理体系图纸版本管控与技术文件闭环管理，推动仪表安装、调试作业标准化。</li>
+          </ul>
+
+          <div class="subsection-label">技术改造、故障诊断与非计划停机管控</div>
+          <ul class="duties">
+            <li>重新标定天然气增压压缩机喘振曲线，通过 5Why 分析确认 DCS 中 PID 响应参数与阀门机械行程不匹配，重新整定防喘振控制裕度并引入前馈控制策略，解决测量与执行机构信号干扰问题；随后半年气网剧烈波动期内实现压缩机系统<strong>零跳闸</strong>。</li>
+            <li>使用示波器和万用表捕获分析信号跳变、EMI 干扰、接地故障及电压不稳，独立判断仪表信号回路硬件故障与组态错误，支撑燃机、压缩机高风险工况连续稳定运行。</li>
+          </ul>
+
+          <div class="subsection-label">备件库存与成本管控</div>
+          <ul class="duties">
+            <li>统筹全厂仪表管理：制定流量计、压力变送器、温度仪表、液位计及调节阀的定期校准、检定与巡检计划；组织提交仪表备件、控制系统备件（IO 卡件、通讯模块）申请，优化备件库存与采购策略。</li>
+            <li>成功完成燃机燃油处理模块、润滑油系统、冷却水模块和天然气增压系统部分压力/流量/液位仪表的国产化替代，在保障备件供应的同时降低采购单价及库存物流成本。</li>
+          </ul>
+
+          <div class="subsection-label">技术培训与跨部门协同（运行/质保阶段）</div>
+          <ul class="duties">
+            <li>7×24 小时对 EPC 合同供货范围内仪表设备进行巡视、保养维护、故障排除和技术改造；对生产操作人员进行设备使用和工艺流程培训，编写操作及维护技术资料。</li>
+            <li>参照 ISA-18.2 标准开展 DCS 报警合理化整治，梳理数千个报警点并重新分级，剔除无效"信息类报警"；主导 CEMS 烟气排放连续监测系统（Sick、赛默飞机型）选型确权、安装调试与定期校准，保障环保数据对生产合规的支撑作用。</li>
+          </ul>
+
+          <div class="result-box">
+            <div class="rb-title">▌ 主要量化业绩</div>
+            <ul class="results">
+              <li><strong>非计划停机管控：</strong>防喘振控制裕度重新整定后，半年气网剧烈波动期内压缩机系统<strong>零跳闸</strong>，保障燃机连续稳定发电。</li>
+              <li><strong>报警合理化：</strong>机组稳态运行期间每小时平均报警量<strong>下降 70%+</strong>，故障定位 MTTR 缩短近一半。</li>
+              <li><strong>备件成本管控：</strong>仪表国产化替代采购单价<strong>降低 40%–60%</strong>，同时降低库存及物流成本；设备和材料采购成本较同类项目<strong>降低 5%–10%</strong>。</li>
+              <li><strong>团队培训：</strong>从零组建 8 人本地电仪技术团队，<strong>6 个月内</strong>实现团队独立处理约 70% 日常仪表运维工作，大幅降低对外籍工程师的依赖。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">通用电气 – 格兰尼技术咨询（北京）有限公司<span class="company-type">外企</span></div>
+            <div class="exp-period">04/2010 – 05/2016</div>
+          </div>
+          <div class="exp-role">现场经理 / 主管工程师</div>
+          <div class="exp-location">📍 北京（常驻新疆、宁夏、陕西等现场）</div>
+          <ul class="duties">
+            <li><strong>仪表与控制系统运维：</strong>负责 GE 合同范围内温度/压力/流量/液位仪表及 GE Mark VIe DCS/PLC 控制系统的现场安装、调试与运维，覆盖 20+ 台燃气轮机发电机组及离心式压缩机；执行控制逻辑验证、联锁保护测试、启停顺序优化及性能调校。</li>
+            <li><strong>多站点并发管理：</strong>统筹协调西气东输一线、二线合计 14 个以上压气站（霍尔果斯、哈密等极端环境）GE PGT25 燃驱压缩机组自动化安装与系统联调，确保所有机组按期完成性能考核并成功并网移交。</li>
+            <li><strong>技术培训与客户协同：</strong>在 GE 合同范围内完成润滑油、液压、控制空气、燃气、冷却水、消防及 ESD 系统的仪表安装、调试与运行管理；组织操作人员设备技术培训并建立良好客户关系。</li>
+          </ul>
+          <div class="result-box">
+            <div class="rb-title">▌ 主要业绩</div>
+            <ul class="results">
+              <li><strong>14+ 压气站按期交付：</strong>通过标准化调试程序与快速故障排除，显著提升了旋转设备及配套仪表运行可靠性与可用性，有效减少机组启动阶段的技术缺陷与故障。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">中航世新燃气轮机股份有限公司沈阳分公司<span class="company-type">国企（原沈阳黎明燃机）</span></div>
+            <div class="exp-period">07/2007 – 04/2010</div>
+          </div>
+          <div class="exp-role">电气仪表控制工程师</div>
+          <div class="exp-location">📍 沈阳 / 福建、浙江、广东等项目现场</div>
+          <ul class="duties">
+            <li>按整体布局图、P&amp;ID 图、电气仪表接线图及控制逻辑图进行仪表安装指导；完成润滑油、液压、MCC、消防等各辅助系统分系统功能测试及控制逻辑/联锁/报警验证，工业过程仪表（温度/压力/液位/流量/化学分析仪表）测试和校验。</li>
+            <li>参与福建联合石化（FREP）乙烯 COGEN 项目 2 台 GE 9E 燃机发电机组安装与调试工作（总投资约 400 亿元），涉及大型自备电厂仪表系统安装与功能验证。</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-title"><span class="icon">◈</span>主要工程项目（近10年）</div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">Mariana &amp; Guemes 年产2万吨氯化锂化工提取项目群</div>
+            <div class="project-period">2025/03 – 2026/04</div>
+          </div>
+          <div class="project-company">赣锋国际贸易（上海） · 角色：自动化/仪表控制总负责人、业主代表 · 萨尔塔省 / 阿根廷</div>
+          <div class="project-desc">投资规模 6 亿美元的氯化锂盐湖提取化工项目，"液体零排放"设计，高腐蚀化学浆料（KCl/MgCl₂）严苛工况。全面负责全厂仪表选型确权、标准化校准/巡检体系建设、控制逻辑技改及预测性维护落地。</div>
+          <div class="project-tags">
+            <span class="tag green">化工严苛工况 ✓</span>
+            <span class="tag green">仪表全生命周期管理 ✓</span>
+            <span class="tag accent">标准化校验体系 ✓</span>
+            <span class="tag">高腐蚀介质选型</span>
+            <span class="tag">业主方技术负责人</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">KHULNA 330MW（200–300MW级）联合循环双燃料发电厂 EPC</div>
+            <div class="project-period">2019/02 – 2025/02</div>
+          </div>
+          <div class="project-company">北京中缆通达 · 角色：电气仪表控制总工程师 / 技术经理 · Khulna / 孟加拉国</div>
+          <div class="project-desc">1 台 GE 9F.03AGP 燃气轮机发电机组 + A651 汽轮机发电机组 + 余热锅炉联合循环双燃料电厂 EPC Turnkey 项目，全程执行设计、采购、建设安装、调试及 2 年商业运行质保期维护。全面负责一次/二次仪表全生命周期管理、DCS/热控系统技术把关及现场施工/调试统筹管理。</div>
+          <div class="project-tags">
+            <span class="tag green">大型重工业EPC ✓</span>
+            <span class="tag green">基建+运行全程 ✓</span>
+            <span class="tag accent">仪表选型/校验/技改 ✓</span>
+            <span class="tag">GE Mark VIe DCS</span>
+            <span class="tag">Turnkey EPC</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">SHAHJIBAZAR 100MW 燃气轮机发电厂 EPC</div>
+            <div class="project-period">2016/10 – 2020/11</div>
+          </div>
+          <div class="project-company">北京中缆通达 · 角色：电气仪表控制总工程师 · Shahjibazar / 孟加拉国</div>
+          <div class="project-desc">1 台 GE LMS100MW 燃气轮机发电机组单循环燃机电厂 EPC Turnkey 项目，执行设计、采购、建设安装、调试及 2 年商业运行质保期维护，负责一次仪表与热控二次系统的接口统筹及备件国产化替代。</div>
+          <div class="project-tags">
+            <span class="tag green">仪表运维 ✓</span>
+            <span class="tag accent">DCS/热控系统 ✓</span>
+            <span class="tag">GE LMS100</span>
+            <span class="tag">Turnkey EPC</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">中石油西气东输一线/二线天然气压气站群</div>
+            <div class="project-period">2010/06 – 2013/02</div>
+          </div>
+          <div class="project-company">GE-Granite · 角色：现场经理/主管工程师 · 新疆/宁夏/陕西等</div>
+          <div class="project-desc">西气东输 14 台以上 GE PGT25 燃气轮机+离心式压缩机配套仪表及自动化系统安装、集成与调试，覆盖霍尔果斯、哈密等多个极端环境压气站，DCS 控制逻辑验证与联锁保护测试，多站点并发管理。</div>
+          <div class="project-tags">
+            <span class="tag">14台 GE PGT25</span>
+            <span class="tag">多站点并发管理</span>
+            <span class="tag">DCS集成调试</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">福建联合石化（FREP/EMCP&amp;P/SAAC）乙烯装置 COGEN 项目</div>
+            <div class="project-period">2008/01 – 2009/05</div>
+          </div>
+          <div class="project-company">中航世新燃气轮机 · 角色：电气仪表控制工程师 · 福建</div>
+          <div class="project-desc">福建联合石化（中石化/埃克森美孚/沙特阿美合资，总投资约 400 亿元）自备电厂 2 台 GE 9E 级燃气轮机发电机组及配套辅助系统仪表安装调试。</div>
+          <div class="project-tags">
+            <span class="tag">GE 9E</span>
+            <span class="tag">大型石化自备电厂</span>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <aside class="side-col">
+<!--	
+      <div class="side-section">
+        <div class="score-badge">
+          <div class="score-num">80%</div>
+          <div class="score-label">岗位匹配度 · 仪表专家</div>
+          <div class="score-note">3处需如实说明的缺口，见下方⚡标注</div>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">JD逐条对照</div>
+
+        <div class="jd-item">
+          <span class="jd-check partial">⚡</span>
+          <div>
+            <div class="jd-text">本科及以上，自动化/测控技术与仪器专业</div>
+            <div class="jd-proof">沈阳工程学院工业自动化专业（大专）；18年一线仪表实战+GE/Foxboro原厂培训可部分弥补，建议面试如实说明</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check partial">⚡</span>
+          <div>
+            <div class="jd-text">10年以上大型化工/冶炼行业仪表经验</div>
+            <div class="jd-proof">18年工业仪表/自动化经验，其中化工严苛腐蚀工况直接经验约1年（阿根廷氯化锂项目），另有大型石化自备电厂项目经验；主体行业积累在燃气轮机/油气领域，需如实说明并强调工况与仪表原理的可迁移性</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">5年以上团队管理或项目统筹经验</div>
+            <div class="jd-proof">9年以上部门总负责人/技术经理/业主代表，超出岗位要求</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">熟悉DCS/PLC系统架构</div>
+            <div class="jd-proof">GE Mark VIe/Foxboro/Delta V/Siemens PCS7/S7-1200-1500全覆盖</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">仪表全生命周期管理（选型/安装调试/运维/故障诊断）</div>
+            <div class="jd-proof">阿根廷/孟加拉两地严苛工况仪表选型确权、FAT/SAT、故障诊断实战</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">操作标准/维护规程/校验计划制定</div>
+            <div class="jd-proof">全厂仪表校准/巡检计划制定，SOP编制20余份，ISO9001内审员</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">技术改造，测量精度/信号干扰问题解决，降低非计划停机</div>
+            <div class="jd-proof">防喘振控制裕度重整+前馈控制零跳闸；RCA技改误跳车降45.3%</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check partial">⚡</span>
+          <div>
+            <div class="jd-text">备件成本管控，熟悉SAP等管理系统</div>
+            <div class="jd-proof">ABC分级/国产化替代降本40-60%成果扎实；SAP无直接操作经验，仅熟悉CMMS/EAM理念，可快速上手</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">技术培训体系，操作指导书/培训教材</div>
+            <div class="jd-proof">从零组建8人本地团队，6个月独立处理70%日常仪表工作</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">跨部门协同，生产异常分析，支撑产品质量</div>
+            <div class="jd-proof">工艺/设备/生产多专业协调，CEMS环保数据合规支撑经验</div>
+          </div>
+        </div>
+        <div class="jd-item">
+          <span class="jd-check ok">✅</span>
+          <div>
+            <div class="jd-text">应急事件处理经验</div>
+            <div class="jd-proof">7×24小时应急响应、JSA/PTW/LOTO安全作业体系</div>
+          </div>
+        </div>
+      </div>
+-->
+      <div class="side-section">
+        <div class="side-title">核心技术能力</div>
+
+		<div class="skill-category">
+          <div class="skill-cat-name">AI 工具应用</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">Claude Code</span>
+            <span class="skill-tag highlight">Codex</span>
+            <span class="skill-tag">Gemini</span>
+            <span class="skill-tag">WorkBuddy</span>
+          </div>
+        </div>
+		
+        <div class="skill-category">
+          <div class="skill-cat-name">工业仪表 / 严苛工况选型</div>
+          <div class="skill-tags">
+            <span class="skill-tag jd">微波密度计/雷达液位计</span>
+            <span class="skill-tag jd">电磁流量计/pH-ORP</span>
+            <span class="skill-tag jd">SS2205/N10276耐腐蚀选型</span>
+            <span class="skill-tag jd">仪表校准/检定/巡检</span>
+            <span class="skill-tag">温度/压力/振动仪表</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">DCS / PLC 系统</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">GE Mark VIe</span>
+            <span class="skill-tag highlight">Foxboro ArchestrA</span>
+            <span class="skill-tag highlight">Emerson Delta V</span>
+            <span class="skill-tag highlight">Siemens PCS7/TIA Portal</span>
+            <span class="skill-tag">S7-1200/1500</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">标准化/技改/成本管控</div>
+          <div class="skill-tags">
+            <span class="skill-tag jd">操作标准/维护规程</span>
+            <span class="skill-tag jd">校验计划制定</span>
+            <span class="skill-tag jd">RCA根因分析</span>
+            <span class="skill-tag jd">备件ABC分级/成本管控</span>
+            <span class="skill-tag">CMMS/EAM理念</span>
+            <span class="skill-tag">7×24运行维护</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">工业通信协议</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Modbus TCP/RTU</span>
+            <span class="skill-tag">Profibus-DP</span>
+            <span class="skill-tag">Profinet</span>
+            <span class="skill-tag">OPC UA</span>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">基本信息</div>
+        <div class="kv-item"><span class="kv-key">手机</span><span class="kv-val"><a href="tel:+8613889810081">138-8981-0081</a></span></div>
+        <div class="kv-item"><span class="kv-key">邮箱</span><span class="kv-val"><a href="mailto:winlee136@msn.com">winlee136@msn.com</a></span></div>
+        <div class="kv-item"><span class="kv-key">现居</span><span class="kv-val">上海 / 沈阳</span></div>
+<!--        
+		<div class="kv-item"><span class="kv-key">出差</span><span class="kv-val">高度适应海外驻场</span></div>
+-->        
+		<div class="kv-item"><span class="kv-key">薪资</span><span class="kv-val">面议<br>五险一金（上海）</span></div>
+        <div class="kv-item"><span class="kv-key">到岗</span><span class="kv-val">1–4 周</span></div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">语言能力</div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">中文</span><span class="lang-level">母语</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">英语</span><span class="lang-level">CET6 · 工作语言</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+        </div>
+      </div>
+
+      <div class="side-section" id="education">
+        <div class="side-title">教育培训</div>
+        <div class="edu-item">
+          <div class="edu-title">工业自动化专业</div>
+          <div class="edu-sub">沈阳工程学院<br>2004/09 – 2007/07</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">GE Mark VIe 控制系统原理培训</div>
+          <div class="edu-sub">GE 能源学习中心（GE ELC）· 美国<br>2012/02 – 2012/03</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">Foxboro DCS 系统培训</div>
+          <div class="edu-sub">Foxboro 上海培训中心<br>2025/04 – 2025/05</div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
