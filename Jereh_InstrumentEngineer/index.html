@@ -14,7 +14,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>李朝珲 · 仪表工程师 · 油气石化工程施工管理</title>
+<title>李朝珲 · Senior仪表工程师 · 油气石化工程施工管理</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
 
@@ -464,10 +464,111 @@
     body { background: #fff; font-size: 12px; }
     .page-wrapper { margin: 0; box-shadow: none; border-radius: 0; }
     .toc-nav { display: none; }
+    .view-toggle { display: none; }
+  }
+
+  /* ===== 视图切换按钮 ===== */
+  .view-toggle {
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 999;
+    background: var(--navy);
+    color: #fff;
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    padding: 7px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(13,34,64,0.28);
+    font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  }
+  .view-toggle:hover { background: var(--steel); }
+
+  /* ===== 手机版布局（.mobile-view 由 JS 控制，不依赖屏幕宽度） ===== */
+  html.mobile-view body { font-size: 13.5px; }
+  html.mobile-view .page-wrapper {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  html.mobile-view .header {
+    padding: 56px 18px 22px;
+  }
+  html.mobile-view .header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  html.mobile-view .name-block h1 { font-size: 24px; letter-spacing: 2px; }
+  html.mobile-view .contact-block {
+    text-align: left;
+    width: 100%;
+  }
+  html.mobile-view .header-tags { margin-top: 14px; }
+  html.mobile-view .header-tag { font-size: 10.5px; padding: 3px 9px; }
+
+  html.mobile-view .toc-nav { padding: 0 12px; }
+  html.mobile-view .toc-nav a { font-size: 11px; padding: 9px 10px; }
+
+  html.mobile-view .body-wrapper {
+    display: block;
+  }
+  html.mobile-view .main-col {
+    padding: 22px 16px 8px;
+    border-right: none;
+  }
+  html.mobile-view .side-col {
+    padding: 22px 16px 32px;
+  }
+
+  html.mobile-view .achievement-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  html.mobile-view .ach-card .ach-metric { font-size: 16px; }
+  html.mobile-view .ach-card .ach-label { font-size: 10.5px; }
+
+  html.mobile-view .exp-header,
+  html.mobile-view .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  html.mobile-view .exp-period,
+  html.mobile-view .project-period {
+    margin-left: 0;
+  }
+
+  html.mobile-view .summary-text { font-size: 13px; }
+  html.mobile-view ul.duties li,
+  html.mobile-view ul.results li,
+  html.mobile-view .project-desc { font-size: 12.5px; }
+
+  html.mobile-view .skill-tags,
+  html.mobile-view .project-tags { gap: 5px; }
+
+  /* 窄屏（真实手机）下，即使停留在网页版，也做最小限度的防溢出处理 */
+  @media (max-width: 600px) {
+    html:not(.mobile-view) .page-wrapper { max-width: 100%; margin: 0; border-radius: 0; box-shadow: none; }
+    html:not(.mobile-view) .header { padding: 56px 16px 20px; }
+    html:not(.mobile-view) .header-top { flex-direction: column; align-items: flex-start; gap: 12px; }
+    html:not(.mobile-view) .contact-block { text-align: left; }
+    html:not(.mobile-view) .body-wrapper { display: block; }
+    html:not(.mobile-view) .main-col { padding: 20px 14px 8px; border-right: none; }
+    html:not(.mobile-view) .side-col { padding: 20px 14px 28px; }
+    html:not(.mobile-view) .achievement-grid { grid-template-columns: 1fr 1fr; }
+    html:not(.mobile-view) .exp-header,
+    html:not(.mobile-view) .project-header { flex-direction: column; align-items: flex-start; gap: 4px; }
   }
 </style>
 </head>
 <body>
+
+<button class="view-toggle" id="viewToggleBtn" type="button">手机版</button>
 
 <div class="page-wrapper">
 
@@ -475,7 +576,7 @@
     <div class="header-top">
       <div class="name-block">
         <h1>李朝珲</h1>
-        <div class="subtitle">仪表工程师 · 油气石化工程 E&amp;I 施工管理</div>
+        <div class="subtitle">资深仪表工程师 · 油气石化工程 E&amp;I 施工管理</div>
       </div>
       <div class="contact-block">
         <div>📞 <a href="tel:+8613889810081">+86 138-8981-0081</a></div>
@@ -842,7 +943,7 @@
             <span class="skill-tag highlight">Codex</span>
             <span class="skill-tag">Gemini</span>
             <span class="skill-tag">WorkBuddy</span>
-            
+           
           </div>
         </div>
 
@@ -959,6 +1060,26 @@
       }
     });
   });
+
+  // ===== 网页版 / 手机版 切换 =====
+  (function () {
+    var html = document.documentElement;
+    var btn = document.getElementById('viewToggleBtn');
+
+    function applyView(isMobile) {
+      html.classList.toggle('mobile-view', isMobile);
+      // 按钮显示"当前不是"的那个版本，点击即可切换过去
+      btn.textContent = isMobile ? '网页版' : '手机版';
+    }
+
+    // 默认按屏幕宽度自动判断一次，之后完全由用户点击控制
+    var initialMobile = window.matchMedia('(max-width: 768px)').matches;
+    applyView(initialMobile);
+
+    btn.addEventListener('click', function () {
+      applyView(!html.classList.contains('mobile-view'));
+    });
+  })();
 </script>
 
 </body>
