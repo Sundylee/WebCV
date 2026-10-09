@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E05GTYBL3K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E05GTYBL3K');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sundy Lee · 上海赢创Senior Instrumentation &amp; Control Engineer · DCS / PLC</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root {
+    --navy: #0d2240;
+    --steel: #1c3a5e;
+    --accent: #c8922a;
+    --accent2: #e8a83a;
+    --light: #f5f7fa;
+    --border: #d0d8e4;
+    --text: #1a2535;
+    --muted: #5a6a7e;
+    --tag-bg: #e8f0fb;
+    --tag-text: #1c3a5e;
+    --green: #2a7a2a;
+    --page-width: 920px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    background: #e8ecf2;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.75;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .page-wrapper {
+    max-width: var(--page-width);
+    margin: 32px auto;
+    background: #fff;
+    box-shadow: 0 8px 48px rgba(13,34,64,0.18);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--steel) 100%);
+    color: #fff;
+    padding: 38px 48px 30px;
+    position: relative;
+    border-bottom: 4px solid var(--accent);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 50%, transparent 100%);
+  }
+  .header-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .name-block h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .name-block .subtitle {
+    margin-top: 8px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--accent2);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .contact-block {
+    text-align: right;
+    font-size: 12.5px;
+    line-height: 2.1;
+    color: rgba(255,255,255,0.82);
+  }
+  .contact-block a { color: var(--accent2); }
+
+  .header-tags {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .header-tag {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    color: rgba(255,255,255,0.9);
+    font-size: 11.5px;
+    padding: 3px 12px;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+  }
+  .header-tag.hot {
+    background: rgba(200,146,42,0.28);
+    border-color: var(--accent);
+    color: var(--accent2);
+    font-weight: 600;
+  }
+
+  .toc-nav {
+    background: var(--light);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+  .toc-nav a {
+    color: var(--muted);
+    font-size: 12px;
+    padding: 10px 14px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+  }
+  .toc-nav a:hover {
+    color: var(--navy);
+    border-bottom-color: var(--accent);
+    text-decoration: none;
+  }
+
+  .body-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 285px;
+    gap: 0;
+  }
+  .main-col { padding: 36px 40px 40px 48px; border-right: 1px solid var(--border); }
+  .side-col { padding: 32px 26px; background: var(--light); }
+
+  .section { margin-bottom: 32px; }
+  .section:last-child { margin-bottom: 0; }
+  .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .icon { color: var(--accent); font-size: 15px; }
+
+  .summary-text {
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: var(--text);
+    border-left: 3px solid var(--accent);
+    padding-left: 14px;
+    margin-bottom: 14px;
+  }
+
+  .achievement-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .ach-card {
+    background: linear-gradient(135deg, #f0f4fa 0%, #e8eef8 100%);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 2px;
+  }
+  .ach-card.wide { grid-column: 1 / -1; }
+  .ach-card .ach-metric {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.2;
+  }
+  .ach-card .ach-label {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 2px;
+    line-height: 1.45;
+  }
+  .ach-card .ach-label strong { color: var(--navy); }
+
+  .exp-item { margin-bottom: 26px; padding-bottom: 26px; border-bottom: 1px solid var(--border); }
+  .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+  .exp-company {
+    font-weight: 700;
+    font-size: 14.5px;
+    color: var(--navy);
+  }
+  .exp-company .company-type {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 6px;
+  }
+  .exp-period {
+    font-size: 11.5px;
+    color: var(--muted);
+    white-space: nowrap;
+    background: var(--tag-bg);
+    padding: 2px 10px;
+    border-radius: 2px;
+  }
+  .exp-role {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  .exp-location {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .subsection-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 12px 0 6px;
+    padding: 3px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+
+  ul.duties {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul.duties li {
+    font-size: 13px;
+    padding: 3px 0 3px 18px;
+    position: relative;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  ul.duties li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+    top: 5px;
+  }
+  ul.duties li strong { color: var(--navy); font-weight: 600; }
+  ul.duties li em { color: var(--muted); font-style: normal; font-size: 12px; }
+
+  .result-box {
+    background: linear-gradient(135deg, #fdf8f0, #faf3e5);
+    border: 1px solid #e8d5b0;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 2px;
+    margin-top: 10px;
+  }
+  .result-box .rb-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  ul.results {
+    list-style: none;
+    padding: 0;
+  }
+  ul.results li {
+    font-size: 12.5px;
+    padding: 2px 0 2px 16px;
+    position: relative;
+    color: #4a3800;
+    line-height: 1.65;
+  }
+  ul.results li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 9px;
+    top: 5px;
+  }
+  ul.results li strong { color: #7a4800; }
+
+  .project-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .project-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
+  .project-name { font-size: 13px; font-weight: 700; color: var(--navy); line-height: 1.4; }
+  .project-period {
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    margin-left: 8px;
+    background: var(--tag-bg);
+    padding: 1px 8px;
+    border-radius: 2px;
+  }
+  .project-company { font-size: 11.5px; color: var(--muted); margin-bottom: 4px; }
+  .project-desc { font-size: 12.5px; color: var(--text); line-height: 1.65; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .tag {
+    font-size: 10.5px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 1px 8px;
+    border-radius: 2px;
+    border: 1px solid #c8d8f0;
+  }
+  .tag.accent { background: #fef3e2; color: #7a4a00; border-color: #e8c880; }
+  .tag.green { background: #e8f5e8; color: #1a5c1a; border-color: #a0d0a0; }
+
+  .side-section { margin-bottom: 22px; }
+  .side-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+  }
+
+  .skill-category { margin-bottom: 12px; }
+  .skill-cat-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .skill-tag {
+    font-size: 11px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 2px 8px;
+    border-radius: 2px;
+    border: 1px solid #c8d8f0;
+    line-height: 1.6;
+  }
+  .skill-tag.highlight {
+    background: #0d2240;
+    color: #fff;
+    border-color: #0d2240;
+  }
+  .skill-tag.jd {
+    background: #fffbe6;
+    color: #7a4a00;
+    border-color: #e8c860;
+    font-weight: 600;
+  }
+
+  .jd-item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 11.5px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    gap: 8px;
+    line-height: 1.5;
+  }
+  .jd-item:last-child { border-bottom: none; }
+  .jd-check {
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .jd-check.ok { color: var(--green); }
+  .jd-check.partial { color: #c87820; }
+  .jd-item .jd-text { color: var(--text); flex: 1; }
+  .jd-item .jd-proof { color: var(--muted); font-size: 10.5px; }
+
+  .kv-item {
+    display: flex;
+    font-size: 12.5px;
+    margin-bottom: 7px;
+    line-height: 1.5;
+  }
+  .kv-key { color: var(--muted); min-width: 52px; flex-shrink: 0; }
+  .kv-val { color: var(--text); font-weight: 500; }
+
+  .edu-item { margin-bottom: 10px; }
+  .edu-title { font-size: 12.5px; font-weight: 600; color: var(--navy); }
+  .edu-sub { font-size: 11.5px; color: var(--muted); }
+
+  .lang-bar { margin-bottom: 8px; }
+  .lang-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px; }
+  .lang-label .lang-name { font-weight: 600; color: var(--navy); }
+  .lang-label .lang-level { color: var(--muted); font-size: 11px; }
+  .bar-track { background: #dde4ee; border-radius: 2px; height: 4px; }
+  .bar-fill { background: linear-gradient(90deg, var(--navy), var(--accent)); height: 4px; border-radius: 2px; }
+
+  .score-badge {
+    background: linear-gradient(135deg, var(--navy), var(--steel));
+    color: #fff;
+    text-align: center;
+    padding: 12px 10px;
+    border-radius: 3px;
+    margin-bottom: 14px;
+    border: 1px solid var(--accent);
+  }
+  .score-badge .score-num {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent2);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.1;
+  }
+  .score-badge .score-label {
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 2px;
+    letter-spacing: 1px;
+  }
+  .score-badge .score-note {
+    font-size: 9.5px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 4px;
+  }
+
+  @media print {
+    body { background: #fff; font-size: 12px; }
+    .page-wrapper { margin: 0; box-shadow: none; border-radius: 0; }
+    .toc-nav { display: none; }
+    .view-toggle { display: none; }
+  }
+
+  /* ===== 视图切换按钮 ===== */
+  .view-toggle {
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 999;
+    background: var(--navy);
+    color: #fff;
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    padding: 7px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(13,34,64,0.28);
+    font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  }
+  .view-toggle:hover { background: var(--steel); }
+
+  /* ===== 手机版布局（.mobile-view 由 JS 控制，不依赖屏幕宽度） ===== */
+  html.mobile-view body { font-size: 13.5px; }
+  html.mobile-view .page-wrapper {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  html.mobile-view .header {
+    padding: 56px 18px 22px;
+  }
+  html.mobile-view .header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  html.mobile-view .name-block h1 { font-size: 24px; letter-spacing: 2px; }
+  html.mobile-view .contact-block {
+    text-align: left;
+    width: 100%;
+  }
+  html.mobile-view .header-tags { margin-top: 14px; }
+  html.mobile-view .header-tag { font-size: 10.5px; padding: 3px 9px; }
+
+  html.mobile-view .toc-nav { padding: 0 12px; }
+  html.mobile-view .toc-nav a { font-size: 11px; padding: 9px 10px; }
+
+  html.mobile-view .body-wrapper {
+    display: block;
+  }
+  html.mobile-view .main-col {
+    padding: 22px 16px 8px;
+    border-right: none;
+  }
+  html.mobile-view .side-col {
+    padding: 22px 16px 32px;
+  }
+
+  html.mobile-view .achievement-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  html.mobile-view .ach-card .ach-metric { font-size: 16px; }
+  html.mobile-view .ach-card .ach-label { font-size: 10.5px; }
+
+  html.mobile-view .exp-header,
+  html.mobile-view .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  html.mobile-view .exp-period,
+  html.mobile-view .project-period {
+    margin-left: 0;
+  }
+
+  html.mobile-view .summary-text { font-size: 13px; }
+  html.mobile-view ul.duties li,
+  html.mobile-view ul.results li,
+  html.mobile-view .project-desc { font-size: 12.5px; }
+
+  html.mobile-view .skill-tags,
+  html.mobile-view .project-tags { gap: 5px; }
+
+  /* 窄屏（真实手机）下，即使停留在网页版，也做最小限度的防溢出处理 */
+  @media (max-width: 600px) {
+    html:not(.mobile-view) .page-wrapper { max-width: 100%; margin: 0; border-radius: 0; box-shadow: none; }
+    html:not(.mobile-view) .header { padding: 56px 16px 20px; }
+    html:not(.mobile-view) .header-top { flex-direction: column; align-items: flex-start; gap: 12px; }
+    html:not(.mobile-view) .contact-block { text-align: left; }
+    html:not(.mobile-view) .body-wrapper { display: block; }
+    html:not(.mobile-view) .main-col { padding: 20px 14px 8px; border-right: none; }
+    html:not(.mobile-view) .side-col { padding: 20px 14px 28px; }
+    html:not(.mobile-view) .achievement-grid { grid-template-columns: 1fr 1fr; }
+    html:not(.mobile-view) .exp-header,
+    html:not(.mobile-view) .project-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+<button class="view-toggle" id="viewToggleBtn" type="button">Mobile</button>
+
+<div class="page-wrapper">
+
+  <header class="header" id="top">
+    <div class="header-top">
+      <div class="name-block">
+        <h1>Sundy Lee <span style="font-weight:400;font-size:20px;letter-spacing:2px">李朝珲</span></h1>
+        <div class="subtitle">Senior Instrumentation &amp; Control Engineer · DCS (DeltaV) / PLC · Process Plants</div>
+      </div>
+      <div class="contact-block">
+        <div>📞 <a href="tel:+8613889810081">+86 138-8981-0081</a></div>
+        <div>✉️ <a href="mailto:winlee136@msn.com">winlee136@msn.com</a></div>
+        <div>📍 Shanghai</div>
+        <div>⏱️ Available: 1–2 weeks</div>
+      </div>
+    </div>
+    <div class="header-tags">
+      <span class="header-tag hot">18+ years I&amp;C in chemical / power / oil &amp; gas plants</span>
+      <span class="header-tag hot">9+ years as E&amp;I chief engineer / technical manager</span>
+      <span class="header-tag">Emerson DeltaV · Siemens PCS 7 / TIA Portal · GE Mark VIe</span>
+      <span class="header-tag">Annual E&amp;I shutdown · PM / PdM · JSA / PTW / LOTO</span>
+      <span class="header-tag">English (CET-6) is my first working language</span>
+    </div>
+  </header>
+
+  <nav class="toc-nav">
+    <a href="#summary">Profile</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#skills">Core Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+  </nav>
+
+  <div class="body-wrapper">
+
+    <main class="main-col">
+
+      <section class="section" id="summary">
+        <div class="section-title"><span class="icon">◈</span>Profile</div>
+        <p class="summary-text">
+          Senior instrumentation and control engineer with <strong>18+ years</strong> in process plants, power plants and oil &amp; gas facilities, <strong>9+ years</strong> of it as E&amp;I chief engineer or technical manager. My day-to-day strengths are <strong>DCS/PLC troubleshooting</strong>, loop checks and <strong>calibration</strong>, interlock testing, alarm cleanup (ISA-18.2), and running <strong>E&amp;I shutdown</strong> scopes safely under <strong>JSA / PTW / LOTO</strong>.
+        </p>
+        <p class="summary-text">
+          Most recently I was the owner-side automation lead on a US$600M lithium chloride plant in Argentina. I worked on <strong>Emerson DeltaV</strong> and <strong>Siemens S7-1200/1500</strong> integration over Profinet, selected field instruments for corrosive KCl / MgCl₂ slurry, and set up the calibration routine and <strong>predictive maintenance</strong>. Before that I spent 8+ years on two gas-fired EPC plants in Bangladesh, from design review through two years of warranty O&amp;M, including 7×24 troubleshooting and annual turnarounds. I read P&amp;IDs, loop diagrams and wiring drawings every day, and I enjoy training younger technicians: I built a local E&amp;I team of 8 from scratch and wrote 20+ SOPs.
+        </p>
+      </section>
+
+      <section class="section" id="achievements">
+        <div class="section-title"><span class="icon">◈</span>Key Achievements</div>
+        <div class="achievement-grid">
+          <div class="ach-card"><div class="ach-metric">18+ yrs</div><div class="ach-label">Instrumentation, DCS/PLC and electrical control<br>chemical, power, oil &amp; gas</div></div>
+          <div class="ach-card"><div class="ach-metric">2 EPC plants</div><div class="ach-label">330MW + 100MW Turnkey<br>design to commissioning + 2-yr warranty O&amp;M</div></div>
+          <div class="ach-card"><div class="ach-metric">Alarms ↓70%+</div><div class="ach-label">ISA-18.2 cleanup of several thousand alarms<br>fault-finding MTTR cut by almost half</div></div>
+          <div class="ach-card"><div class="ach-metric">Zero trips</div><div class="ach-label">Anti-surge margin retuned + feedforward<br>6 months of heavy gas-grid swings</div></div>
+          <div class="ach-card"><div class="ach-metric">95%+</div><div class="ach-label">Annual E&amp;I shutdown schedule attainment<br>first-time light-off and sync after every shutdown</div></div>
+          <div class="ach-card"><div class="ach-metric">MTTR ↓ ⅓</div><div class="ach-label">30+ corrosive-service instruments<br>calibration and maintenance standardised in 6 weeks</div></div>
+          <div class="ach-card"><div class="ach-metric">30 machines</div><div class="ach-label">Moved from PM to predictive maintenance<br>4 bearing failures caught, spares cost ↓12.2%</div></div>
+          <div class="ach-card"><div class="ach-metric">Trips ↓45.3%</div><div class="ach-label">Rewrote filtering + PID deadband logic<br>OEE up about 8.7%</div></div>
+          <div class="ach-card"><div class="ach-metric">Micro-stops ↓99%</div><div class="ach-label">Sensor RCA on a packaging line<br>OEE +6.5%, sensor cost ↓40%+</div></div>
+          <div class="ach-card"><div class="ach-metric">8 people · 70%</div><div class="ach-label">Local E&amp;I team built from zero<br>handled about 70% of routine work in 6 months</div></div>
+          <div class="ach-card"><div class="ach-metric">40–60% cheaper</div><div class="ach-label">Pressure / level transmitter localisation<br>reliability confirmed on non-critical duty</div></div>
+          <div class="ach-card"><div class="ach-metric">Zero incidents</div><div class="ach-label">High-voltage work over 2 years of operation<br>switching orders, LOTO, JSA, PTW</div></div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="section-title"><span class="icon">◈</span>Core Skills</div>
+        <ul class="duties">
+          <li><strong>AI tools (Vibe Coding):</strong> Claude Code, Codex, Gemini, WorkBuddy. I use them for drafting maintenance procedures and reports, comparing options, and checking control logic.</li>
+          <li><strong>Emerson DeltaV DCS:</strong> DeltaV Explorer, control module and I/O review, DCS–PLC integration (Profinet / Modbus / OPC UA), FAT/SAT and loop check supervision, alarm rationalisation, historian trend analysis. My DeltaV work has been mostly integration, configuration review and commissioning support rather than daily plant operation.</li>
+          <li><strong>Siemens PLC / PCS 7:</strong> PCS 7 working knowledge alongside TIA Portal; S7-1200/1500 hardware configuration, Profinet diagnostics, diagnostic buffer fault-finding, SCL (IEC 61131-3), watch table / forcing with approval records, online/offline comparison and backups.</li>
+          <li><strong>Troubleshooting and repair:</strong> sensors, transmitters, control valves, actuators, VFDs, I/O cards and comms modules; multimeter, oscilloscope, Wireshark for EtherNet/IP and Profinet faults; telling a hardware fault from a switch configuration problem.</li>
+          <li><strong>Field instrumentation and calibration:</strong> 80GHz radar level, microwave density, magnetic flow, pressure, temperature, vibration, online pH/ORP; SS2205 / N10276 wetted parts for corrosive duty; calibration schedules, SOPs, 5-Why / fishbone RCA.</li>
+          <li><strong>Preventive and predictive maintenance:</strong> TPM routines, PM/PdM planning, MTBF/MTTR tracking, ABC spare-part strategy, condition-based maintenance instead of fixed intervals.</li>
+          <li><strong>Annual E&amp;I shutdown:</strong> planning from 60 days out, critical-path scheduling, LOTO isolation, standard loop-check and interlock checklists, OEM support for HV drives and excitation systems.</li>
+          <li><strong>MOC and small projects:</strong> change request markup, design check, FAT, loop check, sign-off and as-built drawings; examples are a water treatment control retrofit and like-for-like transmitter replacements; CAPEX/OPEX ranking and payback estimates.</li>
+          <li><strong>Drawings and design review:</strong> P&amp;IDs, loop and wiring diagrams, I/O lists, Cause &amp; Effect matrices; 1oo2 / 2oo3 redundancy, fail-safe positions, hardwired interlocks, EMI and grounding practice.</li>
+          <li><strong>Safety and compliance:</strong> JSA, Permit to Work, LOTO, switching orders; ISO 9001 internal auditor; IEC 60079, 60255, 62271, 62443, ISA-18.2, ISA-S88.</li>
+          <li><strong>Documentation and reporting:</strong> maintenance records, configuration backups, reliability and KPI reports (availability, MTBF/MTTR, red-amber-green monthly status), SOPs and E&amp;I department documents.</li>
+          <li><strong>Other systems:</strong> GE Mark VIe (20+ turbines), Foxboro ArchestrA, Honeywell Experion PKS, Rockwell Studio 5000; HIMatrix / Triconex SIS; AVEVA Edge, WinCC, FactoryTalk View.</li>
+        </ul>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="section-title"><span class="icon">◈</span>Work Experience</div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">Ganfeng International Trading (Shanghai) Co., Ltd.<span class="company-type">Listed company</span></div>
+            <div class="exp-period">03/2025 – 04/2026</div>
+          </div>
+          <div class="exp-role">Head of Automation / Owner's Representative</div>
+          <div class="exp-location">📍 Shanghai / Salta, Argentina · 20,000 tpa lithium chloride plant, US$600M · owner's top technical person for I&amp;C</div>
+          <ul class="duties">
+            <li>Reviewed and approved the designer's control philosophy, instrument selection and PLC/DCS architecture; led <strong>30+</strong> technical reviews of key instrument packages.</li>
+            <li>Chose Siemens S7-1200/1500 PLCs and integrated them with the <strong>Emerson DeltaV DCS</strong> over Profinet; wrote the plant PLC code in SCL with an ISA-S88 + OMAC state machine for <strong>100+</strong> pumps, agitators and conveyors.</li>
+            <li>Wrote control narratives, I/O lists, Cause &amp; Effect matrices and interlock diagrams for brine transfer, centrifuges and filtration.</li>
+            <li>Specified 80GHz radar level and microwave density meters (Valmet DS) with SS2205 / N10276 wetted parts for KCl / MgCl₂ slurry, which removed the blind-spot readings the old devices gave.</li>
+            <li>Set up the calibration and routine inspection plan for all field instruments; wrote <strong>20+ SOPs</strong> (PLC hardware diagnosis, VFD quick replacement, radar / mass flow / control valve calibration).</li>
+            <li>Supervised FAT/SAT and loop checks, and chased down faults on centrifuges, brine pumps and filters during commissioning.</li>
+            <li>Ran 5-Why and fishbone RCA on instrument failures (drift, plugging, corrosion holes) and fed the findings back into material and mounting choices.</li>
+            <li>Deployed wireless vibration and temperature sensors on critical pumps, agitators and compressors via an OPC UA edge gateway, with alarms linked to CMMS work orders.</li>
+            <li>Coached site instrument technicians and electricians on loop checks, calibration and basic DCS/PLC fault-finding; wrote E&amp;I JSAs; reviewed as-built P&amp;IDs and wiring diagrams before handover.</li>
+          </ul>
+          <div class="result-box">
+            <div class="rb-title">▌ Results</div>
+            <ul class="results">
+              <li>Cut commissioning of 100+ equipment nodes from <strong>6 weeks to 2 weeks (−67%)</strong> through modular ISA-S88 programming.</li>
+              <li>Reduced slurry separation nuisance trips by about <strong>45.3%</strong> and lifted OEE by about 8.7% (moving-average filtering and PID deadband on key flow/density loops).</li>
+              <li>Standardised calibration and maintenance for <strong>30+</strong> corrosive-service instruments in 6 weeks; their MTTR fell by roughly one third.</li>
+              <li>Moved 30 critical machines from preventive to predictive maintenance; caught <strong>4</strong> major bearing failures early and cut spare-part cost by about <strong>12.2%</strong> a year.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">Beijing Zhongcan Tongda Electric Complete Sets Co., Ltd. (Shanghai Branch)<span class="company-type">EPC contractor</span></div>
+            <div class="exp-period">06/2016 – 02/2025</div>
+          </div>
+          <div class="exp-role">E&amp;I Chief Engineer / Technical Manager</div>
+          <div class="exp-location">📍 Shanghai / Dhaka, Bangladesh · 330MW combined cycle + 100MW gas turbine plants, EPC Turnkey · site team 100+</div>
+
+          <div class="subsection-label">Design and procurement</div>
+          <ul class="duties">
+            <li>Reviewed FEED and detailed design with the design institute for IEC and local code compliance, and trimmed equipment and material cost through design changes.</li>
+            <li>Wrote technical specs and did the technical bid evaluation for the DCS/PLC/SIS packages and substation primary equipment; joined FAT for compressors, gas turbines and ICSS hardware (DCS, PLC, SCADA, HIMatrix/Triconex SIS).</li>
+            <li>Negotiated with suppliers and cut equipment and material cost by <strong>5–10%</strong>; got the as-built drawings issued one month early.</li>
+          </ul>
+
+          <div class="subsection-label">Installation and commissioning</div>
+          <ul class="duties">
+            <li>Managed E&amp;I site work (safety, quality, schedule) and the interfaces with civil, mechanical, commissioning, supervision and OEM teams; ran HSE and quality meetings and closed out NCRs.</li>
+            <li>Led commissioning: loop checks (continuity, insulation, 4-12-20 mA calibration), interlock tests against the Cause &amp; Effect matrix with three-party sign-off, punch list control (Category A closed before start-up, Category B within 30 days).</li>
+            <li>Built a local E&amp;I team of <strong>8</strong> from zero; within 6 months they handled about <strong>70%</strong> of routine instrument rounds, DCS alarm response and maintenance.</li>
+            <li>Used offline programming and virtual commissioning of DCS/PLC logic to find logic errors before they reached site.</li>
+            <li>Connected a Siemens S7-1200 PLC to GE Mark VIe and DeltaV DCS (Modbus, Profinet, OPC UA); traced packet loss, IP conflicts and unstable links; used an oscilloscope and multimeter on signal jumps, EMI, grounding and shield faults.</li>
+            <li>Managed the main step-up transformer (11/132kV, about 250MVA), 11/6.6kV switchgear, protection relays (87T/87G/87B, 50/51, 50N/51N), generator excitation and first synchronisation; ran ISO 9001 drawing revision control and CEMS (Sick, Thermo Fisher) commissioning.</li>
+          </ul>
+
+          <div class="subsection-label">Commercial operation and 2-year warranty</div>
+          <ul class="duties">
+            <li>Led 7×24 monitoring, maintenance, troubleshooting and upgrades of the DCS/SCADA/PLC/SIS and field instruments (FT, PT, TT, level, control valves); handled spare-part requests; trained plant operators.</li>
+            <li>Rationalised DCS alarms to ISA-18.2: removed information-only alarms, re-prioritised, set deadbands and delays, and added one-click diagnostic pop-ups on the HMI for key pumps and valves.</li>
+            <li>Redesigned and retrofitted the chemical water treatment control system at the owner's request; replaced selected pressure, flow and level instruments in fuel, lube oil, cooling water and gas booster systems with local brands, each change reviewed before approval.</li>
+            <li>Ran the annual E&amp;I shutdown: joined planning 60 days out, built the critical-path schedule, enforced LOTO, and used standard loop-check and interlock checklists.</li>
+          </ul>
+
+          <div class="result-box">
+            <div class="rb-title">▌ Results</div>
+            <ul class="results">
+              <li>Retuned anti-surge margin and added feedforward on the gas booster compressor after a 5-Why showed the DCS PID response did not match valve stroke: <strong>zero trips</strong> over the next 6 months of grid swings.</li>
+              <li>Cut average alarms per hour by <strong>70%+</strong> in steady running and nearly halved fault-finding MTTR.</li>
+              <li>Lifted shutdown schedule attainment to <strong>95%+</strong>; no isolation errors, and every unit lit off and synchronised first time after shutdown.</li>
+              <li>Transmitter localisation cut purchase price by <strong>40–60%</strong>; zero mis-operation or failure-to-operate on main transformer 87T/87G and 50/51 protection over 2 years; zero safety incidents on HV work.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">GE-Granite Technical Consulting (Beijing) Co., Ltd.<span class="company-type">Foreign-invested</span></div>
+            <div class="exp-period">04/2010 – 05/2016</div>
+          </div>
+          <div class="exp-role">Field Manager / Lead Engineer</div>
+          <div class="exp-location">📍 Beijing / Xinjiang, Ningxia, Shaanxi, Sichuan, Guangzhou sites</div>
+          <ul class="duties">
+            <li>As field manager on West-East Gas Pipeline II, coordinated site resources across several compressor stations and ran daily meetings with the owner, supervisors and civil/piping/electrical contractors.</li>
+            <li>Installed, commissioned and troubleshot automation on GE PGT25 gas turbine / compressor sets at <strong>14+</strong> stations (Horgos, Hami and other extreme-climate sites); all passed performance tests on schedule and were handed over.</li>
+            <li>Commissioned GE Mark VIe on <strong>20+</strong> units: logic verification, interlock tests, start-up sequence tuning.</li>
+            <li>Lead Control Engineer for 4 LM2500+G4 generator sets on a Brazilian FPSO (Guangzhou yard), full E&amp;I commissioning to offshore HSE standards.</li>
+            <li>Trained new GE field engineers and customer operators; kept daily and weekly reports; managed warranty follow-up.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">AVIC Shixin Gas Turbine Co., Ltd. Shenyang Branch<span class="company-type">State-owned</span></div>
+            <div class="exp-period">07/2007 – 04/2010</div>
+          </div>
+          <div class="exp-role">E&amp;I Control Engineer</div>
+          <div class="exp-location">📍 Shenyang / Fujian, Zhejiang, Guangdong sites</div>
+          <ul class="duties">
+            <li>Calibrated and loop-tested temperature, pressure, level, flow, pH, turbidity and vibration instruments; ran sub-system commissioning (lube oil, hydraulics, cooling water, instrument air, fuel, MCC, fire system) and verified logic, alarms and trips.</li>
+            <li>Installed and commissioned 2 GE 9E units at the Fujian Union Petrochemical COGEN site; took part in GE 6B and 9E overhaul and fault diagnosis.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-title"><span class="icon">◈</span>Major Projects (latest first)</div>
+
+        <div class="project-item">
+          <div class="project-header"><div class="project-name">Mariana &amp; Guemes 20,000 tpa Lithium Chloride Plant</div><div class="project-period">2025/03 – 2026/04</div></div>
+          <div class="project-company">Ganfeng · Head of automation, owner's rep · Salta, Argentina</div>
+          <div class="project-desc">US$600M, 3,750 m salt flat, zero liquid discharge. DeltaV + S7-1200/1500 integration, corrosive-service instrument selection, FAT/SAT, calibration and PdM set-up.</div>
+          <div class="project-tags"><span class="tag accent">Chemical ✓</span><span class="tag">DeltaV</span><span class="tag">Siemens PLC</span><span class="tag">ISA-S88</span></div>
+        </div>
+        <div class="project-item">
+          <div class="project-header"><div class="project-name">Khulna 330MW Dual-Fuel Combined Cycle Plant, EPC</div><div class="project-period">2019/03 – 2025/02</div></div>
+          <div class="project-company">Zhongcan Tongda · Technical manager / E&amp;I chief engineer · Bangladesh</div>
+          <div class="project-desc">GE 9F.03AGP + A651 steam turbine, Turnkey: design to commissioning, then 2-year warranty O&amp;M with annual shutdowns and alarm rationalisation.</div>
+          <div class="project-tags"><span class="tag green">EPC full cycle ✓</span><span class="tag">GE Mark VIe</span><span class="tag">Shutdown</span></div>
+        </div>
+        <div class="project-item">
+          <div class="project-header"><div class="project-name">Shahjibazar 100MW Gas Turbine Plant, EPC</div><div class="project-period">2016/10 – 2020/11</div></div>
+          <div class="project-company">Zhongcan Tongda · Technical manager / E&amp;I chief engineer · Bangladesh</div>
+          <div class="project-desc">GE LMS100 simple cycle with IR MSG-6R3 gas booster; Turnkey with 2-year warranty O&amp;M; ISO 9001 drawing control; instrument localisation.</div>
+          <div class="project-tags"><span class="tag green">EPC full cycle ✓</span><span class="tag">LMS100</span><span class="tag">Gas booster</span></div>
+        </div>
+        <div class="project-item">
+          <div class="project-header"><div class="project-name">PetroChina Zhonggui Gas Line Stations</div><div class="project-period">2014/05 – 2014/10</div></div>
+          <div class="project-company">GE-Granite · Sichuan</div>
+          <div class="project-desc">Installation and commissioning of 6+ GE electric-drive compressors.</div>
+          <div class="project-tags"><span class="tag accent">Oil &amp; gas ✓</span></div>
+        </div>
+        <div class="project-item">
+          <div class="project-header"><div class="project-name">SBM FPSO Cidade de Ilhabela, Topside Power</div><div class="project-period">2013/04 – 2013/10</div></div>
+          <div class="project-company">GE-Granite · Lead Control Engineer · Guangzhou yard</div>
+          <div class="project-desc">4 GE LM2500+G4 generator sets, full E&amp;I commissioning to offshore HSE standards.</div>
+          <div class="project-tags"><span class="tag accent">Oil &amp; gas ✓</span><span class="tag">Offshore HSE</span></div>
+        </div>
+        <div class="project-item">
+          <div class="project-header"><div class="project-name">PetroChina West-East Gas Pipeline II Compressor Stations</div><div class="project-period">2010/06 – 2013/02</div></div>
+          <div class="project-company">GE-Granite · Field manager / Lead E&amp;I · Xinjiang, Ningxia, Shaanxi</div>
+          <div class="project-desc">14+ GE PGT25 gas turbine / compressor sets: automation installation, DCS logic verification and interlock testing, several stations in parallel.</div>
+          <div class="project-tags"><span class="tag accent">Oil &amp; gas ✓</span><span class="tag">14+ stations</span></div>
+        </div>
+        <div class="project-item">
+          <div class="project-header"><div class="project-name">Fujian Union Petrochemical Ethylene COGEN</div><div class="project-period">2008/01 – 2009/05</div></div>
+          <div class="project-company">AVIC Shixin · E&amp;I control engineer · Quanzhou</div>
+          <div class="project-desc">Sinopec / ExxonMobil / Saudi Aramco joint venture, about RMB 40B; 2 GE 9E units and auxiliaries.</div>
+          <div class="project-tags"><span class="tag accent">Petrochemical ✓</span><span class="tag">GE 9E</span></div>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="side-col">
+<!--
+      <div class="side-section">
+        <div class="score-badge">
+          <div class="score-num">≈78%</div>
+          <div class="score-label">Honest match · I&amp;C Engineer (Evonik)</div>
+          <div class="score-note">Main gap: diploma-level education vs bachelor's required</div>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">JD Check</div>
+        <div class="jd-item"><span class="jd-check partial">⚠️</span><div><div class="jd-text">Bachelor's or above</div><div class="jd-proof">Diploma (3-year), Industrial Automation. Not met.</div></div></div>
+        <div class="jd-item"><span class="jd-check ok">✅</span><div><div class="jd-text">10 yrs instrumentation + DCS</div><div class="jd-proof">18+ yrs I&amp;C; 9+ yrs as E&amp;I lead</div></div></div>
+        <div class="jd-item"><span class="jd-check partial">⚠️</span><div><div class="jd-text">Hands-on DeltaV, MOC / small capex</div><div class="jd-proof">DeltaV integration + FAT/SAT in Argentina (13 months); retrofits done via change review. Not a long DeltaV O&amp;M tenure.</div></div></div>
+        <div class="jd-item"><span class="jd-check partial">⚠️</span><div><div class="jd-text">Familiar with Siemens PCS 7</div><div class="jd-proof">PCS 7 working knowledge, strong TIA Portal / S7-1500</div></div></div>
+        <div class="jd-item"><span class="jd-check ok">✅</span><div><div class="jd-text">Field instruments, loops, drawings</div><div class="jd-proof">Loop checks, calibration, P&amp;ID / wiring review</div></div></div>
+        <div class="jd-item"><span class="jd-check ok">✅</span><div><div class="jd-text">Annual E&amp;I shutdown, PM / PdM</div><div class="jd-proof">95%+ schedule attainment; 30-machine PdM</div></div></div>
+        <div class="jd-item"><span class="jd-check ok">✅</span><div><div class="jd-text">JSA, safety, compliance</div><div class="jd-proof">JSA / PTW / LOTO, zero HV incidents in 2 yrs</div></div></div>
+        <div class="jd-item"><span class="jd-check partial">⚠️</span><div><div class="jd-text">Chemical / process industry</div><div class="jd-proof">Chemical about 13 months; rest is power and oil &amp; gas process plants</div></div></div>
+        <div class="jd-item"><span class="jd-check ok">✅</span><div><div class="jd-text">Training others, reports, records</div><div class="jd-proof">Team of 8, 20+ SOPs, KPI reporting</div></div></div>
+      </div>
+-->
+      <div class="side-section">
+        <div class="side-title">Core Technical Skills</div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">AI Tools</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">Claude Code</span>
+            <span class="skill-tag highlight">Codex</span>
+            <span class="skill-tag">Gemini</span>
+            <span class="skill-tag">WorkBuddy</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">DCS / PLC</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">Emerson DeltaV</span>
+            <span class="skill-tag highlight">Siemens PCS 7</span>
+            <span class="skill-tag highlight">TIA Portal / S7-1500</span>
+            <span class="skill-tag">GE Mark VIe</span>
+            <span class="skill-tag">Foxboro</span>
+            <span class="skill-tag">Honeywell Experion</span>
+            <span class="skill-tag">Rockwell</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">Maintenance &amp; Shutdown</div>
+          <div class="skill-tags">
+            <span class="skill-tag jd">Preventive</span>
+            <span class="skill-tag jd">Predictive</span>
+            <span class="skill-tag jd">Corrective</span>
+            <span class="skill-tag jd">Annual E&amp;I shutdown</span>
+            <span class="skill-tag jd">Calibration</span>
+            <span class="skill-tag">MOC</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">Instrumentation</div>
+          <div class="skill-tags">
+            <span class="skill-tag jd">Troubleshooting</span>
+            <span class="skill-tag jd">Loop check</span>
+            <span class="skill-tag jd">P&amp;ID / wiring</span>
+            <span class="skill-tag">Radar / microwave</span>
+            <span class="skill-tag">Magnetic flow</span>
+            <span class="skill-tag">HART</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">Safety &amp; Compliance</div>
+          <div class="skill-tags">
+            <span class="skill-tag jd">JSA</span>
+            <span class="skill-tag jd">PTW</span>
+            <span class="skill-tag jd">LOTO</span>
+            <span class="skill-tag">ISA-18.2</span>
+            <span class="skill-tag">IEC 60079</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">Protocols</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Profinet</span>
+            <span class="skill-tag">Modbus TCP/RTU</span>
+            <span class="skill-tag">Profibus-DP</span>
+            <span class="skill-tag">EtherNet/IP</span>
+            <span class="skill-tag">OPC UA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">Details</div>
+        <div class="kv-item"><span class="kv-key">Mobile</span><span class="kv-val"><a href="tel:+8613889810081">+86 138-8981-0081</a></span></div>
+        <div class="kv-item"><span class="kv-key">Email</span><span class="kv-val"><a href="mailto:winlee136@msn.com">winlee136@msn.com</a></span></div>
+        <div class="kv-item"><span class="kv-key">Base</span><span class="kv-val">Shanghai</span></div>
+        <div class="kv-item"><span class="kv-key">Start</span><span class="kv-val">1–2 weeks</span></div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">Languages</div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">Chinese</span><span class="lang-level">Native</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">English</span><span class="lang-level">CET-6 · working language</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+        </div>
+      </div>
+
+      <div class="side-section" id="education">
+        <div class="side-title">Education &amp; Training</div>
+        <div class="edu-item">
+          <div class="edu-title">Industrial electrical Automation</div>
+          <div class="edu-sub">Shenyang Institute of Engineering<br>2004/09 – 2007/07</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">GE Mark VIe Control System Principles</div>
+          <div class="edu-sub">GE Energy Learning Center, USA<br>2012/02 – 2012/03</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">Foxboro DCS (ArchestrA IDE)</div>
+          <div class="edu-sub">Foxboro Shanghai Training Center<br>2025/03 – 2025/04</div>
+        </div>
+<!--        <div class="edu-item">
+          <div class="edu-title">ISO 9001 Internal Auditor</div>
+          <div class="edu-sub">Certificate obtained during the Bangladesh EPC projects</div>
+        </div>
+-->
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  (function () {
+    var html = document.documentElement;
+    var btn = document.getElementById('viewToggleBtn');
+    function applyView(isMobile) {
+      html.classList.toggle('mobile-view', isMobile);
+      btn.textContent = isMobile ? 'Desktop' : 'Mobile';
+    }
+    applyView(window.matchMedia('(max-width: 768px)').matches);
+    btn.addEventListener('click', function () { applyView(!html.classList.contains('mobile-view')); });
+  })();
+</script>
+
+</body>
+</html>
