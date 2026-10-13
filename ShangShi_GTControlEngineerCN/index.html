@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E05GTYBL3K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E05GTYBL3K');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李朝珲 · 尚实航空/燃气轮机整机控制系统集成工程师</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+  :root {
+    --navy: #0d2240;
+    --steel: #1c3a5e;
+    --accent: #c8922a;
+    --accent2: #e8a83a;
+    --light: #f5f7fa;
+    --border: #d0d8e4;
+    --text: #1a2535;
+    --muted: #5a6a7e;
+    --tag-bg: #e8f0fb;
+    --tag-text: #1c3a5e;
+    --green: #2a7a2a;
+    --page-width: 920px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    background: #e8ecf2;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.75;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .page-wrapper {
+    max-width: var(--page-width);
+    margin: 32px auto;
+    background: #fff;
+    box-shadow: 0 8px 48px rgba(13,34,64,0.18);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--steel) 100%);
+    color: #fff;
+    padding: 38px 48px 30px;
+    position: relative;
+    border-bottom: 4px solid var(--accent);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 50%, transparent 100%);
+  }
+  .header-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .name-block h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .name-block .subtitle {
+    margin-top: 8px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--accent2);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .contact-block {
+    text-align: right;
+    font-size: 12.5px;
+    line-height: 2.1;
+    color: rgba(255,255,255,0.82);
+  }
+  .contact-block a { color: var(--accent2); }
+
+  .header-tags {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .header-tag {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    color: rgba(255,255,255,0.9);
+    font-size: 11.5px;
+    padding: 3px 12px;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+  }
+  .header-tag.hot {
+    background: rgba(200,146,42,0.28);
+    border-color: var(--accent);
+    color: var(--accent2);
+    font-weight: 600;
+  }
+
+  .toc-nav {
+    background: var(--light);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+  .toc-nav a {
+    color: var(--muted);
+    font-size: 12px;
+    padding: 10px 14px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+  }
+  .toc-nav a:hover {
+    color: var(--navy);
+    border-bottom-color: var(--accent);
+    text-decoration: none;
+  }
+
+  .body-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 285px;
+    gap: 0;
+  }
+  .main-col { padding: 36px 40px 40px 48px; border-right: 1px solid var(--border); }
+  .side-col { padding: 32px 26px; background: var(--light); }
+
+  .section { margin-bottom: 32px; }
+  .section:last-child { margin-bottom: 0; }
+  .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .icon { color: var(--accent); font-size: 15px; }
+
+  .summary-text {
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: var(--text);
+    border-left: 3px solid var(--accent);
+    padding-left: 14px;
+    margin-bottom: 14px;
+  }
+
+  .achievement-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .ach-card {
+    background: linear-gradient(135deg, #f0f4fa 0%, #e8eef8 100%);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 2px;
+  }
+  .ach-card.wide { grid-column: 1 / -1; }
+  .ach-card .ach-metric {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.2;
+  }
+  .ach-card .ach-label {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 2px;
+    line-height: 1.45;
+  }
+  .ach-card .ach-label strong { color: var(--navy); }
+
+  .exp-item { margin-bottom: 26px; padding-bottom: 26px; border-bottom: 1px solid var(--border); }
+  .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+  .exp-company {
+    font-weight: 700;
+    font-size: 14.5px;
+    color: var(--navy);
+  }
+  .exp-company .company-type {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 6px;
+  }
+  .exp-period {
+    font-size: 11.5px;
+    color: var(--muted);
+    white-space: nowrap;
+    background: var(--tag-bg);
+    padding: 2px 10px;
+    border-radius: 2px;
+  }
+  .exp-role {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  .exp-location {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .subsection-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 12px 0 6px;
+    padding: 3px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+
+  ul.duties {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul.duties li {
+    font-size: 13px;
+    padding: 3px 0 3px 18px;
+    position: relative;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  ul.duties li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+    top: 5px;
+  }
+  ul.duties li strong { color: var(--navy); font-weight: 600; }
+  ul.duties li em { color: var(--muted); font-style: normal; font-size: 12px; }
+
+  .result-box {
+    background: linear-gradient(135deg, #fdf8f0, #faf3e5);
+    border: 1px solid #e8d5b0;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 2px;
+    margin-top: 10px;
+  }
+  .result-box .rb-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  ul.results {
+    list-style: none;
+    padding: 0;
+  }
+  ul.results li {
+    font-size: 12.5px;
+    padding: 2px 0 2px 16px;
+    position: relative;
+    color: #4a3800;
+    line-height: 1.65;
+  }
+  ul.results li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 9px;
+    top: 5px;
+  }
+  ul.results li strong { color: #7a4800; }
+
+  .project-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .project-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
+  .project-name { font-size: 13px; font-weight: 700; color: var(--navy); line-height: 1.4; }
+  .project-period {
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    margin-left: 8px;
+    background: var(--tag-bg);
+    padding: 1px 8px;
+    border-radius: 2px;
+  }
+  .project-company { font-size: 11.5px; color: var(--muted); margin-bottom: 4px; }
+  .project-desc { font-size: 12.5px; color: var(--text); line-height: 1.65; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .tag {
+    font-size: 10.5px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 1px 8px;
+    border-radius: 2px;
+    border: 1px solid #c8d8f0;
+  }
+  .tag.accent { background: #fef3e2; color: #7a4a00; border-color: #e8c880; }
+  .tag.green { background: #e8f5e8; color: #1a5c1a; border-color: #a0d0a0; }
+
+  .side-section { margin-bottom: 22px; }
+  .side-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+  }
+
+  .skill-category { margin-bottom: 12px; }
+  .skill-cat-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .skill-tag {
+    font-size: 11px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 2px 8px;
+    border-radius: 2px;
+    border: 1px solid #c8d8f0;
+    line-height: 1.6;
+  }
+  .skill-tag.highlight {
+    background: #0d2240;
+    color: #fff;
+    border-color: #0d2240;
+  }
+  .skill-tag.jd {
+    background: #fffbe6;
+    color: #7a4a00;
+    border-color: #e8c860;
+    font-weight: 600;
+  }
+
+  .jd-item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 11.5px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    gap: 8px;
+    line-height: 1.5;
+  }
+  .jd-item:last-child { border-bottom: none; }
+  .jd-check {
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .jd-check.ok { color: var(--green); }
+  .jd-check.partial { color: #c87820; }
+  .jd-item .jd-text { color: var(--text); flex: 1; }
+  .jd-item .jd-proof { color: var(--muted); font-size: 10.5px; }
+
+  .kv-item {
+    display: flex;
+    font-size: 12.5px;
+    margin-bottom: 7px;
+    line-height: 1.5;
+  }
+  .kv-key { color: var(--muted); min-width: 52px; flex-shrink: 0; }
+  .kv-val { color: var(--text); font-weight: 500; }
+
+  .edu-item { margin-bottom: 10px; }
+  .edu-title { font-size: 12.5px; font-weight: 600; color: var(--navy); }
+  .edu-sub { font-size: 11.5px; color: var(--muted); }
+
+  .lang-bar { margin-bottom: 8px; }
+  .lang-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px; }
+  .lang-label .lang-name { font-weight: 600; color: var(--navy); }
+  .lang-label .lang-level { color: var(--muted); font-size: 11px; }
+  .bar-track { background: #dde4ee; border-radius: 2px; height: 4px; }
+  .bar-fill { background: linear-gradient(90deg, var(--navy), var(--accent)); height: 4px; border-radius: 2px; }
+
+  .score-badge {
+    background: linear-gradient(135deg, var(--navy), var(--steel));
+    color: #fff;
+    text-align: center;
+    padding: 12px 10px;
+    border-radius: 3px;
+    margin-bottom: 14px;
+    border: 1px solid var(--accent);
+  }
+  .score-badge .score-num {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent2);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.1;
+  }
+  .score-badge .score-label {
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 2px;
+    letter-spacing: 1px;
+  }
+  .score-badge .score-note {
+    font-size: 9.5px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 4px;
+  }
+
+  @media print {
+    body { background: #fff; font-size: 12px; }
+    .page-wrapper { margin: 0; box-shadow: none; border-radius: 0; }
+    .toc-nav { display: none; }
+    .view-toggle { display: none; }
+  }
+
+  /* ===== 视图切换按钮 ===== */
+  .view-toggle {
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 999;
+    background: var(--navy);
+    color: #fff;
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    padding: 7px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(13,34,64,0.28);
+    font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  }
+  .view-toggle:hover { background: var(--steel); }
+
+  /* ===== 手机版布局（.mobile-view 由 JS 控制，不依赖屏幕宽度） ===== */
+  html.mobile-view body { font-size: 13.5px; }
+  html.mobile-view .page-wrapper {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  html.mobile-view .header {
+    padding: 56px 18px 22px;
+  }
+  html.mobile-view .header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  html.mobile-view .name-block h1 { font-size: 24px; letter-spacing: 2px; }
+  html.mobile-view .contact-block {
+    text-align: left;
+    width: 100%;
+  }
+  html.mobile-view .header-tags { margin-top: 14px; }
+  html.mobile-view .header-tag { font-size: 10.5px; padding: 3px 9px; }
+
+  html.mobile-view .toc-nav { padding: 0 12px; }
+  html.mobile-view .toc-nav a { font-size: 11px; padding: 9px 10px; }
+
+  html.mobile-view .body-wrapper {
+    display: block;
+  }
+  html.mobile-view .main-col {
+    padding: 22px 16px 8px;
+    border-right: none;
+  }
+  html.mobile-view .side-col {
+    padding: 22px 16px 32px;
+  }
+
+  html.mobile-view .achievement-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  html.mobile-view .ach-card .ach-metric { font-size: 16px; }
+  html.mobile-view .ach-card .ach-label { font-size: 10.5px; }
+
+  html.mobile-view .exp-header,
+  html.mobile-view .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  html.mobile-view .exp-period,
+  html.mobile-view .project-period {
+    margin-left: 0;
+  }
+
+  html.mobile-view .summary-text { font-size: 13px; }
+  html.mobile-view ul.duties li,
+  html.mobile-view ul.results li,
+  html.mobile-view .project-desc { font-size: 12.5px; }
+
+  html.mobile-view .skill-tags,
+  html.mobile-view .project-tags { gap: 5px; }
+
+  /* 窄屏（真实手机）下，即使停留在网页版，也做最小限度的防溢出处理 */
+  @media (max-width: 600px) {
+    html:not(.mobile-view) .page-wrapper { max-width: 100%; margin: 0; border-radius: 0; box-shadow: none; }
+    html:not(.mobile-view) .header { padding: 56px 16px 20px; }
+    html:not(.mobile-view) .header-top { flex-direction: column; align-items: flex-start; gap: 12px; }
+    html:not(.mobile-view) .contact-block { text-align: left; }
+    html:not(.mobile-view) .body-wrapper { display: block; }
+    html:not(.mobile-view) .main-col { padding: 20px 14px 8px; border-right: none; }
+    html:not(.mobile-view) .side-col { padding: 20px 14px 28px; }
+    html:not(.mobile-view) .achievement-grid { grid-template-columns: 1fr 1fr; }
+    html:not(.mobile-view) .exp-header,
+    html:not(.mobile-view) .project-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<button class="view-toggle" id="viewToggleBtn" type="button">手机版</button>
+
+<div class="page-wrapper">
+  <header class="header" id="top">
+    <div class="header-top">
+      <div class="name-block">
+        <h1>李朝珲</h1>
+        <div class="subtitle">燃气轮机整机控制系统集成工程师 · 控制逻辑 / 保护联锁 / 工程文件体系</div>
+      </div>
+      <div class="contact-block">
+        <div>📞 <a href="tel:+8613889810081">+86 138-8981-0081</a></div>
+        <div>✉️ <a href="mailto:winlee136@msn.com">winlee136@msn.com</a></div>
+        <div>📍 上海 / 可长期海外驻场</div>
+        <div>⏱️ 到岗：1–2周</div>
+      </div>
+    </div>
+    <div class="header-tags">
+      <span class="header-tag hot">18年+ 燃气轮机及大型成套设备控制系统工程</span>
+      <span class="header-tag hot">GE Mark VIe · 20+ 台机组 · 9F.03AGP / LMS100 / PGT25 / LM2500+G4</span>
+      <span class="header-tag">整机控制架构 · 接口定义 · I/O 分配表 · Trip/Alarm/Interlock · C&amp;E</span>
+      <span class="header-tag">启停机 · 负荷控制 · 紧急停机 · 保护联锁</span>
+      <span class="header-tag">盘柜布置 · 三维配合 · 冗余方案 · 标准化</span>
+      <span class="header-tag">能源站集成 · 调试试运行</span>
+      <span class="header-tag">英语 CET6 · 工作语言</span>
+    </div>
+  </header>
+
+  <nav class="toc-nav">
+    <a href="#summary">个人小结</a>
+    <a href="#achievements">核心成就</a>
+    <a href="#skills">核心技能</a>
+    <a href="#experience">工作经历</a>
+    <a href="#projects">主要项目</a>
+    <a href="#education">教育培训</a>
+  </nav>
+
+  <div class="body-wrapper">
+
+    <main class="main-col">
+      <section class="section" id="summary">
+        <div class="section-title"><span class="icon">◈</span>个人小结</div>
+        <p class="summary-text">
+          <strong>18年+</strong> 燃气轮机及大型成套设备控制系统工程经验，涉及 GE 9F.03AGP、LMS100、PGT25、LM2500+G4、9E/6B 等多型机组，其中 <strong>9年以上</strong> 担任电仪总工/技术经理。两个 EPC Turnkey 项目（330MW 联合循环、100MW 单循环燃机电厂）里，从<strong>整机及辅机控制系统的总体方案、架构设计和接口定义</strong>，到 <strong>I/O 分配表、Trip/Alarm/Interlock 清单、Cause &amp; Effect Matrix</strong> 的编制和审核，再到逻辑验证、试运行和 2 年质保运行，都由本人牵头负责。早期在 GE 做现场经理/主管工程师，在 20+ 台机组上做过 Mark VIe 安装调试、<strong>启停顺序优化</strong>和保护联锁测试，所以逻辑怎么设计、调试时哪里容易出问题，两头都比较清楚。
+        </p>
+        <p class="summary-text">
+          <strong>整机控制逻辑</strong>覆盖启动与停机、正常运行与负荷控制、紧急停机和异常工况处理；控制、保护、联锁、顺控逻辑做过设计、审核、验证和现场优化（例如天然气增压压缩机防喘振重整定后，半年气网剧烈波动期零跳闸）。控制系统工程配置熟悉控制器、远程 I/O、网络和冗余方案，涉及 GE Mark VIe、Emerson DeltaV、Foxboro ArchestrA、Honeywell Experion PKS、Siemens PCS7/TIA Portal、Rockwell 和 HIMatrix/Triconex SIS。工程文件上坚持控制文件与 P&amp;ID、单线图、现场设备配置逐项对得上。日常要和机务、流体、电气、仪表、整机集成团队及 OEM 供应商打交道，也配合设计院在三维模型里核对盘柜位置和桥架路由，并参与电站整体方案讨论，让整机控制系统能顺畅接进用户端能源站的 DCS/SCADA。英语（CET6）是第一工作语言，能直接和外方 OEM 开技术会、写报告。
+        </p>
+      </section>
+
+      <section class="section" id="achievements">
+        <div class="section-title"><span class="icon">◈</span>核心成就</div>
+        <div class="achievement-grid">
+          <div class="ach-card">
+            <div class="ach-metric">18年+</div>
+            <div class="ach-label">燃机及大型成套设备控制系统工程<br>GE 现场 6 年 + EPC 电仪/控制 9 年+</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">330MW + 100MW</div>
+            <div class="ach-label">两个 EPC Turnkey 全厂控制系统<br>方案-接口-文件-调试-2年质保</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">20+ 台机组</div>
+            <div class="ach-label">GE Mark VIe 安装调试<br>逻辑验证、联锁测试、启停顺序优化</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">14+ 压气站</div>
+            <div class="ach-label">西气东输一/二线 GE PGT25<br>自动化联调，按期通过性能考核</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">零跳闸</div>
+            <div class="ach-label">防喘振裕度重整定 + 前馈<br>半年气网剧烈波动期压缩机零跳闸</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">报警量↓70%+</div>
+            <div class="ach-label">ISA-18.2 报警合理化<br>数千报警点梳理，MTTR 缩短近一半</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">零误动/零拒动</div>
+            <div class="ach-label">主变 87T/87G、50/51 保护<br>2 年商业运行质保期</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">误跳车↓45.3%</div>
+            <div class="ach-label">滤波 + PID 死区重写关键回路<br>产线 OEE 提升约 8.7%</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">6周→2周</div>
+            <div class="ach-label">100+ 设备节点联调<br>ISA-S88 模块化编程，缩短 67%</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">提前1个月</div>
+            <div class="ach-label">协调设计院出版竣工图<br>ISO9001 图纸版本管控</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">95%+</div>
+            <div class="ach-label">大修计划达成率<br>大修后机组均一次点火并网</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-metric">100+ 人</div>
+            <div class="ach-label">单项目现场施工技术团队<br>协调机务/电气/仪表/土建/OEM</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="section-title"><span class="icon">◈</span>核心技能</div>
+        <ul class="duties">
+          <li><strong>AI 工具深度应用（Vibe Coding）：</strong>Claude Code、Codex、Gemini、WorkBuddy——用于控制逻辑说明书和 I/O List 的整理核对、多方案比选、SCL 代码辅助编写与评审、技术文档和日常沟通提效。</li>
+          <li><strong>整机控制系统总体设计：</strong>燃机整机及辅机控制系统的总体方案、架构设计（控制器/远程 I/O/网络/冗余）、功能分解和接口定义；与机务、流体、电气、仪表、整机集成团队协调接口，保证整机层面功能完整一致；参与用户端能源站整体方案，让整机控制系统接入能源站 DCS/SCADA（OPC UA/Modbus/Profinet）。</li>
+          <li><strong>控制、保护、联锁与顺控逻辑：</strong>启动与停机、正常运行与负荷控制、紧急停机和异常工况处理；跳机分级、启动许可、1oo2/2oo3 表决、Fail-Open/Close/Last 故障安全位、关键联锁硬接线；PID 整定、前馈和防喘振控制；IEC 61131-3（SCL）、ISA-S88、OMAC 状态机；MOOG 电液伺服阀 PID 调节。</li>
+          <li><strong>控制系统平台与工程配置：</strong>GE Mark VIe、Emerson DeltaV、Foxboro ArchestrA IDE、Honeywell Experion PKS、Siemens PCS7/TIA Portal/S7-1200/1500、Rockwell Studio5000/ControlLogix/CompactLogix；HIMatrix/Triconex SIS；AVEVA Edge、WinCC、FactoryTalk View、CIMPLICITY、Ignition。</li>
+          <li><strong>工程图纸与文件体系：</strong>控制系统架构图、I/O 分配表、Trip/Alarm/Interlock 清单、Cause &amp; Effect Matrix、控制逻辑说明书、联锁逻辑图、操作和调试文件；与 P&amp;ID、单线图、现场设备配置逐项核对；ISO9001 图纸/文件版本受控管理。</li>
+          <li><strong>盘柜布置与三维配合：</strong>配合整机集成和电气团队确定控制柜、电子间、UPS/直流系统的布置和安装方案；在三维模型中核对盘柜位置、电缆桥架路由和管廊碰撞，预留维护通道；强弱电分桥架（间距 300–500mm）、模拟信号屏蔽层单端接地、仪表接地与强电接地网隔离。</li>
+          <li><strong>安全与保护功能：</strong>SIS（HIMatrix/Triconex）和消防 FPP 联锁逻辑审核与验证；配合危险区域划分，按 IEC 60079 做防爆/本安仪表和电气设备选型确认；继电保护 87T/87G/87B、50/51、50N/51N 和 IEC 61850 GOOSE；报警合理化（ISA-18.2）；JSA、PTW、LOTO。</li>
+          <li><strong>设计流程与标准化：</strong>ISA-S88 模块化 + SCL 功能块，推动控制功能模块化和软件复用，把控制逻辑做成可复用的标准模块（泵、搅拌、皮带等设备模块在 100+ 节点上重复使用）；沉淀 I/O List、C&amp;E、回路检查/联锁测试 Checklist 模板；编制 SOP 20余份；P&amp;ID/详细设计审查要点（冗余、隔离与旁路、故障安全位、关键联锁硬接线）。</li>
+          <li><strong>调试与试运行支持：</strong>冷态回路检查（通断/绝缘/4-12-20mA 标定）、热态联锁功能测试、FAT/SAT、Punch List 分级管理、整套启动与首次并网；离线编程和虚拟调试；示波器、万用表、Wireshark 做信号完整性和网络故障诊断（EtherNet/IP、PROFINET、Modbus TCP）。</li>
+          <li><strong>通信与传动：</strong>Modbus TCP/RTU、Profibus-DP/PA、Profinet、Ethernet/IP、OPC UA、MQTT、EGD、CANopen、HART；Siemens S120/V20、ABB ACS350、Schneider ATV、AB PowerFlex VFD 参数整定与故障诊断；IEC 62443 OT 网络安全。</li>
+<!--          <li><strong>电气一次二次与升压站：</strong>主变压器（OLTC、DGA）、11kV/6.6kV 高压开关柜（GIS/AIS）、发电机励磁 AVR、并网同期检查、GCB、MCC/LVDB/UPS/直流系统；ETAP 短路电流/系统建模审核。</li>
+-->
+          <li><strong>跨专业与对外协调：</strong>EPC 全过程管理；技术评审、项目会议、OEM/供应商技术澄清；FIDIC 变更单和工期责任认定；跨国团队培训和本地化人才培养。</li>
+<!--          <li><strong>办公工具与语言：</strong>MS Office/Project、AutoCAD、E-Plan；英语（CET6，第一工作语言）、中文（母语）、西班牙语（初学）、粤语（基础）。</li>
+-->
+        </ul>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="section-title"><span class="icon">◈</span>工作经历</div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">赣锋国际贸易(上海)有限公司<span class="company-type">上市公司</span></div>
+            <div class="exp-period">03/2025 – 04/2026</div>
+          </div>
+          <div class="exp-role">海外设计部自控总负责人 / 业主代表</div>
+          <div class="exp-location">📍 上海 / 萨尔塔（阿根廷）· Mariana &amp; Guemes 年产2万吨零排放氯化锂项目群，投资 6 亿美元，业主方技术最高负责人</div>
+          <ul class="duties">
+            <li><strong>全厂控制架构：</strong>负责氯化锂工厂 PLC + DCS + SCADA 架构设计，确定控制层级、网络拓扑和 OPC UA → MES 数据接口，按工艺单元做功能分解；审查并批准设计顾问的控制方案、仪表选型和 PLC/DCS 架构，主导核心仪表方案技术评审与确权 <strong>30余次</strong>。</li>
+            <li><strong>控制逻辑与顺控：</strong>选定 Siemens S7-1200/1500，用 IEC 61131-3 SCL 和 ISA-S88 + OMAC 状态机编程，实现 100+ 设备节点（泵、搅拌、皮带）顺控联动；设计盐水输送（泵联锁 + 流量闭环）、离心机（转速控制 + 振动保护）、过滤系统（压差控制 + 自动反冲洗顺控）的启停、运行和异常处理逻辑。</li>
+            <li><strong>系统集成与网络：</strong>完成 S7-1200/1500 与 Emerson DeltaV 的 Profinet 通信集成；用 MikroTik 路由和 ZeroTier SD-WAN 搭跨站点工业网络，解决偏远盐湖园区专家远程支持困难的问题。</li>
+            <li><strong>控制文件：</strong>编制 Control Narrative、I/O List、Cause &amp; Effect Matrix 和 Interlock Diagram，与 P&amp;ID、接线图逐项核对；审核竣工 P&amp;ID、接线图和功能说明书，向现场维护团队平稳移交。</li>
+            <li><strong>调试与验证：</strong>监督 FAT/SAT，验证控制逻辑、回路调节和联锁；解决离心机、盐水输送泵、过滤系统的现场关键故障；指导仪表工、电工做 Loop Check、单体校验和 DCS/PLC 基础排故；负责 E&amp;I 作业 JSA 和风险评估。</li>
+            <li><strong>严苛工况仪表：</strong>KCl/MgCl₂ 腐蚀性浆料工况下指定 80GHz 雷达物位计和微波密度计（Valmet DS），强制 SS2205、N10276 接液材质，解决传统仪表的“盲区测量”问题。</li>
+            <li><strong>标准化与预测性维护：</strong>编制 SOP 20余份（PLC 硬件诊断、变频器快速更换、关键仪表校验）；用 OPC UA 边缘网关 + 无线振动/温度传感器 + CMMS 工单联动，对关键泵组做预测性维护。</li>
+          </ul>
+          <div class="result-box">
+            <div class="rb-title">▌ 主要业绩</div>
+            <ul class="results">
+              <li><strong>联调效率：</strong>ISA-S88 模块化编程使 100+ 设备节点联调周期从 6 周压缩到 2 周（缩短 67%）。</li>
+              <li><strong>误跳车：</strong>重写关键流量/密度控制程序（滑动平均滤波 + PID 死区），浆料分离系统误跳车减少约 <strong>45.3%</strong>，产线 OEE 提升约 8.7%。</li>
+              <li><strong>仪表可靠性：</strong>6 周内完成 30+ 个高腐蚀工况现场仪表校准/维护规程标准化，相关仪表 MTTR 降低约三分之一。</li>
+              <li><strong>预测性维护：</strong>30 台关键设备维护策略由预防性升级为预测性，提前拦截 4 起重大轴承损坏停机，年度维修备件成本降低约 12.2%。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">北京中缆通达电气成套有限公司（上海分公司）<span class="company-type">跨国私企 · EPC总承包</span></div>
+            <div class="exp-period">06/2016 – 02/2025</div>
+          </div>
+          <div class="exp-role">海外事业部电气仪表自动化控制总工程师 / 技术经理</div>
+          <div class="exp-location">📍 上海 / 达卡（孟加拉国）· 330MW 联合循环电厂 + 100MW 燃机电厂两个 EPC Turnkey 项目，单项目现场施工技术团队 100+ 人</div>
+          <div class="subsection-label">整机控制系统总体设计与接口</div>
+          <ul class="duties">
+            <li>与设计院确立 EPC 项目电气、仪表、热控设计原则，把全厂控制拆成燃机（GE Mark VIe）、汽机/锅炉/公用系统（DeltaV DCS）、天然气增压和水处理等辅助撬块（Siemens S7-1200 PLC）、SIS/消防（HIMatrix/Triconex、FPP）几层，逐层定义功能边界、网络拓扑和冗余方案，输出控制系统架构图和接口矩阵。</li>
+            <li>定接口原则：跳机、联锁等关键信号硬接线，监视和非关键数据走 Modbus TCP / Profinet / OPC UA；组织机务、电气、仪表三方核对信号类型、量程、供电和接地方式，把接口问题尽量在图纸阶段解决，减少现场逐点返工。</li>
+            <li>主导升压站一次设备和 DCS/PLC/SIS 的技术规范书与技术评标；参加燃机、压缩机、驱动电机及 ICSS 硬件（DCS、PLC 柜、HMI、SCADA 服务器、SIS、消防盘）FAT；和 GE、IR（增压机）、Siemens、Sick 等 OEM/供应商做接口技术澄清，筛选供应商并谈判，采购成本降低 5%–10%。</li>
+            <li>配合业主确定电厂与电网调度、升压站保护、全厂 SCADA 的接口方案，保证燃机整机控制系统顺畅并入电站控制系统；首次并网前协调调度完成同期检查（电压/频率/相角差）。</li>
+          </ul>
+          <div class="subsection-label">控制、保护与联锁逻辑</div>
+          <ul class="duties">
+            <li>设计、审核并验证燃机及辅机的启动与停机、负荷升降、跳机分级和异常工况处理逻辑：核对启动许可条件（燃料气压力/温度、滑油、冷却水、仪表风等），热态联锁测试按 Cause &amp; Effect 逐条验证并三方签字。</li>
+            <li>重新标定天然气增压压缩机喘振曲线，5Why 查出 DCS 中 PID 响应参数与阀门机械行程不匹配，重整定防喘振裕度并引入前馈控制，使机组对前端供气扰动响应更快、输出更平稳。</li>
+            <li>排查 Modbus TCP 和工业以太网的丢包、延迟、IP 冲突，并在逻辑里增加信号质量判断和通信故障报警，避免坏质量信号直接触发动作；优化多处流量、压力采集信号算法，让数据更平稳。</li>
+            <li>主变差动（87T/87G）、过流（50/51）、零序（50N/51N）、母差（87B）保护定期校验，审核保护定值和整定计算，满足 BPDB 规范和 IEC 60255，杜绝越级跳闸。</li>
+            <li>按 ISA-18.2 整治 DCS 报警：梳理数千个报警点，剔除信息类报警，重新分级并设死区和延时；优化燃机控制与监视画面，为关键机泵和气动阀开发“一键诊断”弹窗。</li>
+          </ul>
+          <div class="subsection-label">工程文件、布置与标准化</div>
+          <ul class="duties">
+            <li>编制和审核 I/O 分配表、Trip/Alarm/Interlock 清单、Cause &amp; Effect Matrix、控制逻辑说明书和联锁逻辑图，与 P&amp;ID、单线图和现场设备配置逐项对照；ISO9001 图纸版本管控（取得内审员证书并承担内审），协调设计院竣工图提前 1 个月出版。</li>
+            <li>配合设计院和电气团队确定 ICSS 盘柜、UPS/直流屏的布置和安装方案，在三维模型里核对盘柜位置、电缆桥架路由与管廊碰撞，预留维护通道和散热空间；强弱电分桥架（间距 300–500mm）、模拟信号屏蔽层单端接地。</li>
+            <li>把 Shahjibazar 100MW 项目形成的 I/O List、C&amp;E、回路检查和联锁测试 Checklist 沉淀成模板，用到 Khulna 330MW 项目，两个电厂的文件格式和逻辑习惯保持一致；用离线编程和 DCS/PLC 虚拟调试提前发现逻辑问题。</li>
+            <li>涉及危险区域（天然气增压区）的仪表和电气设备，按 IEC 60079 核对防爆/本安选型，包括防爆电缆格兰与电缆类型匹配。</li>
+          </ul>
+          <div class="subsection-label">调试、质保运行与跨专业协调</div>
+          <ul class="duties">
+            <li>管理电气、仪表、热控现场施工的安全、质量、进度，协调土建、安装、调试、监理、OEM 和业主接口；主持子系统功能测试、整套启动、首次并网和带负荷试运行，编制调试程序、OTP、SAT/FAT 文档。</li>
+            <li>用示波器和万用表分析信号跳变、触发时序错位、EMI、接地和屏蔽问题；用 Siemens 1200 PLC 完成与 GE Mark VIe 和 DeltaV 的 Modbus/Profinet/OPC UA 通信配置。</li>
+            <li>参加技术评审、项目会议和现场协调会，核查 NCR 关闭；从零组建 8 人本地电仪团队，6 个月内独立处理约 70% 日常电仪工作。</li>
+            <li>质保期 7×24 小时巡视和排故；按业主要求优化化学水处理自动控制系统；燃油处理、润滑油、冷却水和天然气增压系统部分压力/流量/液位仪表完成国产化替代，采购单价降低 40%–60%。</li>
+            <li>年度大修提前 60 天介入，用关键路径法联合各专业排 OTP，严格执行 LOTO；联合 OEM 对高压变频器和励磁系统做深度预防性维护。</li>
+          </ul>
+          <div class="result-box">
+            <div class="rb-title">▌ 主要业绩</div>
+            <ul class="results">
+              <li><strong>进度：</strong>竣工图纸提前 <strong>1 个月</strong>出版；采购成本降低 5%–10%。</li>
+              <li><strong>防喘振：</strong>防喘振裕度重整定 + 前馈控制，随后半年气网剧烈波动期压缩机系统<strong>零跳闸</strong>。</li>
+              <li><strong>报警：</strong>稳态每小时平均报警量下降 <strong>70%+</strong>，故障定位 MTTR 缩短近一半。</li>
+              <li><strong>保护与安全：</strong>主变 87T/87G、50/51 两年零误动/零拒动；高压作业全周期零安全事故；CEMS 数据连续达标上传。</li>
+              <li><strong>大修：</strong>计划达成率提升到 <strong>95%+</strong>，杜绝隔离错误引起的安全虚惊，大修后机组均一次点火并网。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">通用电气 - 格兰尼技术咨询（北京）有限公司<span class="company-type">外企</span></div>
+            <div class="exp-period">04/2010 – 05/2016</div>
+          </div>
+          <div class="exp-role">现场经理 / 主管工程师</div>
+          <div class="exp-location">📍 北京 / 常驻新疆、宁夏、陕西、四川、广州等项目现场</div>
+          <ul class="duties">
+            <li>负责 GE Mark VIe 控制系统现场安装、调试与运维，覆盖 <strong>20+ 台</strong>燃气轮机发电机组及离心式压缩机；执行控制逻辑验证、联锁保护测试、<strong>启停顺序优化</strong>和性能调校。</li>
+            <li>任西气东输二线现场经理，统筹一线、二线合计 <strong>14+ 座压气站</strong>（霍尔果斯、哈密等极端环境）GE PGT25 机组的自动化安装与联调，按站编制调试和试运行计划，配合业主完成性能考核和移交。</li>
+            <li>广州船坞任 Lead Control Engineer，完成巴西 SBM FPSO 4 台 GE LM2500+G4 发电机组顶部模块的全套 E&amp;I 调试，执行离岸 HSE 标准。</li>
+            <li>负责 GE 合同范围内辅助系统（温度/压力/流量/液位/位置开关、各类阀门、控制器）及机械管道、设备就位和对中的安装、调试、排故和备件管理；点火试运行中暴露的启动时序、传感器和阀门反馈问题，记录归档后反馈给 GE 工程开发部和项目管理团队，推动逻辑和定值调整。</li>
+            <li>与业主、监理及土建/管道/电气承包商每日协调，处理交叉作业和进度冲突；给 GE 新员工和客户操作人员做技术培训；主持点火试运行并办理整体移交，管理后续质保。</li>
+          </ul>
+          <div class="result-box">
+            <div class="rb-title">▌ 主要业绩</div>
+            <ul class="results">
+              <li><strong>14+ 压气站按期交付：</strong>标准化调试程序和快速排故，提升旋转设备运行可靠性和可用率，减少机组启动阶段的技术缺陷。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">中航世新燃气轮机股份有限公司沈阳分公司<span class="company-type">国企（原沈阳黎明燃机）</span></div>
+            <div class="exp-period">07/2007 – 04/2010</div>
+          </div>
+          <div class="exp-role">电气仪表控制工程师</div>
+          <div class="exp-location">📍 沈阳 / 福建、浙江、广东等项目现场</div>
+          <ul class="duties">
+            <li>按整体布局图、P&amp;ID、电缆敷设图、电气仪表接线图、控制逻辑图/IO 表和保护定值设置表做现场技术指导。</li>
+            <li>做辅助系统分系统调试（润滑油、液压油、密封/冷却气、冷却水、仪表空气、燃料、MCC、消防），检查验证控制逻辑、报警和停机程序，组态/配置控制系统参数。</li>
+            <li>温度/压力/液位/流量/pH 仪表、变送器、热电偶/热电阻、振动传感器的校验和电信号回路测试；电机、泵、VFD、执行器和调节阀功能测试，随后参与整机调试和点火试运行。</li>
+            <li>福建联合石化 COGEN 项目 2 台 GE 9E 机组及辅助系统安装调试（总投资约 400 亿元）；参与 GE 6B、9E 机组大修和故障诊断，安装调试日立 H25 燃机。</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-title"><span class="icon">◈</span>主要工程项目（倒序）</div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">Mariana &amp; Guemes 年产2万吨氯化锂生产项目</div>
+            <div class="project-period">2025/03 – 2026/04</div>
+          </div>
+          <div class="project-company">赣锋国际贸易 · 角色：自动化/仪表控制总负责人、业主代表 · 阿根廷萨尔塔</div>
+          <div class="project-desc">投资 6 亿美元，海拔 3,750 米盐沼，液体零排放设计。负责全厂控制系统架构（PLC + DCS + SCADA，OPC UA → MES）、控制逻辑、I/O List 和 C&amp;E、FAT/SAT 与移交。</div>
+          <div class="project-tags"><span class="tag">业主代表</span><span class="tag">S7-1500 + DeltaV</span><span class="tag">ISA-S88/OMAC</span></div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">KHULNA 330MW 联合循环（天然气/燃油双燃料）电厂 EPC</div>
+            <div class="project-period">2019/03 – 2025/02</div>
+          </div>
+          <div class="project-company">北京中缆通达 · 角色：技术经理/电仪总工 · 孟加拉 Khulna</div>
+          <div class="project-desc">GE 9F.03AGP 燃机 + A651 汽轮机 + 锅炉，EPC Turnkey，设计-采购-施工-调试-2 年质保。负责燃机、汽机、锅炉、辅助系统（燃料/滑油/冷却水/气/MCC/仪表监测/FPP）和升压站一二次系统的控制与接口。</div>
+          <div class="project-tags"><span class="tag green">EPC 全过程</span><span class="tag">GE Mark VIe</span><span class="tag">DeltaV + S7-1200</span><span class="tag">SIS/FPP</span></div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">SHAHJIBAZAR 100MW 燃气轮机发电厂 EPC</div>
+            <div class="project-period">2016/10 – 2020/11</div>
+          </div>
+          <div class="project-company">北京中缆通达 · 角色：技术经理/电仪总工 · 孟加拉 Shahjibazar</div>
+          <div class="project-desc">GE LMS100 单循环，含 IR MSG-6R3 天然气增压机，EPC Turnkey，含 2 年质保期维护。负责燃机和增压机与电厂辅助系统的控制接口、电气一次与热控二次系统接口统筹；ISO9001 图纸版本管控。</div>
+          <div class="project-tags"><span class="tag green">EPC 全过程</span><span class="tag">GE LMS100</span><span class="tag">天然气增压</span></div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">中石油中贵线输气站（PCAD）</div>
+            <div class="project-period">2014/05 – 2014/10</div>
+          </div>
+          <div class="project-company">GE-Granite · 四川（固原-广元-天水）</div>
+          <div class="project-desc">6 台以上 GE 电驱式压缩机的安装和调试。</div>
+          <div class="project-tags"><span class="tag">压缩机</span></div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">SBM FPSO Cidade de Ilhabela / Topside 动力系统</div>
+            <div class="project-period">2013/04 – 2013/10</div>
+          </div>
+          <div class="project-company">GE-Granite · 角色：Lead Control Engineer · 广州船坞</div>
+          <div class="project-desc">巴西 FPSO 4 台 GE LM2500+G4 发电机组安装与调试，顶部模块动力系统全套 E&amp;I 调试，执行离岸 HSE 标准。</div>
+          <div class="project-tags"><span class="tag">LM2500+G4</span><span class="tag">离岸HSE</span></div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">中石油西气东输二线（WEPP2）压气站群</div>
+            <div class="project-period">2010/06 – 2013/02</div>
+          </div>
+          <div class="project-company">GE-Granite · 角色：现场经理/Lead E&amp;I Engineer · 新疆/宁夏/陕西</div>
+          <div class="project-desc">14 台以上 GE PGT25 燃机 + 压缩机机组自动化系统安装、集成与调试，覆盖霍尔果斯、红柳、哈密、张掖、固原等站；DCS 逻辑验证与联锁保护测试，多站点并行管理。</div>
+          <div class="project-tags"><span class="tag">14台 PGT25</span><span class="tag">联锁测试</span><span class="tag">多站点并行</span></div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">GE 9E/6B、日立 H25 燃机检修/安装/调试项目群</div>
+            <div class="project-period">2009/02 – 2010/04</div>
+          </div>
+          <div class="project-company">中航世新燃气轮机 · 浙江/广东/山西</div>
+          <div class="project-desc">2 台 GE 6B 机组大修和故障诊断（浙江德清、杭州蓝天电厂），1 台 GE 9E 机组大修和故障诊断（珠海洪湾电厂），1 台日立 H25 燃机安装（山西）。</div>
+          <div class="project-tags"><span class="tag">GE 6B/9E</span><span class="tag">故障诊断</span></div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">福建联合石化（FREP/EMCP&amp;P/SAAC）乙烯装置 COGEN</div>
+            <div class="project-period">2008/01 – 2009/05</div>
+          </div>
+          <div class="project-company">中航世新燃气轮机 · 角色：电气仪表控制工程师 · 福建泉州</div>
+          <div class="project-desc">中石化/埃克森美孚/沙特阿美合资，总投资约 400 亿元，自备电厂 2 台 GE 9E 燃机发电机组及辅助系统安装调试。</div>
+          <div class="project-tags"><span class="tag">GE 9E</span><span class="tag">石化 COGEN</span></div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <aside class="side-col">
+<!--
+      JD 对照（仅供自查，投递时保持注释）：尚实航空 · 燃机集成控制系统工程师
+      硬性门槛：5年+ 燃机/航发控制系统设计经验 ✅（燃机控制系统工程18年，其中 EPC 控制系统总体/接口/文件9年+，GE Mark VIe 现场6年）
+                自动化/电气/控制专业 ✅（工业自动化；学历项按要求忽略）
+      能力要求：燃机/大型成套设备控制系统 ✅ 整机控制逻辑/保护策略/文件体系 ✅ 跨专业协调与系统集成 ✅
+      九大职责：总体设计 ✅ 控制逻辑 ✅ 工程配置 ✅ 图纸文件 ✅ 三维布局 ✅(配合/参与) 安全保护 ✅ 标准化 ✅ 调试支持 ✅ 跨专业 ✅
+      面试需备好：GE 控制律与 OEM 自研控制律的边界；三维布局、SIL 功能安全的具体参与深度
+-->
+      <div class="side-section">
+        <div class="side-title">核心技术能力</div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">AI 工具应用</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">Claude Code</span>
+            <span class="skill-tag highlight">Codex</span>
+            <span class="skill-tag">Gemini</span>
+            <span class="skill-tag">WorkBuddy</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">整机控制系统设计</div>
+          <div class="skill-tags">
+            <span class="skill-tag jd">总体方案 / 架构设计</span>
+            <span class="skill-tag jd">功能分解</span>
+            <span class="skill-tag jd">接口定义</span>
+            <span class="skill-tag jd">冗余方案</span>
+            <span class="skill-tag jd">能源站集成</span>
+            <span class="skill-tag">盘柜布置 / 三维配合</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">控制逻辑与保护</div>
+          <div class="skill-tags">
+            <span class="skill-tag jd">启停机 / 负荷控制</span>
+            <span class="skill-tag jd">紧急停机 / 异常工况</span>
+            <span class="skill-tag jd">保护联锁 / 顺控</span>
+            <span class="skill-tag">防喘振 / PID / 前馈</span>
+            <span class="skill-tag">SIS / FPP</span>
+            <span class="skill-tag">IEC 60079</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">工程文件</div>
+          <div class="skill-tags">
+            <span class="skill-tag jd">I/O 分配表</span>
+            <span class="skill-tag jd">Trip/Alarm/Interlock</span>
+            <span class="skill-tag jd">Cause &amp; Effect</span>
+            <span class="skill-tag">控制逻辑说明书</span>
+            <span class="skill-tag">P&amp;ID / 单线图核对</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">DCS / PLC / SIS</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">GE Mark VIe</span>
+            <span class="skill-tag highlight">Emerson DeltaV</span>
+            <span class="skill-tag highlight">Foxboro ArchestrA</span>
+            <span class="skill-tag highlight">Siemens PCS7/TIA</span>
+            <span class="skill-tag">Honeywell Experion</span>
+            <span class="skill-tag">Rockwell</span>
+            <span class="skill-tag">HIMatrix/Triconex</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">工业通信协议</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Modbus TCP/RTU</span>
+            <span class="skill-tag">Profibus-DP</span>
+            <span class="skill-tag">Profinet</span>
+            <span class="skill-tag">EtherNet/IP</span>
+            <span class="skill-tag">OPC UA</span>
+            <span class="skill-tag">EGD</span>
+            <span class="skill-tag">HART</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-name">电气二次</div>
+          <div class="skill-tags">
+            <span class="skill-tag">继电保护</span>
+            <span class="skill-tag">励磁 AVR / 同期</span>
+            <span class="skill-tag">IEC 61850</span>
+            <span class="skill-tag">主变 OLTC/DGA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">基本信息</div>
+        <div class="kv-item"><span class="kv-key">手机</span><span class="kv-val"><a href="tel:+8613889810081">+86 138-8981-0081</a></span></div>
+        <div class="kv-item"><span class="kv-key">邮箱</span><span class="kv-val"><a href="mailto:winlee136@msn.com">winlee136@msn.com</a></span></div>
+        <div class="kv-item"><span class="kv-key">现居</span><span class="kv-val">上海 / 沈阳</span></div>
+        <div class="kv-item"><span class="kv-key">出差</span><span class="kv-val">适应国内/海外驻场</span></div>
+        <div class="kv-item"><span class="kv-key">薪资</span><span class="kv-val">面议<br>五险一金（上海）</span></div>
+        <div class="kv-item"><span class="kv-key">到岗</span><span class="kv-val">1–2 周</span></div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">语言能力</div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">中文</span><span class="lang-level">母语</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="lang-bar">
+          <div class="lang-label"><span class="lang-name">英语</span><span class="lang-level">CET6 · 工作语言</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+        </div>
+      </div>
+
+      <div class="side-section" id="education">
+        <div class="side-title">教育培训</div>
+        <div class="edu-item">
+          <div class="edu-title">工业自动化专业</div>
+          <div class="edu-sub">沈阳工程学院<br>2004/09 – 2007/07</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">GE Mark VIe 控制系统原理培训</div>
+          <div class="edu-sub">GE 能源学习中心（GE ELC）· 美国<br>2012/02 – 2012/03</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">Foxboro DCS 系统培训</div>
+          <div class="edu-sub">Foxboro 上海培训中心<br>2025/03 – 2025/04</div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // ===== 网页版 / 手机版 切换 =====
+  (function () {
+    var html = document.documentElement;
+    var btn = document.getElementById('viewToggleBtn');
+
+    function applyView(isMobile) {
+      html.classList.toggle('mobile-view', isMobile);
+      // 按钮显示"当前不是"的那个版本，点击即可切换过去
+      btn.textContent = isMobile ? '网页版' : '手机版';
+    }
+
+    // 默认按屏幕宽度自动判断一次，之后完全由用户点击控制
+    var initialMobile = window.matchMedia('(max-width: 768px)').matches;
+    applyView(initialMobile);
+
+    btn.addEventListener('click', function () {
+      applyView(!html.classList.contains('mobile-view'));
+    });
+  })();
+</script>
+
+</body>
+</html>
